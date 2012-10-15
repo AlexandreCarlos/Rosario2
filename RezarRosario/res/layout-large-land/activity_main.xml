@@ -24,15 +24,26 @@
         android:layout_below="@id/dia_semana"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="10dp" />
-
-    <fragment
-        android:id="@+id/oracoes"
-        android:name="pt.carlos.alex.rosario.Mostra_Oracoes_"
+    
+<!--     <FrameLayout  -->
+<!--         android:id="@+id/oracoes_frame" -->
+<!--         android:name="pt.carlos.alex.rosario.Mostra_Oracoes_" -->
+<!--         android:layout_width="wrap_content" -->
+<!--         android:layout_height="wrap_content" -->
+<!--         android:layout_alignBaseline="@id/misterios_do_dia" -->
+<!--         android:layout_below="@id/dia_semana" -->
+<!--         android:layout_marginLeft="10dp" -->
+<!--         android:layout_toRightOf="@id/misterios_do_dia"/> -->
+    
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@id/misterios_do_dia"
         android:layout_below="@id/dia_semana"
         android:layout_marginLeft="10dp"
-        android:layout_toRightOf="@id/misterios_do_dia" />
-
+        android:layout_toRightOf="@id/misterios_do_dia"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:scrollbars="vertical" />
+  
 </RelativeLayout>
