@@ -4,6 +4,7 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 import android.os.Bundle;
+import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.widget.TextView;
 
@@ -31,6 +32,9 @@ public class MainActivity extends SherlockFragmentActivity {
 	@ViewById(R.id.dia_semana)
 	protected TextView dia_semana;
 	
+	@ViewById(R.id.pager)
+	protected ViewPager pager;
+	
 	private EventBus eventBus;
 	private GregorianCalendar calendario;
 	protected int index_dia_semana = -1;
@@ -38,7 +42,7 @@ public class MainActivity extends SherlockFragmentActivity {
 	
 
 	@AfterInject
-	void obterDiaSemana() {
+	void startup() {
 		calendario = (GregorianCalendar) GregorianCalendar.getInstance();
 
 		index_dia_semana = calendario.get(Calendar.DAY_OF_WEEK);
@@ -51,12 +55,16 @@ public class MainActivity extends SherlockFragmentActivity {
 	}
 
 	@AfterViews
-	void updateTextWithDate() {
+	void init() {
 
 		try {
 
-			dia_semana.setText(DIA_SEMANA[index_dia_semana] + " - "
-					+ Misterios.DESIGN[Misterios.MISTERIOS[index_dia_semana]]);
+//			dia_semana.setText(DIA_SEMANA[index_dia_semana] + " - "
+//					+ Misterios.DESIGN[Misterios.MISTERIOS[index_dia_semana]]);
+			
+			eventBus.register(this);
+			
+			pager.setAdapter(new OracoesPageAdapter(getSupportFragmentManager(), index_dia_semana, 0));
 
 		} catch (Exception e) {
 			Log.e(TAG, "Erro no updateTextWithDate", e);
@@ -107,5 +115,17 @@ public class MainActivity extends SherlockFragmentActivity {
 			eventBus.post(new Rezar(index_dia_semana, misterio_selected));
 		}
 
+	}
+	
+	public void onEvent(Rezar event) {
+
+		if (DEBUG) {
+			Log.d(TAG, "Evento recebido:" + event);
+		}
+
+		pager.removeAllViews();
+		pager.invalidate();
+		pager.setAdapter(new OracoesPageAdapter(getSupportFragmentManager(), event.dia_semana, event.misterio));
+		this.pager.setCurrentItem(0);
 	}
 }

@@ -3,8 +3,8 @@
  */
 package pt.carlos.alex.rosario;
 
-import android.text.Html;
-import android.text.Spanned;
+import android.util.Log;
+
 
 /**
  * @author Alexandre Carlos
@@ -12,6 +12,9 @@ import android.text.Spanned;
  */
 public final class Misterios {
 
+	private static final String TAG="Misterios";
+//	private static final boolean DEBUG=true;
+	
 	public static final String[] DESIGN = { "Mistérios Gloriosos (da Glória)", // 0
 			"Mistérios Gozosos (da Alegria)", // 1
 			"Mistérios Dolorosos (da Dor)", // 2
@@ -155,7 +158,7 @@ public final class Misterios {
 	 *            4 - 4ª Feira 5 - 5ª Feira 6 - 6ª Feira 7 - Sábado
 	 * @return String Array com os Mistérios associados ao dia da semana
 	 */
-	public final static String[] Design__Misterios(int dia_semana) {
+	public static String[] Design__Misterios(int dia_semana) {
 		switch (MISTERIOS[dia_semana]) {
 		case 0:
 			return GLORIOSOS;
@@ -172,9 +175,9 @@ public final class Misterios {
 		return null;
 	}
 
-	public final static Spanned Obter_Misterio_do_Dia(int dia_semana,
+	public static String Obter_Misterio_do_Dia(int dia_semana,
 			int misterio) {
-
+		
 		switch (MISTERIOS[dia_semana]) {
 		case 0:
 			return Gloriosos(misterio);
@@ -190,123 +193,124 @@ public final class Misterios {
 
 	}
 
-	public static final Spanned Gozosos(int i) {
+	public static final String Gozosos(int i) {
 
 		switch (i) {
 		case 0:
-			return Html.fromHtml(GOZOSO1);
+			return GOZOSO1;
 		case 1:
-			return Html.fromHtml(GOZOSO2);
+			return GOZOSO2;
 		case 2:
-			return Html.fromHtml(GOZOSO3);
+			return GOZOSO3;
 		case 3:
-			return Html.fromHtml(GOZOSO4);
+			return GOZOSO4;
 		case 4:
-			return Html.fromHtml(GOZOSO5);
+			return GOZOSO5;
 		case 5:
-			return Html.fromHtml(ORACOESFINAIS);
+			return ORACOESFINAIS;
 		}
 
 		return null;
 	}
 
-	public static final Spanned Gloriosos(int i) {
+	public static final String Gloriosos(int i) {
 
 		switch (i) {
 		case 0:
-			return Html.fromHtml(GLORIOSO1);
+			return GLORIOSO1;
 		case 1:
-			return Html.fromHtml(GLORIOSO2);
+			return GLORIOSO2;
 		case 2:
-			return Html.fromHtml(GLORIOSO3);
+			return GLORIOSO3;
 		case 3:
-			return Html.fromHtml(GLORIOSO4);
+			return GLORIOSO4;
 		case 4:
-			return Html.fromHtml(GLORIOSO5);
+			return GLORIOSO5;
 		case 5:
-			return Html.fromHtml(ORACOESFINAIS);
+			return ORACOESFINAIS;
 		}
 
 		return null;
 	}
 
-	public static final Spanned Dolorosos(int i) {
+	public static final String Dolorosos(int i) {
 
 		switch (i) {
 		case 0:
-			return Html.fromHtml(DOLOROSO1);
+			return DOLOROSO1;
 		case 1:
-			return Html.fromHtml(DOLOROSO2);
+			return DOLOROSO2;
 		case 2:
-			return Html.fromHtml(DOLOROSO3);
+			return DOLOROSO3;
 		case 3:
-			return Html.fromHtml(DOLOROSO4);
+			return DOLOROSO4;
 		case 4:
-			return Html.fromHtml(DOLOROSO5);
+			return DOLOROSO5;
 		case 5:
-			return Html.fromHtml(ORACOESFINAIS);
+			return ORACOESFINAIS;
 		}
 
 		return null;
 	}
 
-	public static final Spanned Luminosos(int i) {
+	public static final String Luminosos(int i) {
 
 		switch (i) {
 		case 0:
-			return Html.fromHtml(LUMINOSO1);
+			return LUMINOSO1;
 		case 1:
-			return Html.fromHtml(LUMINOSO2);
+			return LUMINOSO2;
 		case 2:
-			return Html.fromHtml(LUMINOSO3);
+			return LUMINOSO3;
 		case 3:
-			return Html.fromHtml(LUMINOSO4);
+			return LUMINOSO4;
 		case 4:
-			return Html.fromHtml(LUMINOSO5);
+			return LUMINOSO5;
 		case 5:
-			return Html.fromHtml(ORACOESFINAIS);
+			return ORACOESFINAIS;
 		}
 
 		return null;
 	}
 
-	public static final Spanned PaiNosso() {
-		return Html.fromHtml(PAINOSSO);
+	public static final String PaiNosso() {
+		return PAINOSSO;
 	}
 
-	public static final Spanned AveMaria() {
-		return Html.fromHtml(AVE_MARIA);
+	public static final String AveMaria() {
+		return AVE_MARIA;
 	}
 
-	public static Spanned Gloria() {
-		return Html.fromHtml(GLORIA);
+	public static String Gloria() {
+		return GLORIA;
 	}
 
-	public static Spanned SalveRainha() {
-		return Html.fromHtml(SALVERAINHA);
+	public static String SalveRainha() {
+		return SALVERAINHA;
 	}
 
-	public static Spanned Jaculatoria() {
-		return Html.fromHtml(JACULATORIAS);
+	public static String Jaculatoria() {
+		return JACULATORIAS;
 	}
 
-	@SuppressWarnings("null")
-	public static Spanned [] Oracoes_do_Misterio(int dia_semana, int misterio) {
-		Spanned [] oracao = null;
+	public static String [] Oracoes_do_Misterio(int dia_semana, int misterio) {
+		String[] oracao = new String[14];
 		
-		oracao[0] = Misterios.Obter_Misterio_do_Dia(dia_semana, misterio);
-		
-		oracao [1] = Misterios.PaiNosso();
-		
-		for (int i = 2; i < 12; i++) {
-			oracao [i] = Misterios.AveMaria();
+		try {
+			oracao[0] = Obter_Misterio_do_Dia(dia_semana, misterio);
+			oracao[1] = PaiNosso();
+			for (int i = 2; i < 12; i++) {
+				oracao[i] = AveMaria();
+			}
+			oracao[12] = Gloria();
+			oracao[13] = Jaculatoria();
+			return oracao;
+		} catch (Exception e) {
+			Log.e(TAG, "Exception: dia_semana="+dia_semana+"; misterio="+misterio);
+			Log.e(TAG, "Oracoes_do_Misterio", e);
 		}
-		
-		oracao [12] = Misterios.Gloria();
-		oracao [13] = Misterios.Jaculatoria();
 		
 		return oracao;
-		
 	}
 	
 	
