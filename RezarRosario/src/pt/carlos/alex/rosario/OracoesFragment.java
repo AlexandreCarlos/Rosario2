@@ -13,8 +13,9 @@ import com.actionbarsherlock.app.SherlockFragment;
 public class OracoesFragment extends SherlockFragment {
 	private static final String KEY_ORACAO = "oracao";
 	private static final String TAG = "OracoesFragment";
-	private static final boolean DEBUG = false;
-
+	private static final boolean DEBUG = true;
+//	String oracao;
+	
 	static OracoesFragment newInstance(String oracao) {
 		OracoesFragment frag = new OracoesFragment();
 		Bundle args = new Bundle();
@@ -29,6 +30,9 @@ public class OracoesFragment extends SherlockFragment {
 
 		return (frag);
 	}
+//	public OracoesFragment (String oracao) {
+//		this.oracao = oracao;
+//	}
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,

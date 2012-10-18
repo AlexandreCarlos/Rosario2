@@ -36,8 +36,8 @@ public final class MainActivity_
     }
 
     private void afterSetContentView_() {
-        pager = ((ViewPager) findViewById(id.pager));
         dia_semana = ((TextView) findViewById(id.dia_semana));
+        pager = ((ViewPager) findViewById(id.pager));
         init();
     }
 

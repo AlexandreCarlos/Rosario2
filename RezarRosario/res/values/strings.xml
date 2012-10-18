@@ -6,5 +6,6 @@
     <string name="dia_semana">Dia da Semana</string>
     <string name="oracoes_dia">Orações do dia</string>
 	<string name="hint">Editor #%d</string>
+	<string name="oracoes_layout_hint">oracoes_layout</string>
 	
 </resources>

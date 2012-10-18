@@ -1,48 +1,7 @@
-10-17 23:33:47.390: D/Rosário(10655): index_dia_semana: 4
-10-17 23:33:47.510: I/dalvikvm(10655): Could not find method com.actionbarsherlock.internal.nineoldandroids.widget.NineFrameLayout.onHoverEvent, referenced from method com.actionbarsherlock.internal.widget.ActionBarContainer.onHoverEvent
-10-17 23:33:47.510: W/dalvikvm(10655): VFY: unable to resolve virtual method 4257: Lcom/actionbarsherlock/internal/nineoldandroids/widget/NineFrameLayout;.onHoverEvent (Landroid/view/MotionEvent;)Z
-10-17 23:33:47.510: D/dalvikvm(10655): VFY: replacing opcode 0x6f at 0x0000
-10-17 23:33:47.540: I/dalvikvm(10655): Could not find method com.actionbarsherlock.internal.widget.ActionBarView$HomeView.onHoverEvent, referenced from method com.actionbarsherlock.internal.widget.ActionBarView$HomeView.dispatchHoverEvent
-10-17 23:33:47.540: W/dalvikvm(10655): VFY: unable to resolve virtual method 5118: Lcom/actionbarsherlock/internal/widget/ActionBarView$HomeView;.onHoverEvent (Landroid/view/MotionEvent;)Z
-10-17 23:33:47.540: D/dalvikvm(10655): VFY: replacing opcode 0x6e at 0x0000
-10-17 23:33:47.540: I/dalvikvm(10655): Could not find method android.widget.FrameLayout.onPopulateAccessibilityEvent, referenced from method com.actionbarsherlock.internal.widget.ActionBarView$HomeView.onPopulateAccessibilityEvent
-10-17 23:33:47.540: W/dalvikvm(10655): VFY: unable to resolve virtual method 3014: Landroid/widget/FrameLayout;.onPopulateAccessibilityEvent (Landroid/view/accessibility/AccessibilityEvent;)V
-10-17 23:33:47.540: D/dalvikvm(10655): VFY: replacing opcode 0x6f at 0x0006
-10-17 23:33:47.580: D/Rosário(10655): index_dia_semana: 4
-10-17 23:33:47.930: D/dalvikvm(10655): GC_FOR_ALLOC freed 153K, 5% free 6436K/6727K, paused 24ms
-10-17 23:33:47.930: I/dalvikvm-heap(10655): Grow heap (frag case) to 6.874MB for 513744-byte allocation
-10-17 23:33:48.270: D/dalvikvm(10655): GC_CONCURRENT freed 2K, 5% free 6935K/7239K, paused 2ms+2ms
-10-17 23:33:48.290: D/OracoesPageAdapter(10655): Constructor-index_dia_da_semana:4
-10-17 23:33:48.990: W/dalvikvm(10655): dvmFindClassByName rejecting 'res/drawable-mdpi/ic_go.png'
-10-17 23:33:48.990: W/MenuInflater(10655): Cannot instantiate class: res/drawable-mdpi/ic_go.png
-10-17 23:33:48.990: W/MenuInflater(10655): java.lang.ClassNotFoundException: res/drawable-mdpi/ic_go.png in loader dalvik.system.PathClassLoader[/data/app/pt.carlos.alex.rosario-2.apk]
-10-17 23:33:48.990: W/MenuInflater(10655): 	at dalvik.system.PathClassLoader.findClass(PathClassLoader.java:251)
-10-17 23:33:48.990: W/MenuInflater(10655): 	at java.lang.ClassLoader.loadClass(ClassLoader.java:540)
-10-17 23:33:48.990: W/MenuInflater(10655): 	at java.lang.ClassLoader.loadClass(ClassLoader.java:500)
-10-17 23:33:48.990: W/MenuInflater(10655): 	at com.actionbarsherlock.view.MenuInflater$MenuState.newInstance(MenuInflater.java:486)
-10-17 23:33:48.990: W/MenuInflater(10655): 	at com.actionbarsherlock.view.MenuInflater$MenuState.readItem(MenuInflater.java:389)
-10-17 23:33:48.990: W/MenuInflater(10655): 	at com.actionbarsherlock.view.MenuInflater.parseMenu(MenuInflater.java:162)
-10-17 23:33:48.990: W/MenuInflater(10655): 	at com.actionbarsherlock.view.MenuInflater.inflate(MenuInflater.java:112)
-10-17 23:33:48.990: W/MenuInflater(10655): 	at pt.carlos.alex.rosario.MainActivity_.onCreateOptionsMenu(MainActivity_.java:77)
-10-17 23:33:48.990: W/MenuInflater(10655): 	at android.support.v4.app.Watson.onCreatePanelMenu(Watson.java:45)
-10-17 23:33:48.990: W/MenuInflater(10655): 	at com.actionbarsherlock.ActionBarSherlock.callbackCreateOptionsMenu(ActionBarSherlock.java:559)
-10-17 23:33:48.990: W/MenuInflater(10655): 	at com.actionbarsherlock.internal.ActionBarSherlockCompat.preparePanel(ActionBarSherlockCompat.java:479)
-10-17 23:33:48.990: W/MenuInflater(10655): 	at com.actionbarsherlock.internal.ActionBarSherlockCompat.dispatchInvalidateOptionsMenu(ActionBarSherlockCompat.java:272)
-10-17 23:33:48.990: W/MenuInflater(10655): 	at com.actionbarsherlock.internal.ActionBarSherlockCompat$1.run(ActionBarSherlockCompat.java:984)
-10-17 23:33:48.990: W/MenuInflater(10655): 	at android.os.Handler.handleCallback(Handler.java:587)
-10-17 23:33:48.990: W/MenuInflater(10655): 	at android.os.Handler.dispatchMessage(Handler.java:92)
-10-17 23:33:48.990: W/MenuInflater(10655): 	at android.os.Looper.loop(Looper.java:132)
-10-17 23:33:48.990: W/MenuInflater(10655): 	at android.app.ActivityThread.main(ActivityThread.java:4126)
-10-17 23:33:48.990: W/MenuInflater(10655): 	at java.lang.reflect.Method.invokeNative(Native Method)
-10-17 23:33:48.990: W/MenuInflater(10655): 	at java.lang.reflect.Method.invoke(Method.java:491)
-10-17 23:33:48.990: W/MenuInflater(10655): 	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:844)
-10-17 23:33:48.990: W/MenuInflater(10655): 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:602)
-10-17 23:33:48.990: W/MenuInflater(10655): 	at dalvik.system.NativeStart.main(Native Method)
-10-17 23:33:49.200: D/CLIPBOARD(10655): Hide Clipboard dialog at Starting input: finished by someone else... !
-10-17 23:33:50.990: D/dalvikvm(10655): GC_CONCURRENT freed 216K, 6% free 7118K/7495K, paused 2ms+3ms
-10-17 23:33:53.250: D/Rosário(10655): List Item Click: 1
-10-17 23:33:53.250: D/OracoesPageAdapter(10655): Evento recebido:Rezar [dia_semana=4, misterio=1]
-10-17 23:33:53.250: D/Event(10655): No subscripers registered for event class java.lang.String
-10-17 23:33:59.870: D/Rosário(10655): List Item Click: 2
-10-17 23:33:59.870: D/OracoesPageAdapter(10655): Evento recebido:Rezar [dia_semana=4, misterio=2]
-10-17 23:33:59.870: D/Event(10655): No subscripers registered for event class java.lang.String
+10-18 22:45:23.710: D/OracoesPageAdapter(7865): Constructor-oracao:<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"></head><body><div  align="center"><h1>1º Mistério Luminoso</h1><h2>O baptismo de Jesus no Jordão <sub><font  size="-1"><i>(Mt 3,13-17)</i></font></sub></h2></div><sup><font color="#AA66CC" size="-1">13</font></sup>Então, veio Jesus da Galileia ao Jordão ter com João, para ser baptizado por ele. <sup><font color="#AA66CC" size="-1">14</font></sup>João opunha-se, dizendo: «Eu é que tenho necessidade de ser baptizado por ti, e Tu vens a mim?» <sup><font color="#AA66CC" size="-1">15</font></sup>Jesus, porém, respondeu-lhe: «Deixa por agora. Convém que cumpramos assim toda a justiça.» João, então, concordou.<br><br><sup><font color="#AA66CC" size="-1">16</font></sup>Uma vez baptizado, Jesus saiu da água e eis que se rasgaram os céus, e viu o Espírito de Deus descer como uma pomba e vir sobre Ele. <sup><font color="#AA66CC" size="-1">17</font></sup>E uma voz vinda do Céu dizia: «Este é o meu Filho muito amado, no qual pus todo o meu agrado.»<br><br><br></body></html>
+10-18 22:45:23.830: D/OracoesPageAdapter(7865): Object instantiateItem-position:0; <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"></head><body><div  align="center"><h1>1º Mistério Luminoso</h1><h2>O baptismo de Jesus no Jordão <sub><font  size="-1"><i>(Mt 3,13-17)</i></font></sub></h2></div><sup><font color="#AA66CC" size="-1">13</font></sup>Então, veio Jesus da Galileia ao Jordão ter com João, para ser baptizado por ele. <sup><font color="#AA66CC" size="-1">14</font></sup>João opunha-se, dizendo: «Eu é que tenho necessidade de ser baptizado por ti, e Tu vens a mim?» <sup><font color="#AA66CC" size="-1">15</font></sup>Jesus, porém, respondeu-lhe: «Deixa por agora. Convém que cumpramos assim toda a justiça.» João, então, concordou.<br><br><sup><font color="#AA66CC" size="-1">16</font></sup>Uma vez baptizado, Jesus saiu da água e eis que se rasgaram os céus, e viu o Espírito de Deus descer como uma pomba e vir sobre Ele. <sup><font color="#AA66CC" size="-1">17</font></sup>E uma voz vinda do Céu dizia: «Este é o meu Filho muito amado, no qual pus todo o meu agrado.»<br><br><br></body></html>
+10-18 22:45:24.000: D/OracoesPageAdapter(7865): Object instantiateItem-position:1; <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"><html><head><title>Pai Nosso</title></head><body><h1 style="text-align: center; color: #0000FF;">Pai Nosso</h1>Pai Nosso que estais no céu,<br />santificado seja o vosso nome,<br />vem a nós o vosso reino,<br />seja feita a vossa vontade<br />assim na terra como no céu.<br /><br />O pão nosso de cada dia nos daí hoje,<br />perdoai-nos as nossas ofensas,<br />assim como nós perdoamos<br />a quem nos tem ofendido,<br />não nos deixei cair em tentação<br />mas livrai-nos do mal.<br /><br />Amen<br /><hr size="2" /></body></html>
+10-18 22:45:33.730: D/OracoesPageAdapter(7865): getItemPosition-object:class android.widget.ScrollView
+10-18 22:45:33.740: D/OracoesPageAdapter(7865): getItemPosition-object:class android.widget.ScrollView
+10-18 22:45:33.740: D/OracoesPageAdapter(7865): Object instantiateItem-position:0; <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"></head><body><div  align="center"><h1>3º Mistério Luminoso</h1><h2>O anúncio do Reino de Deus com o convite à conversão <sub><font  size="-1"><i>(Mc 1,14-15)</i></font></sub></h2></div><sup><font color="#AA66CC" size="-1">14</font></sup>Depois de João ter sido preso, Jesus foi para a Galileia, e proclamava o Evangelho de Deus, <sup><font color="#AA66CC" size="-1">15</font></sup>dizendo: «Completou-se o tempo e o Reino de Deus está próximo: arrependei-vos e acreditai no Evangelho.» <br></body></html>
+10-18 22:45:33.800: D/OracoesPageAdapter(7865): Object instantiateItem-position:1; <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"><html><head><title>Pai Nosso</title></head><body><h1 style="text-align: center; color: #0000FF;">Pai Nosso</h1>Pai Nosso que estais no céu,<br />santificado seja o vosso nome,<br />vem a nós o vosso reino,<br />seja feita a vossa vontade<br />assim na terra como no céu.<br /><br />O pão nosso de cada dia nos daí hoje,<br />perdoai-nos as nossas ofensas,<br />assim como nós perdoamos<br />a quem nos tem ofendido,<br />não nos deixei cair em tentação<br />mas livrai-nos do mal.<br /><br />Amen<br /><hr size="2" /></body></html>

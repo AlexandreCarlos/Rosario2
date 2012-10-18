@@ -3,6 +3,9 @@
  */
 package pt.carlos.alex.rosario;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import android.util.Log;
 
 
@@ -293,17 +296,17 @@ public final class Misterios {
 		return JACULATORIAS;
 	}
 
-	public static String [] Oracoes_do_Misterio(int dia_semana, int misterio) {
-		String[] oracao = new String[14];
+	public static List <String> Oracoes_do_Misterio(int dia_semana, int misterio) {
+		List <String> oracao = new ArrayList<String>();
 		
 		try {
-			oracao[0] = Obter_Misterio_do_Dia(dia_semana, misterio);
-			oracao[1] = PaiNosso();
+			oracao.add(Obter_Misterio_do_Dia(dia_semana, misterio));
+			oracao.add(PaiNosso());
 			for (int i = 2; i < 12; i++) {
-				oracao[i] = AveMaria();
+				oracao.add(AveMaria());
 			}
-			oracao[12] = Gloria();
-			oracao[13] = Jaculatoria();
+			oracao.add(Gloria());
+			oracao.add(Jaculatoria());
 			return oracao;
 		} catch (Exception e) {
 			Log.e(TAG, "Exception: dia_semana="+dia_semana+"; misterio="+misterio);
