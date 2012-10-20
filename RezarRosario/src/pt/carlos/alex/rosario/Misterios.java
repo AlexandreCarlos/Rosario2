@@ -301,12 +301,14 @@ public final class Misterios {
 		
 		try {
 			oracao.add(Obter_Misterio_do_Dia(dia_semana, misterio));
-			oracao.add(PaiNosso());
-			for (int i = 2; i < 12; i++) {
-				oracao.add(AveMaria());
+			if (misterio < 5) {	// se for Oração Final (misterio =5) não inclui as restantes orações
+				oracao.add(PaiNosso());
+				for (int i = 2; i < 12; i++) {
+					oracao.add(AveMaria());
+				}
+				oracao.add(Gloria());
+				oracao.add(Jaculatoria());
 			}
-			oracao.add(Gloria());
-			oracao.add(Jaculatoria());
 			return oracao;
 		} catch (Exception e) {
 			Log.e(TAG, "Exception: dia_semana="+dia_semana+"; misterio="+misterio);

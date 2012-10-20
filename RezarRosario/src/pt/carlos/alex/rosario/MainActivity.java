@@ -127,7 +127,9 @@ public class MainActivity extends SherlockFragmentActivity {
 
 		index_dia_semana = event.dia_semana;
 		misterio_selected = event.misterio;
-		oracao.set(0, Misterios.Obter_Misterio_do_Dia(index_dia_semana, misterio_selected));
+//		oracao.set(0, Misterios.Obter_Misterio_do_Dia(index_dia_semana, misterio_selected));
+		oracao.clear();
+		oracao.addAll(Misterios.Oracoes_do_Misterio(index_dia_semana, misterio_selected));
 		pager.getAdapter().notifyDataSetChanged();
 
 		this.pager.setCurrentItem(0);
