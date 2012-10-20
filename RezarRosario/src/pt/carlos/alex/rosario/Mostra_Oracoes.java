@@ -31,6 +31,9 @@ public class Mostra_Oracoes extends SherlockFragment {
 	@ViewById(R.id.pager)
 	protected ViewPager pager;
 
+	@ViewById(R.id.indicator)
+	ContasRosario mIndicator;
+	
 	protected int index_dia_semana = -1;
 	protected int misterio_selected = 0;
 	protected List<String> oracao;
@@ -57,7 +60,17 @@ public class Mostra_Oracoes extends SherlockFragment {
 			oracao = Misterios.Oracoes_do_Misterio(index_dia_semana, misterio_selected);
 
 			pager.setAdapter(new OracoesPageAdapter(this, oracao));
+			
+			final float density = getResources().getDisplayMetrics().density;
+			
+			mIndicator.setViewPager(pager);
 
+			mIndicator.setBackgroundColor(0xFFCCCCCC);  // cor de fundo do ViewPage Indicator
+			mIndicator.setRadius(6 * density);
+			mIndicator.setPageColor(0xFFAA66CC);   // Cor de fundo dos circulos
+			mIndicator.setFillColor(0xCC888888);   // Cor de fundo do circulo da página visivel
+			mIndicator.setStrokeColor(0xFF000000); // Cor da circunferencia dos circulos
+			
 		} catch (Exception e) {
 			Log.e(TAG, "Erro no init() @AfterViews:", e);
 		}
