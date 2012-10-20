@@ -3,11 +3,14 @@
  */
 package pt.carlos.alex.rosario;
 
+import java.util.List;
+
+import android.support.v4.view.ViewPager;
 import android.util.Log;
-import android.widget.TextView;
 
 import com.actionbarsherlock.app.SherlockFragment;
 import com.googlecode.androidannotations.annotations.AfterInject;
+import com.googlecode.androidannotations.annotations.AfterViews;
 import com.googlecode.androidannotations.annotations.EFragment;
 import com.googlecode.androidannotations.annotations.ViewById;
 
@@ -17,7 +20,7 @@ import de.greenrobot.event.EventBus;
  * @author alexandre
  * 
  */
-@EFragment(R.layout.oracoes_layout)
+@EFragment(R.layout.oracoes_page_layout)
 public class Mostra_Oracoes extends SherlockFragment {
 
 	private static final String TAG = "Mostra Orações";
@@ -25,19 +28,43 @@ public class Mostra_Oracoes extends SherlockFragment {
 	private EventBus eventBus;
 	private boolean registado = false;
 	
-	@ViewById
-	protected TextView oracoesText;
+	@ViewById(R.id.pager)
+	protected ViewPager pager;
 
+	protected int index_dia_semana = -1;
+	protected int misterio_selected = 0;
+	protected List<String> oracao;
+	
 	@AfterInject
-	void inicializa() {
+	void startUp() {
 		eventBus = EventBus.getDefault();
 		registaBus();
 		
+		MainActivity ma = (MainActivity)getActivity();
+		index_dia_semana = ma.index_dia_semana;
+		misterio_selected = ma.misterio_selected;
+		ma = null;
+		
 		if (DEBUG) {
-			Log.d(TAG, "inicializa");
+			Log.d(TAG, "inicializa-index_dia_semana:"+index_dia_semana+"; misterio_selected:"+misterio_selected);
 		}
 	}
 
+	@AfterViews
+	void init() {
+
+		try {
+			oracao = Misterios.Oracoes_do_Misterio(index_dia_semana, misterio_selected);
+
+			pager.setAdapter(new OracoesPageAdapter(this, oracao));
+
+		} catch (Exception e) {
+			Log.e(TAG, "Erro no init() @AfterViews:", e);
+		}
+
+	}
+	
+	
 	private void registaBus() {
 		if (!registado) {
 			eventBus.register(this);
@@ -66,15 +93,15 @@ public class Mostra_Oracoes extends SherlockFragment {
 	}
 
 
-	void escreveOracoes(int dia_semana, int misterio) {
-
-		if (misterio < 0) {
-			return;
-		}
-
-		oracoesText.setText(Misterios.Obter_Misterio_do_Dia(dia_semana, misterio));
-		
-	}
+//	void escreveOracoes(int dia_semana, int misterio) {
+//
+//		if (misterio < 0) {
+//			return;
+//		}
+//
+//		oracoesText.setText(Misterios.Obter_Misterio_do_Dia(dia_semana, misterio));
+//		
+//	}
 
 	public void onEvent(Rezar event) {
 
@@ -82,7 +109,14 @@ public class Mostra_Oracoes extends SherlockFragment {
 			Log.d(TAG, "Evento recebido:" + event);
 		}
 
-		escreveOracoes(event.dia_semana, event.misterio);
+		index_dia_semana = event.dia_semana;
+		misterio_selected = event.misterio;
+		oracao.clear();
+		oracao.addAll(Misterios.Oracoes_do_Misterio(index_dia_semana, misterio_selected))
+		;
+		pager.getAdapter().notifyDataSetChanged();
+
+		this.pager.setCurrentItem(0);
 	}
 
 }

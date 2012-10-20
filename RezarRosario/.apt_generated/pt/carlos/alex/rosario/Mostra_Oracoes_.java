@@ -6,10 +6,10 @@
 package pt.carlos.alex.rosario;
 
 import android.os.Bundle;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 import pt.carlos.alex.rosario.R.layout;
 
 public final class Mostra_Oracoes_
@@ -19,7 +19,7 @@ public final class Mostra_Oracoes_
     private View contentView_;
 
     private void init_() {
-        inicializa();
+        startUp();
     }
 
     @Override
@@ -29,14 +29,15 @@ public final class Mostra_Oracoes_
     }
 
     private void afterSetContentView_() {
-        oracoesText = ((TextView) findViewById(pt.carlos.alex.rosario.R.id.oracoesText));
+        pager = ((ViewPager) findViewById(pt.carlos.alex.rosario.R.id.pager));
+        init();
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         contentView_ = super.onCreateView(inflater, container, savedInstanceState);
         if (contentView_ == null) {
-            contentView_ = inflater.inflate(layout.oracoes_layout, container, false);
+            contentView_ = inflater.inflate(layout.oracoes_page_layout, container, false);
         }
         afterSetContentView_();
         return contentView_;

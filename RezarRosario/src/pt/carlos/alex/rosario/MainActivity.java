@@ -2,10 +2,8 @@ package pt.carlos.alex.rosario;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;
-import java.util.List;
 
 import android.os.Bundle;
-import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.widget.TextView;
 
@@ -33,14 +31,14 @@ public class MainActivity extends SherlockFragmentActivity {
 	@ViewById(R.id.dia_semana)
 	protected TextView dia_semana;
 
-	@ViewById(R.id.pager)
-	protected ViewPager pager;
+//	@ViewById(R.id.pager)
+//	protected ViewPager pager;
 
 	private EventBus eventBus;
 	private GregorianCalendar calendario;
 	protected int index_dia_semana = -1;
 	protected int misterio_selected = 0;
-	protected List<String> oracao;
+//	protected List<String> oracao;
 
 	@AfterInject
 	void startup() {
@@ -59,11 +57,11 @@ public class MainActivity extends SherlockFragmentActivity {
 	void init() {
 
 		try {
-			eventBus.register(this);
-			oracao = Misterios.Oracoes_do_Misterio(index_dia_semana,
-					misterio_selected);
-
-			pager.setAdapter(new OracoesPageAdapter(this, oracao));
+//			eventBus.register(this);
+//			oracao = Misterios.Oracoes_do_Misterio(index_dia_semana,
+//					misterio_selected);
+//
+//			pager.setAdapter(new OracoesPageAdapter(this, oracao));
 
 		} catch (Exception e) {
 			Log.e(TAG, "Erro no init() @AfterViews:", e);
@@ -119,19 +117,20 @@ public class MainActivity extends SherlockFragmentActivity {
 
 	}
 
-	public void onEvent(Rezar event) {
-
-		if (DEBUG) {
-			Log.d(TAG, "Evento recebido:" + event);
-		}
-
-		index_dia_semana = event.dia_semana;
-		misterio_selected = event.misterio;
-//		oracao.set(0, Misterios.Obter_Misterio_do_Dia(index_dia_semana, misterio_selected));
-		oracao.clear();
-		oracao.addAll(Misterios.Oracoes_do_Misterio(index_dia_semana, misterio_selected));
-		pager.getAdapter().notifyDataSetChanged();
-
-		this.pager.setCurrentItem(0);
-	}
+//	public void onEvent(Rezar event) {
+//
+//		if (DEBUG) {
+//			Log.d(TAG, "Evento recebido:" + event);
+//		}
+//
+//		index_dia_semana = event.dia_semana;
+//		misterio_selected = event.misterio;
+////		oracao.set(0, Misterios.Obter_Misterio_do_Dia(index_dia_semana, misterio_selected));
+//		oracao.clear();
+//		oracao.addAll(Misterios.Oracoes_do_Misterio(index_dia_semana, misterio_selected))
+//		;
+//		pager.getAdapter().notifyDataSetChanged();
+//
+//		this.pager.setCurrentItem(0);
+//	}
 }

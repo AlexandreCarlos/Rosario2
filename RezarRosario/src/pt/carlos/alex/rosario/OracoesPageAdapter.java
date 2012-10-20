@@ -24,10 +24,10 @@ public class OracoesPageAdapter extends PagerAdapter {
 	final static boolean DEBUG = true;
 
 	private List <String> oracao;
-	private MainActivity ctx;
+	private Mostra_Oracoes ctx;
 
 	
-	public OracoesPageAdapter(MainActivity ctx, List <String> oracao) {
+	public OracoesPageAdapter(Mostra_Oracoes ctx, List <String> oracao) {
 		
 	    if (DEBUG) {
 	    	Log.d(TAG, "Constructor-oracao:"+oracao.get(0));
@@ -53,7 +53,7 @@ public class OracoesPageAdapter extends PagerAdapter {
 //    	  TextView view = new TextView(ctx);
 //          view.setText(Html.fromHtml(oracao.get(position)));
 //          ((ViewPager)collection).addView(view);
-        LayoutInflater l = ctx.getLayoutInflater();  
+        LayoutInflater l = ctx.getLayoutInflater(null);  
     	View result = l.inflate(R.layout.oracoes_layout, (ViewPager)collection, false);
     	
 		TextView oracoesText = (TextView) result.findViewById(R.id.oracoesText);

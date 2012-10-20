@@ -8,7 +8,6 @@ package pt.carlos.alex.rosario;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.view.ViewPager;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
@@ -37,7 +36,6 @@ public final class MainActivity_
 
     private void afterSetContentView_() {
         dia_semana = ((TextView) findViewById(id.dia_semana));
-        pager = ((ViewPager) findViewById(id.pager));
         init();
     }
 
