@@ -63,6 +63,8 @@ public class MainActivity extends SherlockFragmentActivity {
 //
 //			pager.setAdapter(new OracoesPageAdapter(this, oracao));
 
+			dia_semana.setText(DIA_SEMANA[index_dia_semana]);
+			
 		} catch (Exception e) {
 			Log.e(TAG, "Erro no init() @AfterViews:", e);
 		}
