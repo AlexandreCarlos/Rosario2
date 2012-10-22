@@ -16,7 +16,11 @@
  */
 package pt.carlos.alex.rosario;
 
-import com.viewpagerindicator.PageIndicator;
+import static android.graphics.Paint.ANTI_ALIAS_FLAG;
+import static android.widget.LinearLayout.HORIZONTAL;
+import static android.widget.LinearLayout.VERTICAL;
+
+import java.util.List;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -35,9 +39,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewConfiguration;
 
-import static android.graphics.Paint.ANTI_ALIAS_FLAG;
-import static android.widget.LinearLayout.HORIZONTAL;
-import static android.widget.LinearLayout.VERTICAL;
+import com.viewpagerindicator.PageIndicator;
 
 /**
  * Draws circles (one for each view). The current view position is filled and
@@ -47,7 +49,9 @@ public class ContasRosario extends View implements PageIndicator {
     private static final int INVALID_POINTER = -1;
 
     private final Paint iPaintPageFill = new Paint(ANTI_ALIAS_FLAG);
-    private float mRadius;
+    private List <Integer> iCoresContas;
+    
+  	private float mRadius;
     private final Paint mPaintPageFill = new Paint(ANTI_ALIAS_FLAG);
     private final Paint mPaintStroke = new Paint(ANTI_ALIAS_FLAG);
     private final Paint mPaintFill = new Paint(ANTI_ALIAS_FLAG);
@@ -117,7 +121,14 @@ public class ContasRosario extends View implements PageIndicator {
         mTouchSlop = ViewConfigurationCompat.getScaledPagingTouchSlop(configuration);
     }
 
+    public List<Integer> getCoresContas() {
+  		return iCoresContas;
+  	}
 
+  	public void setCoresContas(List<Integer> iCoresContas) {
+  		this.iCoresContas = iCoresContas;
+  	}
+  	
     public void setCentered(boolean centered) {
         mCentered = centered;
         invalidate();
@@ -259,22 +270,27 @@ public class ContasRosario extends View implements PageIndicator {
             // Only paint fill if not completely transparent
             if (mPaintPageFill.getAlpha() > 0) {
             	
-            	switch (iLoop) {
-            	case 0:
-            		iPaintPageFill.setColor(0xFFFFBB33); // Texto meditativo
-            		break;
-            	case 1:
-            		iPaintPageFill.setColor(0xFF33B5E5); // Pai Nosso
-            		break;
-            	case 12:
-            		iPaintPageFill.setColor(0xFFFF8800); // Glória
-            		break;
-            	case 13:
-            		iPaintPageFill.setColor(0xFF99CC00); // Jaculatória
-            		break;
-            	default:
-            		iPaintPageFill.setColor(mPaintPageFill.getColor());
-            	}
+//            	iEvangelo.setColor(getResources().getColor(R.color.ics_yellow);
+//            	
+//            	switch (iLoop) {
+//            	case 0:
+//            		iPaintPageFill.setColor(); // Texto meditativo (Evangelho)
+//            		break;
+//            	case 1:
+//            		iPaintPageFill.setColor(R.color.ics_green); // Pai Nosso
+//            		break;
+//            	case 12:
+//            		iPaintPageFill.setColor(getResources().getColor(R.color.ics_bold_yellow)); // Glória
+//            		break;
+//            	case 13:
+//            		iPaintPageFill.setColor(R.color.ics_violet); // Jaculatória
+//            		break;
+//            	default:
+//            		iPaintPageFill.setColor(mPaintPageFill.getColor());
+//            	}
+            	          	
+            	iPaintPageFill.setColor(iCoresContas.get(iLoop));
+            	
             	canvas.drawCircle(dX, dY, pageFillRadius, iPaintPageFill);
 //            	canvas.drawCircle(dX, dY, pageFillRadius, mPaintPageFill);
             }

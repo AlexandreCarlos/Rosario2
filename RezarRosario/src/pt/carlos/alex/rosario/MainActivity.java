@@ -24,6 +24,7 @@ public class MainActivity extends SherlockFragmentActivity {
 	final static boolean DEBUG = true;
 	final static String POSICAO = "Posicao";
 	final static String DIA = "Dia";
+	final static String PAGINA = "Pagina";
 	final static String[] DIA_SEMANA = { "Que dia é este?", "Domingo",
 			"2ª Feira", "3ª Feira", "4ª Feira", "5ª Feira", "6ª Feira",
 			"Sábado" };
@@ -31,14 +32,11 @@ public class MainActivity extends SherlockFragmentActivity {
 	@ViewById(R.id.dia_semana)
 	protected TextView dia_semana;
 
-//	@ViewById(R.id.pager)
-//	protected ViewPager pager;
-
 	private EventBus eventBus;
 	private GregorianCalendar calendario;
 	protected int index_dia_semana = -1;
 	protected int misterio_selected = 0;
-//	protected List<String> oracao;
+	protected int pagina_actual = 0;
 
 	@AfterInject
 	void startup() {
@@ -57,14 +55,15 @@ public class MainActivity extends SherlockFragmentActivity {
 	void init() {
 
 		try {
-//			eventBus.register(this);
-//			oracao = Misterios.Oracoes_do_Misterio(index_dia_semana,
-//					misterio_selected);
-//
-//			pager.setAdapter(new OracoesPageAdapter(this, oracao));
+			eventBus.register(this);
+
+			// oracao = Misterios.Oracoes_do_Misterio(index_dia_semana,
+			// misterio_selected);
+			//
+			// pager.setAdapter(new OracoesPageAdapter(this, oracao));
 
 			dia_semana.setText(DIA_SEMANA[index_dia_semana]);
-			
+
 		} catch (Exception e) {
 			Log.e(TAG, "Erro no init() @AfterViews:", e);
 		}
@@ -77,9 +76,11 @@ public class MainActivity extends SherlockFragmentActivity {
 
 		outState.putInt(POSICAO, this.misterio_selected);
 		outState.putInt(DIA, this.index_dia_semana);
+		outState.putInt(PAGINA, this.pagina_actual);
+
 		if (DEBUG) {
 			Log.d(TAG, "onSaveInstanceState [POSICAO]=" + misterio_selected
-					+ "; [DIA]=" + index_dia_semana);
+					+ "; [DIA]=" + index_dia_semana+ "; [PAGINA]=" + pagina_actual);
 		}
 
 	}
@@ -90,12 +91,13 @@ public class MainActivity extends SherlockFragmentActivity {
 
 		int d = inState.getInt(DIA);
 		int p = inState.getInt(POSICAO);
+		int g = inState.getInt(PAGINA);
 		boolean alterado = false;
 
 		if (DEBUG) {
-			Log.d(TAG, "onRestoreInstanceState [POSICAO]=" + p + "; [DIA]=" + d);
+			Log.d(TAG, "onRestoreInstanceState [POSICAO]=" + p + "; [DIA]=" + d+ "; [PAGINA]=" + g);
 			Log.d(TAG, "MainActivityState [POSICAO]=" + misterio_selected
-					+ "; [DIA]=" + index_dia_semana);
+					+ "; [DIA]=" + index_dia_semana+ "; [PAGINA]=" + pagina_actual);
 		}
 
 		if (d > this.index_dia_semana) {
@@ -108,31 +110,33 @@ public class MainActivity extends SherlockFragmentActivity {
 			alterado = true;
 		}
 
+		if (g != this.pagina_actual) {
+			this.pagina_actual = g;
+			alterado = true;
+		}
+
 		if (alterado) {
 
 			if (DEBUG) {
 				Log.d(TAG, "MainActivityState changed [POSICAO]="
-						+ misterio_selected + "; [DIA]=" + index_dia_semana);
+						+ misterio_selected + "; [DIA]=" + index_dia_semana
+						+ "; [PAGINA]=" + pagina_actual);
 			}
-			eventBus.post(new Rezar(index_dia_semana, misterio_selected));
+			
+			eventBus.post(new Rezar(index_dia_semana, misterio_selected, pagina_actual));
 		}
 
 	}
 
-//	public void onEvent(Rezar event) {
-//
-//		if (DEBUG) {
-//			Log.d(TAG, "Evento recebido:" + event);
-//		}
-//
-//		index_dia_semana = event.dia_semana;
-//		misterio_selected = event.misterio;
-////		oracao.set(0, Misterios.Obter_Misterio_do_Dia(index_dia_semana, misterio_selected));
-//		oracao.clear();
-//		oracao.addAll(Misterios.Oracoes_do_Misterio(index_dia_semana, misterio_selected))
-//		;
-//		pager.getAdapter().notifyDataSetChanged();
-//
-//		this.pager.setCurrentItem(0);
-//	}
+	public void onEvent(Integer event) {
+
+		if (DEBUG) {
+			Log.d(TAG, "Evento  página recebido:" + event);
+		}
+
+		this.pagina_actual = event.intValue();
+
+	}
+	
+	
 }

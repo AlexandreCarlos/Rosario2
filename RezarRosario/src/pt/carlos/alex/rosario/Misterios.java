@@ -65,69 +65,6 @@ public final class Misterios {
 			"5º Mistério - A Última Ceia de Jesus e a instituição da Eucarístia",
 			"Orações finais" };
 
-	// private static final String PRIMEIRO_GLORIOSO =
-	// "<html><head></head><body>1º Mistério - A ressureição de Nosso Senhor Jesus Cristo</body></html>";
-	//
-	// private static final String SEGUNDO_GLORIOSO =
-	// "<html><head></head><body>2º Mistério - A Ascensão de Jesus ao Céu</body></html>";
-	//
-	// private static final String TERCEIRO_GLORIOSO =
-	// "<html><head></head><body>3º Mistério - A descida do Espírito Santo sobre Nossa Senhora e os Apóstolos</body></html>";
-	//
-	// private static final String QUARTO_GLORIOSO =
-	// "<html><head></head><body>4º Mistério - A Assunção de Nossa Senhora ao Céu</body></html>";
-	//
-	// private static final String QUINTO_GLORIOSO =
-	// "<html><head></head><body>5º Mistério - A Coroação de Nossa Senhora, no Céu, como Rainha dos Anjos e dos Santos</body></html>";
-	//
-	// private static final String PRIMEIRO_GOZOSO =
-	// "<html><head></head><body><div align=\"center\"><h1><font color=\"#0000FF\">1º Mistério Gozoso</font></h1><h2><font color=\"#0000FF\">Anúncio do nascimento de Jesus <sub><i>(Lc 1,26-38)</i></sub></font></h2></div><br /><sup><font color=\"#A52A2A\">26</font></sup>Ao sexto mês, o anjo Gabriel foi enviado por Deus a uma cidade da Galileia chamada Nazaré, <br /><sup><font color=\"#A52A2A\">27</font></sup>a uma virgem desposada com um homem chamado José, da casa de David; e o nome da virgem era Maria.<br /><sup><font color=\"#A52A2A\">28</font></sup>Ao entrar em casa dela, o anjo disse-lhe: «Salve, ó cheia de graça, o Senhor está contigo.» <br /><sup><font color=\"#A52A2A\">29</font></sup>Ao ouvir estas palavras, ela perturbou-se e inquiria de si própria o que significava tal saudação. <br /><sup><font color=\"#A52A2A\">30</font></sup>Disse-lhe o anjo: «Maria, não temas, pois achaste graça diante de Deus. <br /><sup><font color=\"#A52A2A\">31</font></sup>Hás-de conceber no teu seio e dar à luz um filho, ao qual porás o nome de Jesus. <br /><sup><font color=\"#A52A2A\">32</font></sup>Será grande e vai chamar-se Filho do Altíssimo. O Senhor Deus vai dar-lhe o trono de seu pai David, <br /><sup><font color=\"#A52A2A\">33</font></sup>reinará eternamente sobre a casa de Jacob e o seu reinado não terá fim.»<br /><sup><font color=\"#A52A2A\">34</font></sup>Maria disse ao anjo: «Como será isso, se eu não conheço homem?» <br /><sup><font color=\"#A52A2A\">35</font></sup>O anjo respondeu-lhe: «O Espírito Santo virá sobre ti e a força do Altíssimo estenderá sobre ti a sua sombra. Por isso, aquele que vai nascer é Santo e será chamado Filho de Deus. <br /><sup><font color=\"#A52A2A\">36</font></sup>Também a tua parente Isabel concebeu um filho na sua velhice e já está no sexto mês, ela, a quem chamavam estéril, <br /><sup><font color=\"#A52A2A\">37</font></sup>porque nada é impossível a Deus.» <br /><sup><font color=\"#A52A2A\">38</font></sup>Maria disse, então: «Eis a serva do Senhor, faça-se em mim segundo a tua palavra.» E o anjo retirou-se de junto dela. </body></html>";
-	//
-	// private static final String SEGUNDO_GOZOSO =
-	// "<html><head></head><body><h1><font color=\"#0000FF\">2º Mistério Gozoso</font></h1><h2><font color=\"#0000FF\">A visita de Nossa Senhora a Sua prima Santa Isabel <sub><i>(Lc 1, 39-45)</i></sub></font></h2><br /><sup><font color=\"#A52A2A\">39</font></sup>Por aqueles dias, Maria pôs-se a caminho e dirigiu-se à pressa para a montanha, a uma cidade da Judeia. <br /><sup><font color=\"#A52A2A\">40</font></sup>Entrou em casa de Zacarias e saudou Isabel. <br /><sup><font color=\"#A52A2A\">41</font></sup>Quando Isabel ouviu a saudação de Maria, o menino saltou-lhe de alegria no seio e Isabel ficou cheia do Espírito Santo. <br /><sup><font color=\"#A52A2A\">42</font></sup>Então, erguendo a voz, exclamou: «Bendita és tu entre as mulheres e bendito é o fruto do teu ventre. <br /><sup><font color=\"#A52A2A\">43</font></sup>E donde me é dado que venha ter comigo a mãe do meu Senhor? <br /><sup><font color=\"#A52A2A\">44</font></sup>Pois, logo que chegou aos meus ouvidos a tua saudação, o menino saltou de alegria no meu seio. <br /><sup><font color=\"#A52A2A\">45</font></sup>Feliz de ti que acreditaste, porque se vai cumprir tudo o que te foi dito da parte do Senhor.» </body></html>";
-	//
-	// private static final String TERCEIRO_GOZOSO =
-	// "<html><head></head><body><h1><font color=\"#0000FF\">3º Mistério Gozoso</font></h1><h2><font color=\"#0000FF\">Nascimento de Jesus em Belém <sub><i>(Lc 2,4-7)</i></sub></font></h2><br /><sup><font color=\"#A52A2A\">4</font></sup>Também José, deixando a cidade de Nazaré, na Galileia, subiu até à Judeia, à cidade de David, chamada Belém, por ser da casa e linhagem de David, <br /><sup><font color=\"#A52A2A\">5</font></sup>a fim de se recensear com Maria, sua esposa, que se encontrava grávida.<br /><sup><font color=\"#A52A2A\">6</font></sup>E, quando eles ali se encontravam, completaram-se os dias de ela dar à luz <br /><sup><font color=\"#A52A2A\">7</font></sup>e teve o seu filho primogénito, que envolveu em panos e recostou numa manjedoura, por não haver lugar para eles na hospedaria. </body></html>";
-	//
-	// private static final String QUARTO_GOZOSO =
-	// "<html><head></head><body><h1><font color=\"#0000FF\">4º Mistério Gozoso</font></h1><h2><font color=\"#0000FF\">Apresentação de Jesus no Templo <sub><i>(Lc 2,22-24)</i></sub></font></h2><br /><sup><font color=\"#A52A2A\">22</font></sup>Quando se cumpriu o tempo da sua purificação, segundo a Lei de Moisés, levaram-no a Jerusalém para o apresentarem ao Senhor, <br /><sup><font color=\"#A52A2A\">23</font></sup>conforme está escrito na Lei do Senhor: «Todo o primogénito varão será consagrado ao Senhor» <br /><sup><font color=\"#A52A2A\">24</font></sup>e para oferecerem em sacrifício, como se diz na Lei do Senhor, duas rolas ou duas pombas. </body></html>";
-	//
-	// private static final String QUINTO_GOZOSO =
-	// "<html><head></head><body><h1><font color=\"#0000FF\">5º Mistério Gozoso</font></h1><h2><font color=\"#0000FF\">Jesus no Templo, entre os Doutores <sub>(Lc 2,41-51)</sub></font></h2><br /><sup><font color=\"#A52A2A\">41</font></sup>Os pais de Jesus iam todos os anos a Jerusalém, pela festa da Páscoa. <br /><sup><font color=\"#A52A2A\">42</font></sup>Quando Ele chegou aos doze anos, subiram até lá, segundo o costume da festa. <br /><sup><font color=\"#A52A2A\">43</font></sup>Terminados esses dias, regressaram a casa e o menino ficou em Jerusalém, sem que os pais o soubessem. <br /><sup><font color=\"#A52A2A\">44</font></sup>Pensando que Ele se encontrava na caravana, fizeram um dia de viagem e começaram a procurá-lo entre os parentes e conhecidos. <br /><sup><font color=\"#A52A2A\">45</font></sup>Não o tendo encontrado, voltaram a Jerusalém, à sua procura.<br /><sup><font color=\"#A52A2A\">46</font></sup>Três dias depois, encontraram-no no templo, sentado entre os doutores, a ouvi-los e a fazer-lhes perguntas. <br /><sup><font color=\"#A52A2A\">47</font></sup>Todos quantos o ouviam, estavam estupefactos com a sua inteligência e as suas respostas.<br /><sup><font color=\"#A52A2A\">48</font></sup>Ao vê-lo, ficaram assombrados e sua mãe disse-lhe: «Filho, porque nos fizeste isto? Olha que teu pai e eu andávamos aflitos à tua procura!» <br /><sup><font color=\"#A52A2A\">49</font></sup>Ele respondeu-lhes: «Porque me procuráveis? Não sabíeis que devia estar em casa de meu Pai?»<br /><sup><font color=\"#A52A2A\">50</font></sup>Mas eles não compreenderam as palavras que lhes disse.<br /><sup><font color=\"#A52A2A\">51</font></sup>Depois desceu com eles, voltou para Nazaré e era-lhes submisso. Sua mãe guardava todas estas coisas no seu coração.</body></html>";
-	//
-	// private static final String PRIMEIRO_DOLOROSO =
-	// "<html><head></head><body>1º Mistério - Agonia de Jesus no Horto das Oliveiras</body></html>";
-	//
-	// private static final String SEGUNDO_DOLOROSO =
-	// "<html><head></head><body>2º Mistério - A flagelação de Jesus</body></html>";
-	//
-	// private static final String TERCEIRO_DOLOROSO =
-	// "<html><head></head><body>3º Mistério - A coroação de espinhos</body></html>";
-	//
-	// private static final String QUARTO_DOLOROSO =
-	// "<html><head></head><body>4º Mistério - Jesus a caminho do Calvário com a cruz às costas</body></html>";
-	//
-	// private static final String QUINTO_DOLOROSO =
-	// "<html><head></head><body>5º Mistério - A crucificação e morte de Jesus</body></html>";
-	//
-	// private static final String PRIMEIRO_LUMINOSO =
-	// "<html><head></head><body>1º Mistério - O Batismo de Jesus no rio Jordão</body></html>";
-	//
-	// private static final String SEGUNDO_LUMINOSO =
-	// "<html><head></head><body>2º Mistério - A revelação de Jesus nas bodas de Caná</body></html>";
-	//
-	// private static final String TERCEIRO_LUMINOSO =
-	// "<html><head></head><body>3º Mistério - O Anúncio do Reino de Deus e o convite à conversão</body></html>";
-	//
-	// private static final String QUARTO_LUMINOSO =
-	// "<html><head></head><body>4º Mistério - A Transfiguração de Jesus</body></html>";
-	//
-	// private static final String QUINTO_LUMINOSO =
-	// "<html><head></head><body>5º Mistério - A Última Ceia de Jesus e a instituição da Eucarístia</body></html>";
-	//
-	// private static final String ORACOES_FINAIS =
-	// "<html><head></head><body>Louvado seja Nosso Senhor Jesus Cristo<br />Para sempre seja louvado<br />com Sua mãe Maria Santíssima.</body></html>";
-
 	private static final String AVE_MARIA = "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\"><html><head><title>Avé Maria</title><meta name=\"generator\" content=\"Bluefish 2.2.2\" ><meta name=\"author\" content=\"Alexandre Carlos\" ><meta name=\"date\" content=\"2012-10-08T12:34:01+0100\" ><meta name=\"copyright\" content=\"\"><meta name=\"keywords\" content=\"\"><meta name=\"description\" content=\"\"><meta name=\"ROBOTS\" content=\"NOINDEX, NOFOLLOW\"><meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\"><meta http-equiv=\"content-type\" content=\"application/xhtml+xml; charset=UTF-8\"><meta http-equiv=\"content-style-type\" content=\"text/css\"><meta http-equiv=\"expires\" content=\"0\"><meta ><meta ></head><body><h1 style=\"text-align: center; color: #0000FF;\">Avé Maria</h1>Ave Maria,<br />cheia de graça,<br />o Senhor é convosco,<br />bendita sois Vós entre as mulheres,<br />bendito é o fruto em Vosso ventre,<br />Jesus.<br /><br />Santa Maria Mãe de Deus,<br />rogai por nós os pecadores,<br />agora e na hora da nossa morte.<br /><br />Amen<br /></body></html>";
 	private static final String DOLOROSO1 = "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\"><html><head><meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\"></head><body><div align=\"center\"><h1>1º Mistério Doloroso</h1><h2>A agonia de Jesus no Horto das Oliveiras<sub><font size=\"-1\"><i>(Lc 22,39-46))</i></font></sub></h2></div><sup><font color=\"#AA66CC\" size=\"-1\">39</font></sup>Saiu então e foi, como de costume, para o Monte das Oliveiras. E os discípulos seguiram também com Ele. <sup><font color=\"#AA66CC\" size=\"-1\">40</font></sup>Quando chegou ao local, disse-lhes: «Orai, para que não entreis em tentação.» <sup><font color=\"#AA66CC\" size=\"-1\">41</font></sup>Depois afastou-se deles, à distância de um tiro de pedra, aproximadamente; e, pondo-se de joelhos, começou a orar, dizendo: <sup><font color=\"#AA66CC\" size=\"-1\">42</font></sup>«Pai, se quiseres, afasta de mim este cálice; contudo, não se faça a minha vontade, mas a tua.»<br><br><sup><font color=\"#AA66CC\" size=\"-1\">43</font></sup>Então, vindo do Céu, apareceu-lhe um anjo que o confortava. <sup><font color=\"#AA66CC\" size=\"-1\">44</font></sup>Cheio de angústia, pôs-se a orar mais instantemente, e o suor tornou-se-lhe como grossas gotas de sangue, que caíam na terra. <sup><font color=\"#AA66CC\" size=\"-1\">45</font></sup>Depois de orar, levantou-se e foi ter com os discípulos, encontrando-os a dormir, devido à tristeza. <sup><font color=\"#AA66CC\" size=\"-1\">46</font></sup>Disse-lhes: «Porque dormis? Levantai-vos e orai, para que não entreis em tentação.»<br></body></html>";
 	private static final String DOLOROSO2 = "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\"><html><head><meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\"></head><body><div align=\"center\"><h1>2º Mistério Doloroso</h1><h2>A flagelação de Jesus<sub><font size=\"-1\"><i>(Mt 27,22-26)</i></font></sub></h2></div><sup><font color=\"#AA66CC\" size=\"-1\">22</font></sup>Pilatos disse-lhes: «Que hei-de fazer, então, de Jesus chamado Cristo?» Todos responderam: «Seja crucificado!» <sup><font color=\"#AA66CC\" size=\"-1\">23</font></sup>Pilatos insistiu: «Que mal fez Ele?» Mas eles cada vez gritavam mais: «Seja crucificado!»<br><br><sup><font color=\"#AA66CC\" size=\"-1\">24</font></sup>Pilatos, vendo que nada conseguia e que o tumulto aumentava cada vez mais, mandou vir água e lavou as mãos na presença da multidão, dizendo: «Estou inocente deste sangue. Isso é convosco.» <sup><font color=\"#AA66CC\" size=\"-1\">25</font></sup>E todo o povo respondeu: «Que o seu sangue caia sobre nós e sobre os nossos filhos!» <sup><font color=\"#AA66CC\" size=\"-1\">26</font></sup>Então, soltou-lhes Barrabás. Quanto a Jesus, depois de o mandar flagelar, entregou-o para ser crucificado. <br></body></html>";
@@ -301,6 +238,7 @@ public final class Misterios {
 		
 		try {
 			oracao.add(Obter_Misterio_do_Dia(dia_semana, misterio));
+						
 			if (misterio < 5) {	// se for Oração Final (misterio =5) não inclui as restantes orações
 				oracao.add(PaiNosso());
 				for (int i = 2; i < 12; i++) {

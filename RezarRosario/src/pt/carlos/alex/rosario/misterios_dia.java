@@ -62,7 +62,7 @@ public class misterios_dia extends SherlockListFragment {
 		
 		ma.misterio_selected = position; //Persistência do estado (mistério seleccionado)
 		
-		eventBus.post(new Rezar(index_dia_semana, position));
+		eventBus.post(new Rezar(index_dia_semana, position, 0));
 		
     }
 	

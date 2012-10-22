@@ -30,7 +30,7 @@ public class OracoesPageAdapter extends PagerAdapter {
 	public OracoesPageAdapter(Mostra_Oracoes ctx, List <String> oracao) {
 		
 	    if (DEBUG) {
-	    	Log.d(TAG, "Constructor-oracao:"+oracao.get(0));
+	    	Log.d(TAG, "Constructor");
 	    }
 	    
 	    this.oracao = oracao;
@@ -47,7 +47,7 @@ public class OracoesPageAdapter extends PagerAdapter {
     @Override
     public Object instantiateItem(View collection, int position) {
     	if (DEBUG){
-			Log.d(TAG, "Object instantiateItem-position:"+position+"; "+oracao.get(position));
+			Log.d(TAG, "Object instantiateItem-position:"+position);
 		}
     	
 //    	  TextView view = new TextView(ctx);
@@ -107,4 +107,6 @@ public class OracoesPageAdapter extends PagerAdapter {
     public void finishUpdate(View arg0) {
     }
 
+ 
+    
 }
