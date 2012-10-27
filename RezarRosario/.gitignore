@@ -4,27 +4,22 @@
 
 # files for the dex VM
 *.dex
-
 # Java class files
 *.class
-
 # generated files
 bin/
 gen/
 .apt_generated/
-
 # Local configuration file (sdk path, etc)
 local.properties
 project.properties
 /log.txt
 lint.xml
-
 #Eclipse
 .project
 .classpath
 .settings
 .checkstyle
-
 #IntelliJ IDEA
 .idea
 *.iml
@@ -32,19 +27,16 @@ lint.xml
 *.iws
 classes
 gen-external-apklibs
-
 #Maven
 target
 release.properties
 pom.xml.*
-
 #Ant
 build.xml
 ant.properties
-local.properties
 proguard.cfg
 proguard-project.txt
-
 #Other
 .DS_Store
 tmp
+/project.properties
