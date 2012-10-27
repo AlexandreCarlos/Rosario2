@@ -1,153 +1,52 @@
-10-22 23:52:53.530: D/Rosário(25674): index_dia_semana: 2
-10-22 23:52:53.840: I/dalvikvm(25674): Could not find method com.actionbarsherlock.internal.nineoldandroids.widget.NineFrameLayout.onHoverEvent, referenced from method com.actionbarsherlock.internal.widget.ActionBarContainer.onHoverEvent
-10-22 23:52:53.840: W/dalvikvm(25674): VFY: unable to resolve virtual method 4853: Lcom/actionbarsherlock/internal/nineoldandroids/widget/NineFrameLayout;.onHoverEvent (Landroid/view/MotionEvent;)Z
-10-22 23:52:53.840: D/dalvikvm(25674): VFY: replacing opcode 0x6f at 0x0000
-10-22 23:52:53.870: I/dalvikvm(25674): Could not find method com.actionbarsherlock.internal.widget.ActionBarView$HomeView.onHoverEvent, referenced from method com.actionbarsherlock.internal.widget.ActionBarView$HomeView.dispatchHoverEvent
-10-22 23:52:53.870: W/dalvikvm(25674): VFY: unable to resolve virtual method 5714: Lcom/actionbarsherlock/internal/widget/ActionBarView$HomeView;.onHoverEvent (Landroid/view/MotionEvent;)Z
-10-22 23:52:53.870: D/dalvikvm(25674): VFY: replacing opcode 0x6e at 0x0000
-10-22 23:52:53.880: I/dalvikvm(25674): Could not find method android.widget.FrameLayout.onPopulateAccessibilityEvent, referenced from method com.actionbarsherlock.internal.widget.ActionBarView$HomeView.onPopulateAccessibilityEvent
-10-22 23:52:53.880: W/dalvikvm(25674): VFY: unable to resolve virtual method 3590: Landroid/widget/FrameLayout;.onPopulateAccessibilityEvent (Landroid/view/accessibility/AccessibilityEvent;)V
-10-22 23:52:53.880: D/dalvikvm(25674): VFY: replacing opcode 0x6f at 0x0006
-10-22 23:52:54.020: D/Rosário(25674): index_dia_semana: 2
-10-22 23:52:54.120: D/dalvikvm(25674): GC_FOR_ALLOC freed 147K, 5% free 6444K/6727K, paused 50ms
-10-22 23:52:54.120: I/dalvikvm-heap(25674): Grow heap (frag case) to 6.881MB for 513744-byte allocation
-10-22 23:52:54.200: D/dalvikvm(25674): GC_CONCURRENT freed <1K, 5% free 6945K/7239K, paused 2ms+2ms
-10-22 23:52:54.240: D/Mostra Orações(25674): inicializa-index_dia_semana:2; misterio_selected:0
-10-22 23:52:54.270: D/OracoesPageAdapter(25674): Constructor
-10-22 23:52:54.420: D/OracoesPageAdapter(25674): Object instantiateItem-position:0
-10-22 23:52:54.540: D/OracoesPageAdapter(25674): Object instantiateItem-position:1
-10-22 23:52:54.800: W/dalvikvm(25674): dvmFindClassByName rejecting 'res/drawable-mdpi/ic_go.png'
-10-22 23:52:54.810: W/MenuInflater(25674): Cannot instantiate class: res/drawable-mdpi/ic_go.png
-10-22 23:52:54.810: W/MenuInflater(25674): java.lang.ClassNotFoundException: res/drawable-mdpi/ic_go.png in loader dalvik.system.PathClassLoader[/data/app/pt.carlos.alex.rosario-1.apk]
-10-22 23:52:54.810: W/MenuInflater(25674): 	at dalvik.system.PathClassLoader.findClass(PathClassLoader.java:251)
-10-22 23:52:54.810: W/MenuInflater(25674): 	at java.lang.ClassLoader.loadClass(ClassLoader.java:540)
-10-22 23:52:54.810: W/MenuInflater(25674): 	at java.lang.ClassLoader.loadClass(ClassLoader.java:500)
-10-22 23:52:54.810: W/MenuInflater(25674): 	at com.actionbarsherlock.view.MenuInflater$MenuState.newInstance(MenuInflater.java:486)
-10-22 23:52:54.810: W/MenuInflater(25674): 	at com.actionbarsherlock.view.MenuInflater$MenuState.readItem(MenuInflater.java:389)
-10-22 23:52:54.810: W/MenuInflater(25674): 	at com.actionbarsherlock.view.MenuInflater.parseMenu(MenuInflater.java:162)
-10-22 23:52:54.810: W/MenuInflater(25674): 	at com.actionbarsherlock.view.MenuInflater.inflate(MenuInflater.java:112)
-10-22 23:52:54.810: W/MenuInflater(25674): 	at pt.carlos.alex.rosario.MainActivity_.onCreateOptionsMenu(MainActivity_.java:75)
-10-22 23:52:54.810: W/MenuInflater(25674): 	at android.support.v4.app.Watson.onCreatePanelMenu(Watson.java:45)
-10-22 23:52:54.810: W/MenuInflater(25674): 	at com.actionbarsherlock.ActionBarSherlock.callbackCreateOptionsMenu(ActionBarSherlock.java:559)
-10-22 23:52:54.810: W/MenuInflater(25674): 	at com.actionbarsherlock.internal.ActionBarSherlockCompat.preparePanel(ActionBarSherlockCompat.java:479)
-10-22 23:52:54.810: W/MenuInflater(25674): 	at com.actionbarsherlock.internal.ActionBarSherlockCompat.dispatchInvalidateOptionsMenu(ActionBarSherlockCompat.java:272)
-10-22 23:52:54.810: W/MenuInflater(25674): 	at com.actionbarsherlock.internal.ActionBarSherlockCompat$1.run(ActionBarSherlockCompat.java:984)
-10-22 23:52:54.810: W/MenuInflater(25674): 	at android.os.Handler.handleCallback(Handler.java:587)
-10-22 23:52:54.810: W/MenuInflater(25674): 	at android.os.Handler.dispatchMessage(Handler.java:92)
-10-22 23:52:54.810: W/MenuInflater(25674): 	at android.os.Looper.loop(Looper.java:132)
-10-22 23:52:54.810: W/MenuInflater(25674): 	at android.app.ActivityThread.main(ActivityThread.java:4126)
-10-22 23:52:54.810: W/MenuInflater(25674): 	at java.lang.reflect.Method.invokeNative(Native Method)
-10-22 23:52:54.810: W/MenuInflater(25674): 	at java.lang.reflect.Method.invoke(Method.java:491)
-10-22 23:52:54.810: W/MenuInflater(25674): 	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:844)
-10-22 23:52:54.810: W/MenuInflater(25674): 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:602)
-10-22 23:52:54.810: W/MenuInflater(25674): 	at dalvik.system.NativeStart.main(Native Method)
-10-22 23:52:54.900: D/dalvikvm(25674): GC_CONCURRENT freed 186K, 5% free 7163K/7495K, paused 2ms+53ms
-10-22 23:52:54.990: D/CLIPBOARD(25674): Hide Clipboard dialog at Starting input: finished by someone else... !
-10-22 23:52:58.050: D/Rosário(25674): Evento  página recebido:1
-10-22 23:52:58.050: D/Mostra Orações(25674): onPageSelected-position:1
-10-22 23:52:58.660: D/OracoesPageAdapter(25674): Object instantiateItem-position:2
-10-22 23:52:59.100: D/Rosário(25674): Evento  página recebido:2
-10-22 23:52:59.100: D/Mostra Orações(25674): onPageSelected-position:2
-10-22 23:52:59.600: D/OracoesPageAdapter(25674): Object instantiateItem-position:3
-10-22 23:53:03.670: D/Rosário(25674): onSaveInstanceState [POSICAO]=0; [DIA]=2; [PAGINA]=2
-10-22 23:53:03.890: D/Rosário(25674): index_dia_semana: 2
-10-22 23:53:03.900: D/Rosário(25674): index_dia_semana: 2
-10-22 23:53:03.920: D/Mostra Orações(25674): inicializa-index_dia_semana:2; misterio_selected:0
-10-22 23:53:03.930: D/OracoesPageAdapter(25674): Constructor
-10-22 23:53:03.940: D/Rosário(25674): Evento  página recebido:2
-10-22 23:53:03.940: D/Rosário(25674): Evento  página recebido:2
-10-22 23:53:03.940: D/Mostra Orações(25674): onPageSelected-position:2
-10-22 23:53:03.940: D/Rosário(25674): onRestoreInstanceState [POSICAO]=0; [DIA]=2; [PAGINA]=2
-10-22 23:53:03.940: D/Rosário(25674): MainActivityState [POSICAO]=0; [DIA]=2; [PAGINA]=2
-10-22 23:53:03.970: D/OracoesPageAdapter(25674): Object instantiateItem-position:2
-10-22 23:53:04.090: D/OracoesPageAdapter(25674): Object instantiateItem-position:1
-10-22 23:53:04.100: D/OracoesPageAdapter(25674): Object instantiateItem-position:3
-10-22 23:53:04.370: W/dalvikvm(25674): dvmFindClassByName rejecting 'res/drawable-mdpi/ic_go.png'
-10-22 23:53:04.390: W/MenuInflater(25674): Cannot instantiate class: res/drawable-mdpi/ic_go.png
-10-22 23:53:04.390: W/MenuInflater(25674): java.lang.ClassNotFoundException: res/drawable-mdpi/ic_go.png in loader dalvik.system.PathClassLoader[/data/app/pt.carlos.alex.rosario-1.apk]
-10-22 23:53:04.390: W/MenuInflater(25674): 	at dalvik.system.PathClassLoader.findClass(PathClassLoader.java:251)
-10-22 23:53:04.390: W/MenuInflater(25674): 	at java.lang.ClassLoader.loadClass(ClassLoader.java:540)
-10-22 23:53:04.390: W/MenuInflater(25674): 	at java.lang.ClassLoader.loadClass(ClassLoader.java:500)
-10-22 23:53:04.390: W/MenuInflater(25674): 	at com.actionbarsherlock.view.MenuInflater$MenuState.newInstance(MenuInflater.java:486)
-10-22 23:53:04.390: W/MenuInflater(25674): 	at com.actionbarsherlock.view.MenuInflater$MenuState.readItem(MenuInflater.java:389)
-10-22 23:53:04.390: W/MenuInflater(25674): 	at com.actionbarsherlock.view.MenuInflater.parseMenu(MenuInflater.java:162)
-10-22 23:53:04.390: W/MenuInflater(25674): 	at com.actionbarsherlock.view.MenuInflater.inflate(MenuInflater.java:112)
-10-22 23:53:04.390: W/MenuInflater(25674): 	at pt.carlos.alex.rosario.MainActivity_.onCreateOptionsMenu(MainActivity_.java:75)
-10-22 23:53:04.390: W/MenuInflater(25674): 	at android.support.v4.app.Watson.onCreatePanelMenu(Watson.java:45)
-10-22 23:53:04.390: W/MenuInflater(25674): 	at com.actionbarsherlock.ActionBarSherlock.callbackCreateOptionsMenu(ActionBarSherlock.java:559)
-10-22 23:53:04.390: W/MenuInflater(25674): 	at com.actionbarsherlock.internal.ActionBarSherlockCompat.preparePanel(ActionBarSherlockCompat.java:479)
-10-22 23:53:04.390: W/MenuInflater(25674): 	at com.actionbarsherlock.internal.ActionBarSherlockCompat.dispatchInvalidateOptionsMenu(ActionBarSherlockCompat.java:272)
-10-22 23:53:04.390: W/MenuInflater(25674): 	at com.actionbarsherlock.internal.ActionBarSherlockCompat$1.run(ActionBarSherlockCompat.java:984)
-10-22 23:53:04.390: W/MenuInflater(25674): 	at android.os.Handler.handleCallback(Handler.java:587)
-10-22 23:53:04.390: W/MenuInflater(25674): 	at android.os.Handler.dispatchMessage(Handler.java:92)
-10-22 23:53:04.390: W/MenuInflater(25674): 	at android.os.Looper.loop(Looper.java:132)
-10-22 23:53:04.390: W/MenuInflater(25674): 	at android.app.ActivityThread.main(ActivityThread.java:4126)
-10-22 23:53:04.390: W/MenuInflater(25674): 	at java.lang.reflect.Method.invokeNative(Native Method)
-10-22 23:53:04.390: W/MenuInflater(25674): 	at java.lang.reflect.Method.invoke(Method.java:491)
-10-22 23:53:04.390: W/MenuInflater(25674): 	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:844)
-10-22 23:53:04.390: W/MenuInflater(25674): 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:602)
-10-22 23:53:04.390: W/MenuInflater(25674): 	at dalvik.system.NativeStart.main(Native Method)
-10-22 23:53:04.420: D/dalvikvm(25674): GC_CONCURRENT freed 369K, 7% free 7269K/7751K, paused 15ms+12ms
-10-22 23:53:10.640: D/Rosário(25674): List Item Click: 2
-10-22 23:53:10.640: D/Mostra Orações(25674): Evento recebido:Rezar [dia_semana=2, misterio=2, pagina=0]
-10-22 23:53:10.640: D/OracoesPageAdapter(25674): getItemPosition-object:class android.widget.ScrollView
-10-22 23:53:10.640: D/OracoesPageAdapter(25674): getItemPosition-object:class android.widget.ScrollView
-10-22 23:53:10.650: D/OracoesPageAdapter(25674): getItemPosition-object:class android.widget.ScrollView
-10-22 23:53:10.650: D/OracoesPageAdapter(25674): Object instantiateItem-position:2
-10-22 23:53:10.670: D/OracoesPageAdapter(25674): Object instantiateItem-position:1
-10-22 23:53:10.680: D/OracoesPageAdapter(25674): Object instantiateItem-position:3
-10-22 23:53:10.710: D/OracoesPageAdapter(25674): Object instantiateItem-position:0
-10-22 23:53:10.730: D/Mostra Orações(25674): onPageSelected-position:0
-10-22 23:53:10.730: D/Rosário(25674): Evento  página recebido:0
-10-22 23:53:10.730: D/Rosário(25674): Evento  página recebido:0
-10-22 23:53:11.930: D/Rosário(25674): Evento  página recebido:1
-10-22 23:53:11.930: D/Rosário(25674): Evento  página recebido:1
-10-22 23:53:11.930: D/Mostra Orações(25674): onPageSelected-position:1
-10-22 23:53:12.540: D/OracoesPageAdapter(25674): Object instantiateItem-position:2
-10-22 23:53:12.800: D/Rosário(25674): Evento  página recebido:2
-10-22 23:53:12.800: D/Rosário(25674): Evento  página recebido:2
-10-22 23:53:12.800: D/Mostra Orações(25674): onPageSelected-position:2
-10-22 23:53:13.430: D/OracoesPageAdapter(25674): Object instantiateItem-position:3
-10-22 23:53:15.170: D/Rosário(25674): onSaveInstanceState [POSICAO]=2; [DIA]=2; [PAGINA]=2
-10-22 23:53:15.210: D/Rosário(25674): index_dia_semana: 2
-10-22 23:53:15.240: D/Rosário(25674): index_dia_semana: 2
-10-22 23:53:15.260: D/Mostra Orações(25674): inicializa-index_dia_semana:2; misterio_selected:0
-10-22 23:53:15.260: D/OracoesPageAdapter(25674): Constructor
-10-22 23:53:15.270: D/Rosário(25674): Evento  página recebido:2
-10-22 23:53:15.270: D/Rosário(25674): Evento  página recebido:2
-10-22 23:53:15.270: D/Rosário(25674): Evento  página recebido:2
-10-22 23:53:15.270: D/Mostra Orações(25674): onPageSelected-position:2
-10-22 23:53:15.270: D/Rosário(25674): onRestoreInstanceState [POSICAO]=2; [DIA]=2; [PAGINA]=2
-10-22 23:53:15.270: D/Rosário(25674): MainActivityState [POSICAO]=0; [DIA]=2; [PAGINA]=2
-10-22 23:53:15.270: D/Rosário(25674): MainActivityState changed [POSICAO]=2; [DIA]=2; [PAGINA]=2
-10-22 23:53:15.270: D/Mostra Orações(25674): Evento recebido:Rezar [dia_semana=2, misterio=2, pagina=2]
-10-22 23:53:15.290: D/OracoesPageAdapter(25674): Object instantiateItem-position:2
-10-22 23:53:15.340: D/OracoesPageAdapter(25674): Object instantiateItem-position:1
-10-22 23:53:15.370: D/OracoesPageAdapter(25674): Object instantiateItem-position:3
-10-22 23:53:15.370: D/dalvikvm(25674): GC_CONCURRENT freed 367K, 7% free 7398K/7879K, paused 7ms+4ms
-10-22 23:53:15.440: W/dalvikvm(25674): dvmFindClassByName rejecting 'res/drawable-mdpi/ic_go.png'
-10-22 23:53:15.440: W/MenuInflater(25674): Cannot instantiate class: res/drawable-mdpi/ic_go.png
-10-22 23:53:15.440: W/MenuInflater(25674): java.lang.ClassNotFoundException: res/drawable-mdpi/ic_go.png in loader dalvik.system.PathClassLoader[/data/app/pt.carlos.alex.rosario-1.apk]
-10-22 23:53:15.440: W/MenuInflater(25674): 	at dalvik.system.PathClassLoader.findClass(PathClassLoader.java:251)
-10-22 23:53:15.440: W/MenuInflater(25674): 	at java.lang.ClassLoader.loadClass(ClassLoader.java:540)
-10-22 23:53:15.440: W/MenuInflater(25674): 	at java.lang.ClassLoader.loadClass(ClassLoader.java:500)
-10-22 23:53:15.440: W/MenuInflater(25674): 	at com.actionbarsherlock.view.MenuInflater$MenuState.newInstance(MenuInflater.java:486)
-10-22 23:53:15.440: W/MenuInflater(25674): 	at com.actionbarsherlock.view.MenuInflater$MenuState.readItem(MenuInflater.java:389)
-10-22 23:53:15.440: W/MenuInflater(25674): 	at com.actionbarsherlock.view.MenuInflater.parseMenu(MenuInflater.java:162)
-10-22 23:53:15.440: W/MenuInflater(25674): 	at com.actionbarsherlock.view.MenuInflater.inflate(MenuInflater.java:112)
-10-22 23:53:15.440: W/MenuInflater(25674): 	at pt.carlos.alex.rosario.MainActivity_.onCreateOptionsMenu(MainActivity_.java:75)
-10-22 23:53:15.440: W/MenuInflater(25674): 	at android.support.v4.app.Watson.onCreatePanelMenu(Watson.java:45)
-10-22 23:53:15.440: W/MenuInflater(25674): 	at com.actionbarsherlock.ActionBarSherlock.callbackCreateOptionsMenu(ActionBarSherlock.java:559)
-10-22 23:53:15.440: W/MenuInflater(25674): 	at com.actionbarsherlock.internal.ActionBarSherlockCompat.preparePanel(ActionBarSherlockCompat.java:479)
-10-22 23:53:15.440: W/MenuInflater(25674): 	at com.actionbarsherlock.internal.ActionBarSherlockCompat.dispatchInvalidateOptionsMenu(ActionBarSherlockCompat.java:272)
-10-22 23:53:15.440: W/MenuInflater(25674): 	at com.actionbarsherlock.internal.ActionBarSherlockCompat$1.run(ActionBarSherlockCompat.java:984)
-10-22 23:53:15.440: W/MenuInflater(25674): 	at android.os.Handler.handleCallback(Handler.java:587)
-10-22 23:53:15.440: W/MenuInflater(25674): 	at android.os.Handler.dispatchMessage(Handler.java:92)
-10-22 23:53:15.440: W/MenuInflater(25674): 	at android.os.Looper.loop(Looper.java:132)
-10-22 23:53:15.440: W/MenuInflater(25674): 	at android.app.ActivityThread.main(ActivityThread.java:4126)
-10-22 23:53:15.440: W/MenuInflater(25674): 	at java.lang.reflect.Method.invokeNative(Native Method)
-10-22 23:53:15.440: W/MenuInflater(25674): 	at java.lang.reflect.Method.invoke(Method.java:491)
-10-22 23:53:15.440: W/MenuInflater(25674): 	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:844)
-10-22 23:53:15.440: W/MenuInflater(25674): 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:602)
-10-22 23:53:15.440: W/MenuInflater(25674): 	at dalvik.system.NativeStart.main(Native Method)
-10-22 23:53:19.990: D/CLIPBOARD(25674): Hide Clipboard dialog at Starting input: finished by someone else... !
+10-11 03:45:25.007: D/Rosário.MainActivity(1322): index_dia_semana: 5
+10-11 03:45:25.067: I/dalvikvm(1322): Could not find method com.actionbarsherlock.internal.nineoldandroids.widget.NineFrameLayout.onHoverEvent, referenced from method com.actionbarsherlock.internal.widget.ActionBarContainer.onHoverEvent
+10-11 03:45:25.067: W/dalvikvm(1322): VFY: unable to resolve virtual method 4255: Lcom/actionbarsherlock/internal/nineoldandroids/widget/NineFrameLayout;.onHoverEvent (Landroid/view/MotionEvent;)Z
+10-11 03:45:25.067: D/dalvikvm(1322): VFY: replacing opcode 0x6f at 0x0000
+10-11 03:45:25.117: I/dalvikvm(1322): Could not find method com.actionbarsherlock.internal.widget.ActionBarView$HomeView.onHoverEvent, referenced from method com.actionbarsherlock.internal.widget.ActionBarView$HomeView.dispatchHoverEvent
+10-11 03:45:25.117: W/dalvikvm(1322): VFY: unable to resolve virtual method 5115: Lcom/actionbarsherlock/internal/widget/ActionBarView$HomeView;.onHoverEvent (Landroid/view/MotionEvent;)Z
+10-11 03:45:25.117: D/dalvikvm(1322): VFY: replacing opcode 0x6e at 0x0000
+10-11 03:45:25.128: I/dalvikvm(1322): Could not find method android.widget.FrameLayout.onPopulateAccessibilityEvent, referenced from method com.actionbarsherlock.internal.widget.ActionBarView$HomeView.onPopulateAccessibilityEvent
+10-11 03:45:25.128: W/dalvikvm(1322): VFY: unable to resolve virtual method 3023: Landroid/widget/FrameLayout;.onPopulateAccessibilityEvent (Landroid/view/accessibility/AccessibilityEvent;)V
+10-11 03:45:25.128: D/dalvikvm(1322): VFY: replacing opcode 0x6f at 0x0006
+10-11 03:45:25.228: D/AndroidRuntime(1322): Shutting down VM
+10-11 03:45:25.228: W/dalvikvm(1322): threadid=1: thread exiting with uncaught exception (group=0x40014760)
+10-11 03:45:25.238: E/AndroidRuntime(1322): FATAL EXCEPTION: main
+10-11 03:45:25.238: E/AndroidRuntime(1322): java.lang.RuntimeException: Unable to start activity ComponentInfo{pt.carlos.alex.rosario/pt.carlos.alex.rosario.MainActivity_}: android.view.InflateException: Binary XML file line #18: Error inflating class fragment
+10-11 03:45:25.238: E/AndroidRuntime(1322): 	at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:1748)
+10-11 03:45:25.238: E/AndroidRuntime(1322): 	at android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:1764)
+10-11 03:45:25.238: E/AndroidRuntime(1322): 	at android.app.ActivityThread.access$1500(ActivityThread.java:122)
+10-11 03:45:25.238: E/AndroidRuntime(1322): 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:1002)
+10-11 03:45:25.238: E/AndroidRuntime(1322): 	at android.os.Handler.dispatchMessage(Handler.java:99)
+10-11 03:45:25.238: E/AndroidRuntime(1322): 	at android.os.Looper.loop(Looper.java:132)
+10-11 03:45:25.238: E/AndroidRuntime(1322): 	at android.app.ActivityThread.main(ActivityThread.java:4025)
+10-11 03:45:25.238: E/AndroidRuntime(1322): 	at java.lang.reflect.Method.invokeNative(Native Method)
+10-11 03:45:25.238: E/AndroidRuntime(1322): 	at java.lang.reflect.Method.invoke(Method.java:491)
+10-11 03:45:25.238: E/AndroidRuntime(1322): 	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:841)
+10-11 03:45:25.238: E/AndroidRuntime(1322): 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:599)
+10-11 03:45:25.238: E/AndroidRuntime(1322): 	at dalvik.system.NativeStart.main(Native Method)
+10-11 03:45:25.238: E/AndroidRuntime(1322): Caused by: android.view.InflateException: Binary XML file line #18: Error inflating class fragment
+10-11 03:45:25.238: E/AndroidRuntime(1322): 	at android.view.LayoutInflater.createViewFromTag(LayoutInflater.java:688)
+10-11 03:45:25.238: E/AndroidRuntime(1322): 	at android.view.LayoutInflater.rInflate(LayoutInflater.java:724)
+10-11 03:45:25.238: E/AndroidRuntime(1322): 	at android.view.LayoutInflater.inflate(LayoutInflater.java:479)
+10-11 03:45:25.238: E/AndroidRuntime(1322): 	at android.view.LayoutInflater.inflate(LayoutInflater.java:391)
+10-11 03:45:25.238: E/AndroidRuntime(1322): 	at android.view.LayoutInflater.inflate(LayoutInflater.java:347)
+10-11 03:45:25.238: E/AndroidRuntime(1322): 	at com.actionbarsherlock.internal.ActionBarSherlockCompat.setContentView(ActionBarSherlockCompat.java:857)
+10-11 03:45:25.238: E/AndroidRuntime(1322): 	at com.actionbarsherlock.app.SherlockFragmentActivity.setContentView(SherlockFragmentActivity.java:251)
+10-11 03:45:25.238: E/AndroidRuntime(1322): 	at pt.carlos.alex.rosario.MainActivity_.setContentView(MainActivity_.java:44)
+10-11 03:45:25.238: E/AndroidRuntime(1322): 	at pt.carlos.alex.rosario.MainActivity_.onCreate(MainActivity_.java:30)
+10-11 03:45:25.238: E/AndroidRuntime(1322): 	at android.app.Instrumentation.callActivityOnCreate(Instrumentation.java:1048)
+10-11 03:45:25.238: E/AndroidRuntime(1322): 	at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:1712)
+10-11 03:45:25.238: E/AndroidRuntime(1322): 	... 11 more
+10-11 03:45:25.238: E/AndroidRuntime(1322): Caused by: java.lang.IllegalStateException: Content view not yet created
+10-11 03:45:25.238: E/AndroidRuntime(1322): 	at android.support.v4.app.ListFragment.ensureList(ListFragment.java:328)
+10-11 03:45:25.238: E/AndroidRuntime(1322): 	at android.support.v4.app.ListFragment.getListView(ListFragment.java:222)
+10-11 03:45:25.238: E/AndroidRuntime(1322): 	at pt.carlos.alex.rosario.misterios_dia.obterDiaSemana(misterios_dia.java:34)
+10-11 03:45:25.238: E/AndroidRuntime(1322): 	at pt.carlos.alex.rosario.misterios_dia_.init_(misterios_dia_.java:20)
+10-11 03:45:25.238: E/AndroidRuntime(1322): 	at pt.carlos.alex.rosario.misterios_dia_.onCreate(misterios_dia_.java:25)
+10-11 03:45:25.238: E/AndroidRuntime(1322): 	at android.support.v4.app.FragmentManagerImpl.moveToState(FragmentManager.java:834)
+10-11 03:45:25.238: E/AndroidRuntime(1322): 	at android.support.v4.app.FragmentManagerImpl.moveToState(FragmentManager.java:1058)
+10-11 03:45:25.238: E/AndroidRuntime(1322): 	at android.support.v4.app.FragmentManagerImpl.addFragment(FragmentManager.java:1156)
+10-11 03:45:25.238: E/AndroidRuntime(1322): 	at android.support.v4.app.FragmentActivity.onCreateView(FragmentActivity.java:270)
+10-11 03:45:25.238: E/AndroidRuntime(1322): 	at android.view.LayoutInflater.createViewFromTag(LayoutInflater.java:660)
+10-11 03:45:25.238: E/AndroidRuntime(1322): 	... 21 more
+10-11 03:45:25.457: D/dalvikvm(1322): GC_CONCURRENT freed 247K, 6% free 6468K/6855K, paused 4ms+12ms

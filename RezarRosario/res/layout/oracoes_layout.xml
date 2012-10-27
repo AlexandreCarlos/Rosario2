@@ -1,32 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/scrollView1"
+    android:id="@+id/scrollView1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
 
-        <LinearLayout
-            android:layout_width="match_parent"
+<!--         <TextView -->
+<!--             android:id="@+id/oracoesFiller" -->
+<!--             android:layout_width="0dip" -->
+<!--             android:layout_height="0dip" -->
+<!--             android:layout_weight="1" -->
+<!--             android:text="@string/fill" -->
+<!--             android:textSize="18sp" -->
+<!--             android:clickable="false" > -->
+<!--         </TextView> -->
+
+<!--         android:layout_width="wrap_content" -->
+<!--         android:layout_height="0dip" -->
+
+        <TextView
+            android:id="@+id/oracoesText"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:layout_weight="1"
+            android:paddingLeft="15dip"
+            android:paddingRight="15dip"
+            android:clickable="false"
+            android:contentDescription="@string/oracoes_dia"
+            android:hint="@string/oracoes_dia"
+            android:text="@string/oracoes_dia"
+            android:textSize="18sp" >
+        </TextView>
+    </LinearLayout>
 
-            <TextView
-                android:id="@+id/textView1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/oracoes_layout_hint" />
-
-            <TextView
-                android:id="@+id/oracoesText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:clickable="false"
-                android:contentDescription="@string/oracoes_dia"
-                android:hint="@string/oracoes_dia"
-                android:text="@string/oracoes_dia"
-                android:textSize="18sp" >
-
-            </TextView>
-
-        </LinearLayout>
 </ScrollView>

@@ -8,6 +8,7 @@ import java.util.List;
 
 import android.support.v4.view.ViewPager;
 import android.util.Log;
+import android.widget.TextView;
 
 import com.actionbarsherlock.app.SherlockFragment;
 import com.googlecode.androidannotations.annotations.AfterInject;
@@ -24,7 +25,7 @@ import de.greenrobot.event.EventBus;
 @EFragment(R.layout.oracoes_page_layout)
 public class Mostra_Oracoes extends SherlockFragment {
 
-	private static final String TAG = "Mostra Orações";
+	private static final String TAG = "Rosário.Mostra_Oracoes";
 	private static final boolean DEBUG = true;
 
 	private EventBus eventBus;
@@ -35,6 +36,9 @@ public class Mostra_Oracoes extends SherlockFragment {
 
 	@ViewById(R.id.indicator)
 	ContasRosario mIndicator;
+	
+	@ViewById(R.id.textMisterio)
+	TextView textMisterio;
 
 	protected int index_dia_semana = -1;
 	protected int misterio_selected = 0;
@@ -67,6 +71,8 @@ public class Mostra_Oracoes extends SherlockFragment {
 			oracao = Misterios.Oracoes_do_Misterio(index_dia_semana,
 					misterio_selected);
 
+			identificarMisterio();
+			
 			this.gerarCoresContas();
 
 			pager.setAdapter(new OracoesPageAdapter(this, oracao));
@@ -127,7 +133,7 @@ public class Mostra_Oracoes extends SherlockFragment {
 		super.onPause();
 	}
 
-	void gerarCoresContas() {
+	private void gerarCoresContas() {
 
 		coresContas = new ArrayList<Integer>();
 
@@ -143,6 +149,13 @@ public class Mostra_Oracoes extends SherlockFragment {
 
 	}
 
+
+	private void identificarMisterio() {
+		
+		textMisterio.setText(Misterios.Identificar_Misterio_do_Dia(index_dia_semana, misterio_selected));
+		
+	}
+	
 	private void detectaPaginaCorrente() {
 
 		// We set this on the indicator, NOT the pager
@@ -159,6 +172,7 @@ public class Mostra_Oracoes extends SherlockFragment {
 						
 						if (DEBUG) {
 							Log.d(TAG, "onPageSelected-position:"+position);
+							Log.d(TAG, "Página (Integer) eventBus generated");
 						}
 					}
 
@@ -176,11 +190,14 @@ public class Mostra_Oracoes extends SherlockFragment {
 	public void onEvent(Rezar event) {
 
 		if (DEBUG) {
-			Log.d(TAG, "Evento recebido:" + event);
+			Log.d(TAG, "Evento Rezar recebido:" + event);
 		}
 
 		index_dia_semana = event.dia_semana;
 		misterio_selected = event.misterio;
+		
+		identificarMisterio();
+		
 		oracao.clear();
 		oracao.addAll(Misterios.Oracoes_do_Misterio(index_dia_semana, misterio_selected));
 		pager.getAdapter().notifyDataSetChanged();

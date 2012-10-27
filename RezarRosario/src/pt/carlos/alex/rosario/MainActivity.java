@@ -20,7 +20,7 @@ import de.greenrobot.event.EventBus;
 @OptionsMenu(R.menu.activity_main)
 public class MainActivity extends SherlockFragmentActivity {
 
-	final static String TAG = "Rosário";
+	final static String TAG = "Rosário.MainActivity";
 	final static boolean DEBUG = true;
 	final static String POSICAO = "Posicao";
 	final static String DIA = "Dia";
@@ -121,6 +121,7 @@ public class MainActivity extends SherlockFragmentActivity {
 				Log.d(TAG, "MainActivityState changed [POSICAO]="
 						+ misterio_selected + "; [DIA]=" + index_dia_semana
 						+ "; [PAGINA]=" + pagina_actual);
+				Log.d(TAG, " Rezar EventBus Generated");
 			}
 			
 			eventBus.post(new Rezar(index_dia_semana, misterio_selected, pagina_actual));
@@ -131,12 +132,21 @@ public class MainActivity extends SherlockFragmentActivity {
 	public void onEvent(Integer event) {
 
 		if (DEBUG) {
-			Log.d(TAG, "Evento  página recebido:" + event);
+			Log.d(TAG, "Evento (Integer) página recebido:" + event);
 		}
 
 		this.pagina_actual = event.intValue();
 
 	}
 	
-	
+	public void onEvent(Rezar event) {
+
+		if (DEBUG) {
+			Log.d(TAG, "Evento Rezar recebido:" + event);
+		}
+
+		index_dia_semana = event.dia_semana;
+		misterio_selected = event.misterio;
+
+	}
 }

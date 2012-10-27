@@ -21,7 +21,7 @@ import de.greenrobot.event.EventBus;
  */
 @EFragment
 public class misterios_dia extends SherlockListFragment {
-	final static String TAG = "Rosário";
+	final static String TAG = "Rosário.misterios_dia";
 	final static boolean DEBUG = true;
 	
 	private int index_dia_semana = -1;
@@ -35,6 +35,7 @@ public class misterios_dia extends SherlockListFragment {
 		
 		ma = (MainActivity)getActivity();
 		index_dia_semana = ma.index_dia_semana;
+		ma = null;
 		
 		if (DEBUG) {
 			Log.d(TAG, "index_dia_semana: " + index_dia_semana);
@@ -52,15 +53,22 @@ public class misterios_dia extends SherlockListFragment {
 		setListAdapter(new ArrayAdapter<String>(getActivity(),
 				R.layout.misterio_list_itemlayout, R.id.item_misterio, Misterios.Design__Misterios(index_dia_semana)));
 			
+		getListView().setChoiceMode(ListView.CHOICE_MODE_SINGLE);
+//		getListView().setSelector(R.color.ics_bold_red);
+		
 	}
 	
 	@Override
     public void onListItemClick(ListView l, View v, int position, long id) {
 		if (DEBUG) {
 			Log.d(TAG, "List Item Click: " + position);
+			Log.d(TAG, "Rezar eventBus generated");
 		}
 		
-		ma.misterio_selected = position; //Persistência do estado (mistério seleccionado)
+//		ma.misterio_selected = position; //Persistência do estado (mistério seleccionado)
+			
+//		v.getFocusables(position);
+//		v.setSelected(true);
 		
 		eventBus.post(new Rezar(index_dia_semana, position, 0));
 		

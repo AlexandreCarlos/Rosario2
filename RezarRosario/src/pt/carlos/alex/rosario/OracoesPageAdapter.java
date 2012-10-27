@@ -20,7 +20,7 @@ import android.widget.TextView;
  */
 public class OracoesPageAdapter extends PagerAdapter {
 
-	final static String TAG = "OracoesPageAdapter";
+	final static String TAG = "Rosário.OracoesPageAdapter";
 	final static boolean DEBUG = true;
 
 	private List <String> oracao;
@@ -50,17 +50,12 @@ public class OracoesPageAdapter extends PagerAdapter {
 			Log.d(TAG, "Object instantiateItem-position:"+position);
 		}
     	
-//    	  TextView view = new TextView(ctx);
-//          view.setText(Html.fromHtml(oracao.get(position)));
-//          ((ViewPager)collection).addView(view);
         LayoutInflater l = ctx.getLayoutInflater(null);  
     	View result = l.inflate(R.layout.oracoes_layout, (ViewPager)collection, false);
     	
 		TextView oracoesText = (TextView) result.findViewById(R.id.oracoesText);
 		oracoesText.setText(Html.fromHtml(oracao.get(position)));
 		
-		TextView contasDezena = (TextView) result.findViewById(R.id.textView1);
-		contasDezena.setText("Oração "+(position+1));
 		
 		((ViewPager)collection).addView(result);  
 		
