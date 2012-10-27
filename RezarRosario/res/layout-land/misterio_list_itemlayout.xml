@@ -4,6 +4,6 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:scrollHorizontally="false"
-    android:textSize="18sp" >
+    android:textSize="10sp" >
 
 </TextView>

@@ -1,52 +1,38 @@
-10-11 03:45:25.007: D/Rosário.MainActivity(1322): index_dia_semana: 5
-10-11 03:45:25.067: I/dalvikvm(1322): Could not find method com.actionbarsherlock.internal.nineoldandroids.widget.NineFrameLayout.onHoverEvent, referenced from method com.actionbarsherlock.internal.widget.ActionBarContainer.onHoverEvent
-10-11 03:45:25.067: W/dalvikvm(1322): VFY: unable to resolve virtual method 4255: Lcom/actionbarsherlock/internal/nineoldandroids/widget/NineFrameLayout;.onHoverEvent (Landroid/view/MotionEvent;)Z
-10-11 03:45:25.067: D/dalvikvm(1322): VFY: replacing opcode 0x6f at 0x0000
-10-11 03:45:25.117: I/dalvikvm(1322): Could not find method com.actionbarsherlock.internal.widget.ActionBarView$HomeView.onHoverEvent, referenced from method com.actionbarsherlock.internal.widget.ActionBarView$HomeView.dispatchHoverEvent
-10-11 03:45:25.117: W/dalvikvm(1322): VFY: unable to resolve virtual method 5115: Lcom/actionbarsherlock/internal/widget/ActionBarView$HomeView;.onHoverEvent (Landroid/view/MotionEvent;)Z
-10-11 03:45:25.117: D/dalvikvm(1322): VFY: replacing opcode 0x6e at 0x0000
-10-11 03:45:25.128: I/dalvikvm(1322): Could not find method android.widget.FrameLayout.onPopulateAccessibilityEvent, referenced from method com.actionbarsherlock.internal.widget.ActionBarView$HomeView.onPopulateAccessibilityEvent
-10-11 03:45:25.128: W/dalvikvm(1322): VFY: unable to resolve virtual method 3023: Landroid/widget/FrameLayout;.onPopulateAccessibilityEvent (Landroid/view/accessibility/AccessibilityEvent;)V
-10-11 03:45:25.128: D/dalvikvm(1322): VFY: replacing opcode 0x6f at 0x0006
-10-11 03:45:25.228: D/AndroidRuntime(1322): Shutting down VM
-10-11 03:45:25.228: W/dalvikvm(1322): threadid=1: thread exiting with uncaught exception (group=0x40014760)
-10-11 03:45:25.238: E/AndroidRuntime(1322): FATAL EXCEPTION: main
-10-11 03:45:25.238: E/AndroidRuntime(1322): java.lang.RuntimeException: Unable to start activity ComponentInfo{pt.carlos.alex.rosario/pt.carlos.alex.rosario.MainActivity_}: android.view.InflateException: Binary XML file line #18: Error inflating class fragment
-10-11 03:45:25.238: E/AndroidRuntime(1322): 	at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:1748)
-10-11 03:45:25.238: E/AndroidRuntime(1322): 	at android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:1764)
-10-11 03:45:25.238: E/AndroidRuntime(1322): 	at android.app.ActivityThread.access$1500(ActivityThread.java:122)
-10-11 03:45:25.238: E/AndroidRuntime(1322): 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:1002)
-10-11 03:45:25.238: E/AndroidRuntime(1322): 	at android.os.Handler.dispatchMessage(Handler.java:99)
-10-11 03:45:25.238: E/AndroidRuntime(1322): 	at android.os.Looper.loop(Looper.java:132)
-10-11 03:45:25.238: E/AndroidRuntime(1322): 	at android.app.ActivityThread.main(ActivityThread.java:4025)
-10-11 03:45:25.238: E/AndroidRuntime(1322): 	at java.lang.reflect.Method.invokeNative(Native Method)
-10-11 03:45:25.238: E/AndroidRuntime(1322): 	at java.lang.reflect.Method.invoke(Method.java:491)
-10-11 03:45:25.238: E/AndroidRuntime(1322): 	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:841)
-10-11 03:45:25.238: E/AndroidRuntime(1322): 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:599)
-10-11 03:45:25.238: E/AndroidRuntime(1322): 	at dalvik.system.NativeStart.main(Native Method)
-10-11 03:45:25.238: E/AndroidRuntime(1322): Caused by: android.view.InflateException: Binary XML file line #18: Error inflating class fragment
-10-11 03:45:25.238: E/AndroidRuntime(1322): 	at android.view.LayoutInflater.createViewFromTag(LayoutInflater.java:688)
-10-11 03:45:25.238: E/AndroidRuntime(1322): 	at android.view.LayoutInflater.rInflate(LayoutInflater.java:724)
-10-11 03:45:25.238: E/AndroidRuntime(1322): 	at android.view.LayoutInflater.inflate(LayoutInflater.java:479)
-10-11 03:45:25.238: E/AndroidRuntime(1322): 	at android.view.LayoutInflater.inflate(LayoutInflater.java:391)
-10-11 03:45:25.238: E/AndroidRuntime(1322): 	at android.view.LayoutInflater.inflate(LayoutInflater.java:347)
-10-11 03:45:25.238: E/AndroidRuntime(1322): 	at com.actionbarsherlock.internal.ActionBarSherlockCompat.setContentView(ActionBarSherlockCompat.java:857)
-10-11 03:45:25.238: E/AndroidRuntime(1322): 	at com.actionbarsherlock.app.SherlockFragmentActivity.setContentView(SherlockFragmentActivity.java:251)
-10-11 03:45:25.238: E/AndroidRuntime(1322): 	at pt.carlos.alex.rosario.MainActivity_.setContentView(MainActivity_.java:44)
-10-11 03:45:25.238: E/AndroidRuntime(1322): 	at pt.carlos.alex.rosario.MainActivity_.onCreate(MainActivity_.java:30)
-10-11 03:45:25.238: E/AndroidRuntime(1322): 	at android.app.Instrumentation.callActivityOnCreate(Instrumentation.java:1048)
-10-11 03:45:25.238: E/AndroidRuntime(1322): 	at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:1712)
-10-11 03:45:25.238: E/AndroidRuntime(1322): 	... 11 more
-10-11 03:45:25.238: E/AndroidRuntime(1322): Caused by: java.lang.IllegalStateException: Content view not yet created
-10-11 03:45:25.238: E/AndroidRuntime(1322): 	at android.support.v4.app.ListFragment.ensureList(ListFragment.java:328)
-10-11 03:45:25.238: E/AndroidRuntime(1322): 	at android.support.v4.app.ListFragment.getListView(ListFragment.java:222)
-10-11 03:45:25.238: E/AndroidRuntime(1322): 	at pt.carlos.alex.rosario.misterios_dia.obterDiaSemana(misterios_dia.java:34)
-10-11 03:45:25.238: E/AndroidRuntime(1322): 	at pt.carlos.alex.rosario.misterios_dia_.init_(misterios_dia_.java:20)
-10-11 03:45:25.238: E/AndroidRuntime(1322): 	at pt.carlos.alex.rosario.misterios_dia_.onCreate(misterios_dia_.java:25)
-10-11 03:45:25.238: E/AndroidRuntime(1322): 	at android.support.v4.app.FragmentManagerImpl.moveToState(FragmentManager.java:834)
-10-11 03:45:25.238: E/AndroidRuntime(1322): 	at android.support.v4.app.FragmentManagerImpl.moveToState(FragmentManager.java:1058)
-10-11 03:45:25.238: E/AndroidRuntime(1322): 	at android.support.v4.app.FragmentManagerImpl.addFragment(FragmentManager.java:1156)
-10-11 03:45:25.238: E/AndroidRuntime(1322): 	at android.support.v4.app.FragmentActivity.onCreateView(FragmentActivity.java:270)
-10-11 03:45:25.238: E/AndroidRuntime(1322): 	at android.view.LayoutInflater.createViewFromTag(LayoutInflater.java:660)
-10-11 03:45:25.238: E/AndroidRuntime(1322): 	... 21 more
-10-11 03:45:25.457: D/dalvikvm(1322): GC_CONCURRENT freed 247K, 6% free 6468K/6855K, paused 4ms+12ms
+10-11 05:13:38.798: D/Rosário.MainActivity(2134): index_dia_semana: 5
+10-11 05:13:38.858: I/dalvikvm(2134): Could not find method com.actionbarsherlock.internal.nineoldandroids.widget.NineFrameLayout.onHoverEvent, referenced from method com.actionbarsherlock.internal.widget.ActionBarContainer.onHoverEvent
+10-11 05:13:38.858: W/dalvikvm(2134): VFY: unable to resolve virtual method 4258: Lcom/actionbarsherlock/internal/nineoldandroids/widget/NineFrameLayout;.onHoverEvent (Landroid/view/MotionEvent;)Z
+10-11 05:13:38.868: D/dalvikvm(2134): VFY: replacing opcode 0x6f at 0x0000
+10-11 05:13:38.908: I/dalvikvm(2134): Could not find method com.actionbarsherlock.internal.widget.ActionBarView$HomeView.onHoverEvent, referenced from method com.actionbarsherlock.internal.widget.ActionBarView$HomeView.dispatchHoverEvent
+10-11 05:13:38.908: W/dalvikvm(2134): VFY: unable to resolve virtual method 5118: Lcom/actionbarsherlock/internal/widget/ActionBarView$HomeView;.onHoverEvent (Landroid/view/MotionEvent;)Z
+10-11 05:13:38.917: D/dalvikvm(2134): VFY: replacing opcode 0x6e at 0x0000
+10-11 05:13:38.917: I/dalvikvm(2134): Could not find method android.widget.FrameLayout.onPopulateAccessibilityEvent, referenced from method com.actionbarsherlock.internal.widget.ActionBarView$HomeView.onPopulateAccessibilityEvent
+10-11 05:13:38.917: W/dalvikvm(2134): VFY: unable to resolve virtual method 3026: Landroid/widget/FrameLayout;.onPopulateAccessibilityEvent (Landroid/view/accessibility/AccessibilityEvent;)V
+10-11 05:13:38.917: D/dalvikvm(2134): VFY: replacing opcode 0x6f at 0x0006
+10-11 05:13:38.997: D/Rosário.misterios_dia(2134): Inicializa-index_dia_semana: 5; mDualPage:false
+10-11 05:13:38.997: I/Rosário.misterios_dia(2134): mDualPage:false
+10-11 05:13:39.057: D/dalvikvm(2134): GC_FOR_ALLOC freed 141K, 5% free 6486K/6791K, paused 46ms
+10-11 05:13:39.067: I/dalvikvm-heap(2134): Grow heap (frag case) to 6.923MB for 513744-byte allocation
+10-11 05:13:39.137: D/dalvikvm(2134): GC_FOR_ALLOC freed 2K, 5% free 6985K/7303K, paused 42ms
+10-11 05:13:39.237: D/dalvikvm(2134): GC_CONCURRENT freed <1K, 5% free 6985K/7303K, paused 5ms+12ms
+10-11 05:13:39.267: I/Rosário.Mostra_Oracoes(2134): Activity mother:class pt.carlos.alex.rosario.MainActivity_
+10-11 05:13:39.267: I/Rosário.Mostra_Oracoes(2134): Argumentos da MainActivity
+10-11 05:13:39.277: D/Rosário.Mostra_Oracoes(2134): Inicializa-index_dia_semana:5; misterio_selected:0; pagina_actual+0
+10-11 05:13:39.307: D/Rosário.OracoesPageAdapter(2134): Constructor
+10-11 05:13:39.317: I/Rosário.MainActivity(2134): Dual Mode:true
+10-11 05:13:39.357: V/TLINE(2134): new: android.text.TextLine@40674868
+10-11 05:13:39.377: D/Rosário.OracoesPageAdapter(2134): Object instantiateItem-position:0
+10-11 05:13:39.527: D/Rosário.OracoesPageAdapter(2134): Object instantiateItem-position:1
+10-11 05:13:39.948: V/TLINE(2134): new: android.text.TextLine@40740c88
+10-11 05:13:43.848: D/Rosário.misterios_dia(2134): List Item Click: 1
+10-11 05:13:43.858: D/Rosário.misterios_dia(2134): MostraOracoes_.class Intent generated & started
+10-11 05:13:43.928: D/Rosário.MostraOracoes Activity(2134): IntentExtra values -Dia:5; Mistério:1; Página:0
+10-11 05:13:43.928: D/Rosário.MostraOracoes Activity(2134): Dia Semana:5ª Feira
+10-11 05:13:43.928: D/Rosário.MostraOracoes Activity(2134): index_dia_semana: 5
+10-11 05:13:43.977: I/Rosário.Mostra_Oracoes(2134): Activity mother:class pt.carlos.alex.rosario.MostraOracoes_
+10-11 05:13:43.977: I/Rosário.Mostra_Oracoes(2134): Argumentos da MostraOracoes
+10-11 05:13:43.987: D/Rosário.Mostra_Oracoes(2134): Inicializa-index_dia_semana:5; misterio_selected:1; pagina_actual+0
+10-11 05:13:43.997: D/Rosário.OracoesPageAdapter(2134): Constructor
+10-11 05:13:44.030: D/Rosário.OracoesPageAdapter(2134): Object instantiateItem-position:0
+10-11 05:13:44.157: D/dalvikvm(2134): GC_CONCURRENT freed 171K, 5% free 7241K/7559K, paused 8ms+4ms
+10-11 05:13:44.267: D/Rosário.OracoesPageAdapter(2134): Object instantiateItem-position:1
+10-11 05:13:44.837: D/Rosário.MainActivity(2134): onSaveInstanceState [MISTERIO]=0; [DIA]=5; [PAGINA]=0

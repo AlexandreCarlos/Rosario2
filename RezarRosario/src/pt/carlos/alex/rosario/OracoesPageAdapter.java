@@ -21,7 +21,7 @@ import android.widget.TextView;
 public class OracoesPageAdapter extends PagerAdapter {
 
 	final static String TAG = "Rosário.OracoesPageAdapter";
-	final static boolean DEBUG = true;
+//	final static boolean DEBUG = true;
 
 	private List <String> oracao;
 	private Mostra_Oracoes ctx;
@@ -29,7 +29,7 @@ public class OracoesPageAdapter extends PagerAdapter {
 	
 	public OracoesPageAdapter(Mostra_Oracoes ctx, List <String> oracao) {
 		
-	    if (DEBUG) {
+	    if (V.DEBUG) {
 	    	Log.d(TAG, "Constructor");
 	    }
 	    
@@ -46,7 +46,7 @@ public class OracoesPageAdapter extends PagerAdapter {
 
     @Override
     public Object instantiateItem(View collection, int position) {
-    	if (DEBUG){
+    	if (V.DEBUG){
 			Log.d(TAG, "Object instantiateItem-position:"+position);
 		}
     	
@@ -71,7 +71,7 @@ public class OracoesPageAdapter extends PagerAdapter {
 	@Override
 	public int getItemPosition(Object object) {
 	    
-		if (DEBUG){
+		if (V.DEBUG){
 			Log.d(TAG, "getItemPosition-object:"+object.getClass());
 		}
 		

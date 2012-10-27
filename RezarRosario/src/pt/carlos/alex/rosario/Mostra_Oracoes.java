@@ -6,6 +6,7 @@ package pt.carlos.alex.rosario;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.widget.TextView;
@@ -26,7 +27,7 @@ import de.greenrobot.event.EventBus;
 public class Mostra_Oracoes extends SherlockFragment {
 
 	private static final String TAG = "Rosário.Mostra_Oracoes";
-	private static final boolean DEBUG = true;
+//	private static final boolean DEBUG = true;
 
 	private EventBus eventBus;
 	private boolean registado = false;
@@ -52,16 +53,45 @@ public class Mostra_Oracoes extends SherlockFragment {
 		eventBus = EventBus.getDefault();
 		registaBus();
 
-		MainActivity ma = (MainActivity) getActivity();
-		index_dia_semana = ma.index_dia_semana;
-		misterio_selected = ma.misterio_selected;
-		pagina_actual = ma.pagina_actual;
-		ma = null;
+		FragmentActivity SFA = getActivity();
+		
+		Log.i(TAG, "Activity mother:"+SFA.getClass());
+		
+		
+		if (SFA.getClass() == MainActivity_.class) {
+			
+			Log.i(TAG, "Argumentos da MainActivity");
+			
+			MainActivity ma = (MainActivity) getActivity();
+			index_dia_semana = ma.index_dia_semana;
+			misterio_selected = ma.misterio_selected;
+			pagina_actual = ma.pagina_actual;
+			ma = null;
+		} else {
+			if (SFA.getClass() == MostraOracoes_.class) {
 
-		if (DEBUG) {
-			Log.d(TAG, "inicializa-index_dia_semana:" + index_dia_semana
-					+ "; misterio_selected:" + misterio_selected);
+				Log.i(TAG, "Argumentos da MostraOracoes");
+				
+				MostraOracoes ma = (MostraOracoes) getActivity();
+				index_dia_semana = ma.index_dia_semana;
+				misterio_selected = ma.misterio_selected;
+				pagina_actual = ma.pagina_actual;
+				ma = null;
+			}
 		}
+	
+		
+		
+//		MainActivity ma = (MainActivity) getActivity();
+//		index_dia_semana = ma.index_dia_semana;
+//		misterio_selected = ma.misterio_selected;
+//		pagina_actual = ma.pagina_actual;
+//		ma = null;
+
+		if (V.DEBUG) {
+			Log.d(TAG, "Inicializa-index_dia_semana:" + index_dia_semana + "; misterio_selected:" + misterio_selected+"; pagina_actual:"+pagina_actual);
+		}
+				
 	}
 
 	@AfterViews
@@ -170,7 +200,7 @@ public class Mostra_Oracoes extends SherlockFragment {
 						
 						eventBus.post((Integer)position);
 						
-						if (DEBUG) {
+						if (V.DEBUG) {
 							Log.d(TAG, "onPageSelected-position:"+position);
 							Log.d(TAG, "Página (Integer) eventBus generated");
 						}
@@ -189,7 +219,7 @@ public class Mostra_Oracoes extends SherlockFragment {
 
 	public void onEvent(Rezar event) {
 
-		if (DEBUG) {
+		if (V.DEBUG) {
 			Log.d(TAG, "Evento Rezar recebido:" + event);
 		}
 
