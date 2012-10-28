@@ -1,4 +1,4 @@
 Rosario
 =======
 
-Programas Android para rezar o rosário
+Programa Android para se rezar o rosário
