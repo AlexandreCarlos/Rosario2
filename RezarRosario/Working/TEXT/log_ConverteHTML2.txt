@@ -1,0 +1,327 @@
+2012-10-11 15:29:29,460 - __main__ - INFO - Inicio 
+2012-10-11 15:29:29,460 - __main__ - INFO - Inicio do programa
+2012-10-11 15:29:29,460 - __main__ - INFO - A verificar os argumentos de input
+2012-10-11 15:29:29,460 - __main__ - DEBUG - path in = 
+2012-10-11 15:29:29,460 - __main__ - DEBUG - file out = SameDirectory
+2012-10-11 15:29:29,460 - __main__ - DEBUG - Novo path out = 
+2012-10-11 15:29:29,460 - __main__ - INFO - argumentos utilizados: Namespace(filein='Doloroso1.txt', fileout='Doloroso1.html')
+2012-10-11 15:29:29,476 - __main__ - INFO - fim 
+2012-10-11 15:29:29,476 - __main__ - INFO - Fim do programa
+2012-10-11 15:29:29,476 - __main__ - INFO -  
+2012-10-11 15:29:29,680 - __main__ - INFO - Inicio 
+2012-10-11 15:29:29,680 - __main__ - INFO - Inicio do programa
+2012-10-11 15:29:29,680 - __main__ - INFO - A verificar os argumentos de input
+2012-10-11 15:29:29,696 - __main__ - DEBUG - path in = 
+2012-10-11 15:29:29,696 - __main__ - DEBUG - file out = SameDirectory
+2012-10-11 15:29:29,696 - __main__ - DEBUG - Novo path out = 
+2012-10-11 15:29:29,696 - __main__ - INFO - argumentos utilizados: Namespace(filein='Doloroso2.txt', fileout='Doloroso2.html')
+2012-10-11 15:29:29,696 - __main__ - INFO - fim 
+2012-10-11 15:29:29,696 - __main__ - INFO - Fim do programa
+2012-10-11 15:29:29,696 - __main__ - INFO -  
+2012-10-11 15:29:29,882 - __main__ - INFO - Inicio 
+2012-10-11 15:29:29,882 - __main__ - INFO - Inicio do programa
+2012-10-11 15:29:29,882 - __main__ - INFO - A verificar os argumentos de input
+2012-10-11 15:29:29,882 - __main__ - DEBUG - path in = 
+2012-10-11 15:29:29,882 - __main__ - DEBUG - file out = SameDirectory
+2012-10-11 15:29:29,882 - __main__ - DEBUG - Novo path out = 
+2012-10-11 15:29:29,882 - __main__ - INFO - argumentos utilizados: Namespace(filein='Doloroso3.txt', fileout='Doloroso3.html')
+2012-10-11 15:29:29,898 - __main__ - INFO - fim 
+2012-10-11 15:29:29,898 - __main__ - INFO - Fim do programa
+2012-10-11 15:29:29,898 - __main__ - INFO -  
+2012-10-11 15:29:30,085 - __main__ - INFO - Inicio 
+2012-10-11 15:29:30,085 - __main__ - INFO - Inicio do programa
+2012-10-11 15:29:30,085 - __main__ - INFO - A verificar os argumentos de input
+2012-10-11 15:29:30,085 - __main__ - DEBUG - path in = 
+2012-10-11 15:29:30,085 - __main__ - DEBUG - file out = SameDirectory
+2012-10-11 15:29:30,085 - __main__ - DEBUG - Novo path out = 
+2012-10-11 15:29:30,085 - __main__ - INFO - argumentos utilizados: Namespace(filein='Doloroso4.txt', fileout='Doloroso4.html')
+2012-10-11 15:29:30,085 - __main__ - INFO - fim 
+2012-10-11 15:29:30,085 - __main__ - INFO - Fim do programa
+2012-10-11 15:29:30,085 - __main__ - INFO -  
+2012-10-11 15:29:30,289 - __main__ - INFO - Inicio 
+2012-10-11 15:29:30,289 - __main__ - INFO - Inicio do programa
+2012-10-11 15:29:30,289 - __main__ - INFO - A verificar os argumentos de input
+2012-10-11 15:29:30,289 - __main__ - DEBUG - path in = 
+2012-10-11 15:29:30,289 - __main__ - DEBUG - file out = SameDirectory
+2012-10-11 15:29:30,289 - __main__ - DEBUG - Novo path out = 
+2012-10-11 15:29:30,289 - __main__ - INFO - argumentos utilizados: Namespace(filein='Doloroso5.txt', fileout='Doloroso5.html')
+2012-10-11 15:29:30,305 - __main__ - INFO - fim 
+2012-10-11 15:29:30,305 - __main__ - INFO - Fim do programa
+2012-10-11 15:29:30,305 - __main__ - INFO -  
+2012-10-11 15:29:30,523 - __main__ - INFO - Inicio 
+2012-10-11 15:29:30,523 - __main__ - INFO - Inicio do programa
+2012-10-11 15:29:30,523 - __main__ - INFO - A verificar os argumentos de input
+2012-10-11 15:29:30,539 - __main__ - DEBUG - path in = 
+2012-10-11 15:29:30,539 - __main__ - DEBUG - file out = SameDirectory
+2012-10-11 15:29:30,539 - __main__ - DEBUG - Novo path out = 
+2012-10-11 15:29:30,539 - __main__ - INFO - argumentos utilizados: Namespace(filein='Glorioso1.txt', fileout='Glorioso1.html')
+2012-10-11 15:29:30,555 - __main__ - INFO - fim 
+2012-10-11 15:29:30,555 - __main__ - INFO - Fim do programa
+2012-10-11 15:29:30,555 - __main__ - INFO -  
+2012-10-11 15:29:30,743 - __main__ - INFO - Inicio 
+2012-10-11 15:29:30,743 - __main__ - INFO - Inicio do programa
+2012-10-11 15:29:30,743 - __main__ - INFO - A verificar os argumentos de input
+2012-10-11 15:29:30,743 - __main__ - DEBUG - path in = 
+2012-10-11 15:29:30,743 - __main__ - DEBUG - file out = SameDirectory
+2012-10-11 15:29:30,743 - __main__ - DEBUG - Novo path out = 
+2012-10-11 15:29:30,743 - __main__ - INFO - argumentos utilizados: Namespace(filein='Glorioso2.txt', fileout='Glorioso2.html')
+2012-10-11 15:29:30,757 - __main__ - INFO - fim 
+2012-10-11 15:29:30,757 - __main__ - INFO - Fim do programa
+2012-10-11 15:29:30,757 - __main__ - INFO -  
+2012-10-11 15:29:30,930 - __main__ - INFO - Inicio 
+2012-10-11 15:29:30,960 - __main__ - INFO - Inicio do programa
+2012-10-11 15:29:30,960 - __main__ - INFO - A verificar os argumentos de input
+2012-10-11 15:29:30,960 - __main__ - DEBUG - path in = 
+2012-10-11 15:29:30,960 - __main__ - DEBUG - file out = SameDirectory
+2012-10-11 15:29:30,960 - __main__ - DEBUG - Novo path out = 
+2012-10-11 15:29:30,960 - __main__ - INFO - argumentos utilizados: Namespace(filein='Glorioso3.txt', fileout='Glorioso3.html')
+2012-10-11 15:29:30,976 - __main__ - INFO - fim 
+2012-10-11 15:29:30,976 - __main__ - INFO - Fim do programa
+2012-10-11 15:29:30,976 - __main__ - INFO -  
+2012-10-11 15:29:31,148 - __main__ - INFO - Inicio 
+2012-10-11 15:29:31,148 - __main__ - INFO - Inicio do programa
+2012-10-11 15:29:31,148 - __main__ - INFO - A verificar os argumentos de input
+2012-10-11 15:29:31,148 - __main__ - DEBUG - path in = 
+2012-10-11 15:29:31,148 - __main__ - DEBUG - file out = SameDirectory
+2012-10-11 15:29:31,148 - __main__ - DEBUG - Novo path out = 
+2012-10-11 15:29:31,148 - __main__ - INFO - argumentos utilizados: Namespace(filein='Glorioso4.txt', fileout='Glorioso4.html')
+2012-10-11 15:29:31,196 - __main__ - INFO - fim 
+2012-10-11 15:29:31,196 - __main__ - INFO - Fim do programa
+2012-10-11 15:29:31,196 - __main__ - INFO -  
+2012-10-11 15:29:31,368 - __main__ - INFO - Inicio 
+2012-10-11 15:29:31,368 - __main__ - INFO - Inicio do programa
+2012-10-11 15:29:31,368 - __main__ - INFO - A verificar os argumentos de input
+2012-10-11 15:29:31,382 - __main__ - DEBUG - path in = 
+2012-10-11 15:29:31,382 - __main__ - DEBUG - file out = SameDirectory
+2012-10-11 15:29:31,382 - __main__ - DEBUG - Novo path out = 
+2012-10-11 15:29:31,382 - __main__ - INFO - argumentos utilizados: Namespace(filein='Glorioso5.txt', fileout='Glorioso5.html')
+2012-10-11 15:29:31,382 - __main__ - INFO - fim 
+2012-10-11 15:29:31,382 - __main__ - INFO - Fim do programa
+2012-10-11 15:29:31,382 - __main__ - INFO -  
+2012-10-11 15:29:31,571 - __main__ - INFO - Inicio 
+2012-10-11 15:29:31,571 - __main__ - INFO - Inicio do programa
+2012-10-11 15:29:31,571 - __main__ - INFO - A verificar os argumentos de input
+2012-10-11 15:29:31,571 - __main__ - DEBUG - path in = 
+2012-10-11 15:29:31,571 - __main__ - DEBUG - file out = SameDirectory
+2012-10-11 15:29:31,571 - __main__ - DEBUG - Novo path out = 
+2012-10-11 15:29:31,571 - __main__ - INFO - argumentos utilizados: Namespace(filein='Luminoso1.txt', fileout='Luminoso1.html')
+2012-10-11 15:29:31,571 - __main__ - INFO - fim 
+2012-10-11 15:29:31,571 - __main__ - INFO - Fim do programa
+2012-10-11 15:29:31,571 - __main__ - INFO -  
+2012-10-11 15:29:31,743 - __main__ - INFO - Inicio 
+2012-10-11 15:29:31,743 - __main__ - INFO - Inicio do programa
+2012-10-11 15:29:31,743 - __main__ - INFO - A verificar os argumentos de input
+2012-10-11 15:29:31,743 - __main__ - DEBUG - path in = 
+2012-10-11 15:29:31,743 - __main__ - DEBUG - file out = SameDirectory
+2012-10-11 15:29:31,743 - __main__ - DEBUG - Novo path out = 
+2012-10-11 15:29:31,743 - __main__ - INFO - argumentos utilizados: Namespace(filein='Luminoso2.txt', fileout='Luminoso2.html')
+2012-10-11 15:29:31,773 - __main__ - INFO - fim 
+2012-10-11 15:29:31,773 - __main__ - INFO - Fim do programa
+2012-10-11 15:29:31,773 - __main__ - INFO -  
+2012-10-11 15:29:31,946 - __main__ - INFO - Inicio 
+2012-10-11 15:29:31,946 - __main__ - INFO - Inicio do programa
+2012-10-11 15:29:31,946 - __main__ - INFO - A verificar os argumentos de input
+2012-10-11 15:29:31,946 - __main__ - DEBUG - path in = 
+2012-10-11 15:29:31,946 - __main__ - DEBUG - file out = SameDirectory
+2012-10-11 15:29:31,946 - __main__ - DEBUG - Novo path out = 
+2012-10-11 15:29:31,960 - __main__ - INFO - argumentos utilizados: Namespace(filein='Luminoso3.txt', fileout='Luminoso3.html')
+2012-10-11 15:29:31,960 - __main__ - INFO - fim 
+2012-10-11 15:29:31,960 - __main__ - INFO - Fim do programa
+2012-10-11 15:29:31,960 - __main__ - INFO -  
+2012-10-11 15:29:32,148 - __main__ - INFO - Inicio 
+2012-10-11 15:29:32,164 - __main__ - INFO - Inicio do programa
+2012-10-11 15:29:32,164 - __main__ - INFO - A verificar os argumentos de input
+2012-10-11 15:29:32,164 - __main__ - DEBUG - path in = 
+2012-10-11 15:29:32,164 - __main__ - DEBUG - file out = SameDirectory
+2012-10-11 15:29:32,164 - __main__ - DEBUG - Novo path out = 
+2012-10-11 15:29:32,164 - __main__ - INFO - argumentos utilizados: Namespace(filein='Luminoso4.txt', fileout='Luminoso4.html')
+2012-10-11 15:29:32,164 - __main__ - INFO - fim 
+2012-10-11 15:29:32,164 - __main__ - INFO - Fim do programa
+2012-10-11 15:29:32,164 - __main__ - INFO -  
+2012-10-11 15:29:32,351 - __main__ - INFO - Inicio 
+2012-10-11 15:29:32,351 - __main__ - INFO - Inicio do programa
+2012-10-11 15:29:32,351 - __main__ - INFO - A verificar os argumentos de input
+2012-10-11 15:29:32,351 - __main__ - DEBUG - path in = 
+2012-10-11 15:29:32,351 - __main__ - DEBUG - file out = SameDirectory
+2012-10-11 15:29:32,351 - __main__ - DEBUG - Novo path out = 
+2012-10-11 15:29:32,351 - __main__ - INFO - argumentos utilizados: Namespace(filein='Luminoso5.txt', fileout='Luminoso5.html')
+2012-10-11 15:29:32,368 - __main__ - INFO - fim 
+2012-10-11 15:29:32,414 - __main__ - INFO - Fim do programa
+2012-10-11 15:29:32,414 - __main__ - INFO -  
+2012-10-11 15:40:16,148 - __main__ - INFO - Inicio 
+2012-10-11 15:40:16,148 - __main__ - INFO - Inicio do programa
+2012-10-11 15:40:16,148 - __main__ - INFO - A verificar os argumentos de input
+2012-10-11 16:41:17,460 - __main__ - INFO - Inicio 
+2012-10-11 16:41:17,476 - __main__ - INFO - Inicio do programa
+2012-10-11 16:41:17,476 - __main__ - INFO - A verificar os argumentos de input
+2012-10-11 16:41:17,476 - __main__ - DEBUG - path in = 
+2012-10-11 16:41:17,476 - __main__ - DEBUG - file out = SameDirectory
+2012-10-11 16:41:17,476 - __main__ - DEBUG - Novo path out = 
+2012-10-11 16:41:17,476 - __main__ - INFO - argumentos utilizados: Namespace(filein='Doloroso1.txt', fileout='Doloroso1.html')
+2012-10-11 16:42:39,674 - __main__ - INFO - Inicio 
+2012-10-11 16:42:39,674 - __main__ - INFO - Inicio do programa
+2012-10-11 16:42:39,674 - __main__ - INFO - A verificar os argumentos de input
+2012-10-11 16:42:39,674 - __main__ - DEBUG - path in = 
+2012-10-11 16:42:39,674 - __main__ - DEBUG - file out = SameDirectory
+2012-10-11 16:42:39,674 - __main__ - DEBUG - Novo path out = 
+2012-10-11 16:42:39,674 - __main__ - INFO - argumentos utilizados: Namespace(filein='Doloroso1.txt', fileout='Doloroso1.html')
+2012-10-11 16:43:54,730 - __main__ - INFO - Inicio 
+2012-10-11 16:43:54,730 - __main__ - INFO - Inicio do programa
+2012-10-11 16:43:54,730 - __main__ - INFO - A verificar os argumentos de input
+2012-10-11 16:43:54,746 - __main__ - DEBUG - path in = 
+2012-10-11 16:43:54,746 - __main__ - DEBUG - file out = SameDirectory
+2012-10-11 16:43:54,746 - __main__ - DEBUG - Novo path out = 
+2012-10-11 16:43:54,746 - __main__ - INFO - argumentos utilizados: Namespace(filein='Doloroso1.txt', fileout='Doloroso1.html')
+2012-10-11 16:43:54,746 - __main__ - INFO - fim 
+2012-10-11 16:43:54,746 - __main__ - INFO - Fim do programa
+2012-10-11 16:43:54,746 - __main__ - INFO -  
+2012-10-11 16:48:38,880 - __main__ - INFO - Inicio 
+2012-10-11 16:48:38,880 - __main__ - INFO - Inicio do programa
+2012-10-11 16:48:38,880 - __main__ - INFO - A verificar os argumentos de input
+2012-10-11 16:48:38,894 - __main__ - DEBUG - path in = 
+2012-10-11 16:48:38,894 - __main__ - DEBUG - file out = SameDirectory
+2012-10-11 16:48:38,894 - __main__ - DEBUG - Novo path out = 
+2012-10-11 16:48:38,894 - __main__ - INFO - argumentos utilizados: Namespace(filein='Doloroso1.txt', fileout='Doloroso1.html')
+2012-10-11 16:48:38,894 - __main__ - INFO - fim 
+2012-10-11 16:48:38,894 - __main__ - INFO - Fim do programa
+2012-10-11 16:48:38,894 - __main__ - INFO -  
+2012-10-11 16:48:39,098 - __main__ - INFO - Inicio 
+2012-10-11 16:48:39,098 - __main__ - INFO - Inicio do programa
+2012-10-11 16:48:39,098 - __main__ - INFO - A verificar os argumentos de input
+2012-10-11 16:48:39,098 - __main__ - DEBUG - path in = 
+2012-10-11 16:48:39,098 - __main__ - DEBUG - file out = SameDirectory
+2012-10-11 16:48:39,098 - __main__ - DEBUG - Novo path out = 
+2012-10-11 16:48:39,098 - __main__ - INFO - argumentos utilizados: Namespace(filein='Doloroso2.txt', fileout='Doloroso2.html')
+2012-10-11 16:48:39,098 - __main__ - INFO - fim 
+2012-10-11 16:48:39,098 - __main__ - INFO - Fim do programa
+2012-10-11 16:48:39,098 - __main__ - INFO -  
+2012-10-11 16:48:39,286 - __main__ - INFO - Inicio 
+2012-10-11 16:48:39,286 - __main__ - INFO - Inicio do programa
+2012-10-11 16:48:39,286 - __main__ - INFO - A verificar os argumentos de input
+2012-10-11 16:48:39,286 - __main__ - DEBUG - path in = 
+2012-10-11 16:48:39,286 - __main__ - DEBUG - file out = SameDirectory
+2012-10-11 16:48:39,286 - __main__ - DEBUG - Novo path out = 
+2012-10-11 16:48:39,302 - __main__ - INFO - argumentos utilizados: Namespace(filein='Doloroso3.txt', fileout='Doloroso3.html')
+2012-10-11 16:48:39,302 - __main__ - INFO - fim 
+2012-10-11 16:48:39,302 - __main__ - INFO - Fim do programa
+2012-10-11 16:48:39,302 - __main__ - INFO -  
+2012-10-11 16:48:39,505 - __main__ - INFO - Inicio 
+2012-10-11 16:48:39,505 - __main__ - INFO - Inicio do programa
+2012-10-11 16:48:39,505 - __main__ - INFO - A verificar os argumentos de input
+2012-10-11 16:48:39,505 - __main__ - DEBUG - path in = 
+2012-10-11 16:48:39,505 - __main__ - DEBUG - file out = SameDirectory
+2012-10-11 16:48:39,505 - __main__ - DEBUG - Novo path out = 
+2012-10-11 16:48:39,505 - __main__ - INFO - argumentos utilizados: Namespace(filein='Doloroso4.txt', fileout='Doloroso4.html')
+2012-10-11 16:48:39,505 - __main__ - INFO - fim 
+2012-10-11 16:48:39,505 - __main__ - INFO - Fim do programa
+2012-10-11 16:48:39,505 - __main__ - INFO -  
+2012-10-11 16:48:39,755 - __main__ - INFO - Inicio 
+2012-10-11 16:48:39,755 - __main__ - INFO - Inicio do programa
+2012-10-11 16:48:39,755 - __main__ - INFO - A verificar os argumentos de input
+2012-10-11 16:48:39,755 - __main__ - DEBUG - path in = 
+2012-10-11 16:48:39,755 - __main__ - DEBUG - file out = SameDirectory
+2012-10-11 16:48:39,755 - __main__ - DEBUG - Novo path out = 
+2012-10-11 16:48:39,755 - __main__ - INFO - argumentos utilizados: Namespace(filein='Doloroso5.txt', fileout='Doloroso5.html')
+2012-10-11 16:48:39,769 - __main__ - INFO - fim 
+2012-10-11 16:48:39,769 - __main__ - INFO - Fim do programa
+2012-10-11 16:48:39,769 - __main__ - INFO -  
+2012-10-11 16:48:39,941 - __main__ - INFO - Inicio 
+2012-10-11 16:48:39,941 - __main__ - INFO - Inicio do programa
+2012-10-11 16:48:39,941 - __main__ - INFO - A verificar os argumentos de input
+2012-10-11 16:48:39,941 - __main__ - DEBUG - path in = 
+2012-10-11 16:48:39,941 - __main__ - DEBUG - file out = SameDirectory
+2012-10-11 16:48:39,941 - __main__ - DEBUG - Novo path out = 
+2012-10-11 16:48:39,941 - __main__ - INFO - argumentos utilizados: Namespace(filein='Glorioso1.txt', fileout='Glorioso1.html')
+2012-10-11 16:48:39,957 - __main__ - INFO - fim 
+2012-10-11 16:48:39,957 - __main__ - INFO - Fim do programa
+2012-10-11 16:48:39,957 - __main__ - INFO -  
+2012-10-11 16:48:40,144 - __main__ - INFO - Inicio 
+2012-10-11 16:48:40,144 - __main__ - INFO - Inicio do programa
+2012-10-11 16:48:40,144 - __main__ - INFO - A verificar os argumentos de input
+2012-10-11 16:48:40,144 - __main__ - DEBUG - path in = 
+2012-10-11 16:48:40,144 - __main__ - DEBUG - file out = SameDirectory
+2012-10-11 16:48:40,144 - __main__ - DEBUG - Novo path out = 
+2012-10-11 16:48:40,144 - __main__ - INFO - argumentos utilizados: Namespace(filein='Glorioso2.txt', fileout='Glorioso2.html')
+2012-10-11 16:48:40,161 - __main__ - INFO - fim 
+2012-10-11 16:48:40,161 - __main__ - INFO - Fim do programa
+2012-10-11 16:48:40,161 - __main__ - INFO -  
+2012-10-11 16:48:40,364 - __main__ - INFO - Inicio 
+2012-10-11 16:48:40,380 - __main__ - INFO - Inicio do programa
+2012-10-11 16:48:40,380 - __main__ - INFO - A verificar os argumentos de input
+2012-10-11 16:48:40,380 - __main__ - DEBUG - path in = 
+2012-10-11 16:48:40,380 - __main__ - DEBUG - file out = SameDirectory
+2012-10-11 16:48:40,380 - __main__ - DEBUG - Novo path out = 
+2012-10-11 16:48:40,380 - __main__ - INFO - argumentos utilizados: Namespace(filein='Glorioso3.txt', fileout='Glorioso3.html')
+2012-10-11 16:48:40,380 - __main__ - INFO - fim 
+2012-10-11 16:48:40,380 - __main__ - INFO - Fim do programa
+2012-10-11 16:48:40,380 - __main__ - INFO -  
+2012-10-11 16:48:40,598 - __main__ - INFO - Inicio 
+2012-10-11 16:48:40,598 - __main__ - INFO - Inicio do programa
+2012-10-11 16:48:40,598 - __main__ - INFO - A verificar os argumentos de input
+2012-10-11 16:48:40,598 - __main__ - DEBUG - path in = 
+2012-10-11 16:48:40,614 - __main__ - DEBUG - file out = SameDirectory
+2012-10-11 16:48:40,614 - __main__ - DEBUG - Novo path out = 
+2012-10-11 16:48:40,614 - __main__ - INFO - argumentos utilizados: Namespace(filein='Glorioso4.txt', fileout='Glorioso4.html')
+2012-10-11 16:48:40,614 - __main__ - INFO - fim 
+2012-10-11 16:48:40,614 - __main__ - INFO - Fim do programa
+2012-10-11 16:48:40,614 - __main__ - INFO -  
+2012-10-11 16:48:40,786 - __main__ - INFO - Inicio 
+2012-10-11 16:48:40,802 - __main__ - INFO - Inicio do programa
+2012-10-11 16:48:40,802 - __main__ - INFO - A verificar os argumentos de input
+2012-10-11 16:48:40,802 - __main__ - DEBUG - path in = 
+2012-10-11 16:48:40,802 - __main__ - DEBUG - file out = SameDirectory
+2012-10-11 16:48:40,802 - __main__ - DEBUG - Novo path out = 
+2012-10-11 16:48:40,802 - __main__ - INFO - argumentos utilizados: Namespace(filein='Glorioso5.txt', fileout='Glorioso5.html')
+2012-10-11 16:48:40,802 - __main__ - INFO - fim 
+2012-10-11 16:48:40,802 - __main__ - INFO - Fim do programa
+2012-10-11 16:48:40,802 - __main__ - INFO -  
+2012-10-11 16:48:40,989 - __main__ - INFO - Inicio 
+2012-10-11 16:48:40,989 - __main__ - INFO - Inicio do programa
+2012-10-11 16:48:41,005 - __main__ - INFO - A verificar os argumentos de input
+2012-10-11 16:48:41,005 - __main__ - DEBUG - path in = 
+2012-10-11 16:48:41,005 - __main__ - DEBUG - file out = SameDirectory
+2012-10-11 16:48:41,005 - __main__ - DEBUG - Novo path out = 
+2012-10-11 16:48:41,005 - __main__ - INFO - argumentos utilizados: Namespace(filein='Luminoso1.txt', fileout='Luminoso1.html')
+2012-10-11 16:48:41,005 - __main__ - INFO - fim 
+2012-10-11 16:48:41,005 - __main__ - INFO - Fim do programa
+2012-10-11 16:48:41,005 - __main__ - INFO -  
+2012-10-11 16:48:41,207 - __main__ - INFO - Inicio 
+2012-10-11 16:48:41,207 - __main__ - INFO - Inicio do programa
+2012-10-11 16:48:41,207 - __main__ - INFO - A verificar os argumentos de input
+2012-10-11 16:48:41,207 - __main__ - DEBUG - path in = 
+2012-10-11 16:48:41,207 - __main__ - DEBUG - file out = SameDirectory
+2012-10-11 16:48:41,207 - __main__ - DEBUG - Novo path out = 
+2012-10-11 16:48:41,207 - __main__ - INFO - argumentos utilizados: Namespace(filein='Luminoso2.txt', fileout='Luminoso2.html')
+2012-10-11 16:48:41,207 - __main__ - INFO - fim 
+2012-10-11 16:48:41,207 - __main__ - INFO - Fim do programa
+2012-10-11 16:48:41,207 - __main__ - INFO -  
+2012-10-11 16:48:41,394 - __main__ - INFO - Inicio 
+2012-10-11 16:48:41,394 - __main__ - INFO - Inicio do programa
+2012-10-11 16:48:41,394 - __main__ - INFO - A verificar os argumentos de input
+2012-10-11 16:48:41,394 - __main__ - DEBUG - path in = 
+2012-10-11 16:48:41,394 - __main__ - DEBUG - file out = SameDirectory
+2012-10-11 16:48:41,394 - __main__ - DEBUG - Novo path out = 
+2012-10-11 16:48:41,394 - __main__ - INFO - argumentos utilizados: Namespace(filein='Luminoso3.txt', fileout='Luminoso3.html')
+2012-10-11 16:48:41,411 - __main__ - INFO - fim 
+2012-10-11 16:48:41,411 - __main__ - INFO - Fim do programa
+2012-10-11 16:48:41,411 - __main__ - INFO -  
+2012-10-11 16:48:41,582 - __main__ - INFO - Inicio 
+2012-10-11 16:48:41,582 - __main__ - INFO - Inicio do programa
+2012-10-11 16:48:41,582 - __main__ - INFO - A verificar os argumentos de input
+2012-10-11 16:48:41,582 - __main__ - DEBUG - path in = 
+2012-10-11 16:48:41,582 - __main__ - DEBUG - file out = SameDirectory
+2012-10-11 16:48:41,582 - __main__ - DEBUG - Novo path out = 
+2012-10-11 16:48:41,582 - __main__ - INFO - argumentos utilizados: Namespace(filein='Luminoso4.txt', fileout='Luminoso4.html')
+2012-10-11 16:48:41,598 - __main__ - INFO - fim 
+2012-10-11 16:48:41,598 - __main__ - INFO - Fim do programa
+2012-10-11 16:48:41,598 - __main__ - INFO -  
+2012-10-11 16:48:41,769 - __main__ - INFO - Inicio 
+2012-10-11 16:48:41,769 - __main__ - INFO - Inicio do programa
+2012-10-11 16:48:41,769 - __main__ - INFO - A verificar os argumentos de input
+2012-10-11 16:48:41,769 - __main__ - DEBUG - path in = 
+2012-10-11 16:48:41,769 - __main__ - DEBUG - file out = SameDirectory
+2012-10-11 16:48:41,769 - __main__ - DEBUG - Novo path out = 
+2012-10-11 16:48:41,769 - __main__ - INFO - argumentos utilizados: Namespace(filein='Luminoso5.txt', fileout='Luminoso5.html')
+2012-10-11 16:48:41,786 - __main__ - INFO - fim 
+2012-10-11 16:48:41,786 - __main__ - INFO - Fim do programa
+2012-10-11 16:48:41,786 - __main__ - INFO -  

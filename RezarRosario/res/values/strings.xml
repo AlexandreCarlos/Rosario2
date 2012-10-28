@@ -1,0 +1,12 @@
+<resources>
+
+    <string name="app_name">Rosário</string>
+    <string name="menu_settings">Definições</string>
+    <string name="title_activity_main">Rosário</string>
+    <string name="dia_semana">Dia da Semana</string>
+    <string name="oracoes_dia">Orações do dia</string>
+	<string name="hint">Editor #%d</string>
+	<string name="oracoes_layout_hint">oracoes_layout</string>
+	<string name="fill">    </string>
+	
+</resources>
