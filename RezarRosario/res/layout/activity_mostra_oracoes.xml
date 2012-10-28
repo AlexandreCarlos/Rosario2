@@ -1,33 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
-
+    
     <TextView
-        android:id="@+id/dia_semana"
+        android:id="@+id/dia_semana_p"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:gravity="center"
         android:hint="@string/dia_semana"
         android:text="@string/dia_semana"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        tools:context=".MainActivity" />
+        android:textSize="10sp"
+        android:textStyle="bold" />
 
     <fragment
-        android:id="@+id/misterios_do_dia"
-        android:name="pt.carlos.alex.rosario.misterios_dia_"
+        android:id="@+id/oracoes"
+        android:name="pt.carlos.alex.rosario.Mostra_Oracoes_"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp" />
-
-<!--     <fragment -->
-<!--         android:id="@+id/oracoes" -->
-<!--         android:name="pt.carlos.alex.rosario.Mostra_Oracoes_" -->
-<!--         android:layout_width="match_parent" -->
-<!--         android:layout_height="wrap_content" -->
-<!--         android:layout_marginTop="15dp" /> -->
-
+    
 </LinearLayout>
