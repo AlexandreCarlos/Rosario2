@@ -59,7 +59,7 @@ public class MainActivity extends SherlockFragmentActivity {
 	@AfterViews
 	void init() {
 
-		try {
+//		try {
 			mEventBus.register(this);
 
 			mDiaSemana.setText(V.DIA_SEMANA[mIndexDiaSemana] + " - "
@@ -68,11 +68,14 @@ public class MainActivity extends SherlockFragmentActivity {
 			this.mDualPage = this.mOracoes != null
 					&& this.mOracoes.getVisibility() == View.VISIBLE;
 
+			
+			mEventBus.post(new Estado(mIndexDiaSemana, mMisterioSelected, mPaginaActual, mDualPage));
+			
 			Log.i(TAG, "Dual Mode:" + this.mDualPage);
 
-		} catch (Exception e) {
-			Log.e(TAG, "Erro no init() @AfterViews:", e);
-		}
+		// } catch (Exception e) {
+		// Log.e(TAG, "Erro no init() @AfterViews:", e);
+		// }
 
 	}
 
@@ -139,13 +142,13 @@ public class MainActivity extends SherlockFragmentActivity {
 
 	}
 
-	public void onEvent(Integer event) {
+	public void onEvent(Pagina event) {
 
 		if (V.DEBUG) {
 			Log.d(TAG, "Evento (Integer) página recebido:" + event);
 		}
 
-		this.mPaginaActual = event.intValue();
+		this.mPaginaActual = event.getPagina();
 
 	}
 

@@ -28,7 +28,7 @@ public class MisteriosDia extends SherlockListFragment {
 
 	private int mIndexDiaSemana = -1;
 	private boolean mDualPage = false;
-	private MainActivity mMa = null;
+//	private MainActivity mMa = null;
 	private EventBus mEventBus;
 
 	@ViewById(R.id.oracoes)
@@ -38,11 +38,12 @@ public class MisteriosDia extends SherlockListFragment {
 	void obterDiaSemana() {
 
 		mEventBus = EventBus.getDefault();
+		mEventBus.register(this);
 
-		mMa = (MainActivity) getActivity();
-		mIndexDiaSemana = mMa.mIndexDiaSemana;
-		this.mDualPage = mMa.mDualPage;
-		mMa = null;
+//		mMa = (MainActivity) getActivity();
+//		mIndexDiaSemana = mMa.mIndexDiaSemana;
+//		this.mDualPage = mMa.mDualPage;
+//		mMa = null;
 
 		if (V.DEBUG) {
 			Log.d(TAG, "Inicializa-mIndexDiaSemana: " + mIndexDiaSemana
@@ -80,9 +81,9 @@ public class MisteriosDia extends SherlockListFragment {
 
 		// v.getFocusables(position);
 		// v.setSelected(true);
-		mMa = (MainActivity) getActivity();
-		this.mDualPage = mMa.mDualPage;
-		mMa = null;
+//		mMa = (MainActivity) getActivity();
+//		this.mDualPage = mMa.mDualPage;
+//		mMa = null;
 
 		getListView().setChoiceMode(ListView.CHOICE_MODE_SINGLE);
 		l.setItemChecked(position, true);
@@ -96,10 +97,15 @@ public class MisteriosDia extends SherlockListFragment {
 			intent.putExtra(V.DIA, mIndexDiaSemana);
 			intent.putExtra(V.MISTERIO, position);
 			intent.putExtra(V.PAGINA, 0);
-			Log.d(TAG, "MostraOracoes_.class Intent generated & started");
+			Log.d(TAG, "ActivityMostraOracoes_.class Intent generated & started");
 			startActivity(intent);
 		}
 
+	}
+	
+	public void onEvent(Estado event) {
+		mIndexDiaSemana = event.getDiaSemana();
+		this.mDualPage = event.isDualPage();
 	}
 
 }

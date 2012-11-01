@@ -197,7 +197,7 @@ public class Mostra_Oracoes extends SherlockFragment {
 						// "Changed to page " + position,
 						// Toast.LENGTH_SHORT).show();
 
-						mEventBus.post((Integer) position);
+						mEventBus.post(new Pagina(position));
 
 						if (V.DEBUG) {
 							Log.d(TAG, "onPageSelected-position:" + position);
