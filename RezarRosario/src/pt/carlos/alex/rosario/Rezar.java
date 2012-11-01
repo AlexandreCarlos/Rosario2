@@ -25,15 +25,15 @@ public class Rezar {
 	}
 
 	/**
-	 * @return the dia_semana
+	 * @return the mDiaSemana
 	 */
 	public int getDia_semana() {
 		return dia_semana;
 	}
 
 	/**
-	 * @param dia_semana
-	 *            the dia_semana to set
+	 * @param mDiaSemana
+	 *            the mDiaSemana to set
 	 */
 	public void setDia_semana(int dia_semana) {
 		this.dia_semana = dia_semana;
@@ -69,7 +69,7 @@ public class Rezar {
 	 */
 	@Override
 	public String toString() {
-		return "Rezar [dia_semana=" + dia_semana + ", misterio=" + misterio
+		return "Rezar [mDiaSemana=" + dia_semana + ", misterio=" + misterio
 				+ ", pagina=" + pagina + "]";
 	}
 

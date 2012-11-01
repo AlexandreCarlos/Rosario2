@@ -68,7 +68,7 @@ public final class Misterios {
 	private static final String GLORIA = "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\"><html><head><meta name=\"generator\" content=\"Bluefish 2.2.2\" ><meta name=\"author\" content=\"Alexandre Carlos\" ><meta name=\"date\" content=\"2012-10-08T12:34:01+0100\" ><meta name=\"copyright\" content=\"\"><meta name=\"keywords\" content=\"\"><meta name=\"description\" content=\"\"><meta name=\"ROBOTS\" content=\"NOINDEX, NOFOLLOW\"><meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\"><meta http-equiv=\"content-type\" content=\"application/xhtml+xml; charset=UTF-8\"><meta http-equiv=\"content-style-type\" content=\"text/css\"><meta http-equiv=\"expires\" content=\"0\"><meta ><meta ></head><body><h1 style=\"text-align: center; color: #0000FF;\">Glória</h1>Glória ao Pai,<br />e ao Filho e ao Espírito Santo,<br />assim como era no princípio,<br />agora e sempre.<br /><br />Amen<br /></body></html>";
 
 	private static final String SALVERAINHA = "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\"><html><head><meta name=\"generator\" content=\"Bluefish 2.2.2\" ><meta name=\"author\" content=\"Alexandre Carlos\" ><meta name=\"date\" content=\"2012-10-08T12:34:01+0100\" ><meta name=\"copyright\" content=\"\"><meta name=\"keywords\" content=\"\"><meta name=\"description\" content=\"\"><meta name=\"ROBOTS\" content=\"NOINDEX, NOFOLLOW\"><meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\"><meta http-equiv=\"content-type\" content=\"application/xhtml+xml; charset=UTF-8\"><meta http-equiv=\"content-style-type\" content=\"text/css\"><meta http-equiv=\"expires\" content=\"0\"><meta ><meta ></head><body><h1 style=\"text-align: center; color: #0000FF;\">Salve Rainha</h1>Salve Rainha,<br />Mãe de Misericórdia,<br />vida e doçura esperança nossa salve!<br />A vós bradamos degredados filho de Eva.<br />A vós suspiramos gemendo e chorando neste<br />vale de lágrimas.<br />Eia pois advogada nossa<br />esses vossos olhos misericordiosos a nós volvei,<br />e depois deste desterro mostrai Jesus bendito fruto em vosso ventre,<br /><br />ó clemente,<br />ó piedosa<br />ó doce e Santa Virgem Maria.<br /><br />Rogai por nós Santa mãe de Deus.<br />Para que sejamos sempre livre do pecado,<br />protegido de todos os perigos<br />e dignos da promessa de Cristo.<br /><br />Amen<br /></body></html>";
-	private static final String JACULATORIAS = "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\"><html><head><meta name=\"generator\" content=\"Bluefish 2.2.2\" ><meta name=\"author\" content=\"Alexandre Carlos\" ><meta name=\"date\" content=\"2012-10-08T12:34:01+0100\" ><meta name=\"copyright\" content=\"\"><meta name=\"keywords\" content=\"\"><meta name=\"description\" content=\"\"><meta name=\"ROBOTS\" content=\"NOINDEX, NOFOLLOW\"><meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\"><meta http-equiv=\"content-type\" content=\"application/xhtml+xml; charset=UTF-8\"><meta http-equiv=\"content-style-type\" content=\"text/css\"><meta http-equiv=\"expires\" content=\"0\"></head><body><h1 style=\"text-align: center; color: #0000FF;\">Jaculatórias</h1>Ó Maria concebida sem pecado<br />Rogai por nós que recorremos a vós.<br />Ó meu Jesus, perdoai-nos e livrai-nos do fogo do inferno <br />Levai as almas todas para o Céu, principalmente as que mais precisarem.</body></html>";
+	private static final String JACULATORIA = "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\"><html><head><meta name=\"generator\" content=\"Bluefish 2.2.2\" ><meta name=\"author\" content=\"Alexandre Carlos\" ><meta name=\"date\" content=\"2012-10-08T12:34:01+0100\" ><meta name=\"copyright\" content=\"\"><meta name=\"keywords\" content=\"\"><meta name=\"description\" content=\"\"><meta name=\"ROBOTS\" content=\"NOINDEX, NOFOLLOW\"><meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\"><meta http-equiv=\"content-type\" content=\"application/xhtml+xml; charset=UTF-8\"><meta http-equiv=\"content-style-type\" content=\"text/css\"><meta http-equiv=\"expires\" content=\"0\"></head><body><h1 style=\"text-align: center; color: #0000FF;\">Jaculatórias</h1>Ó Maria concebida sem pecado<br />Rogai por nós que recorremos a vós.<br />Ó meu Jesus, perdoai-nos e livrai-nos do fogo do inferno <br />Levai as almas todas para o Céu, principalmente as que mais precisarem.</body></html>";
 	private static final String ORACOESFINAIS = "<html><head></head><body>Louvado seja Nosso Senhor Jesus Cristo<br />Para sempre seja louvado<br />com Sua mãe Maria Santíssima.</body></html>";
 
 	private static final String DOLOROSO1 = "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\"><html><head><meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\"></head><body><div align=\"center\"><h2>A agonia de Jesus no Horto das Oliveiras<sub><font size=\"-1\"><i>(Lc 22,39-46))</i></font></sub></h2></div><sup><font color=\"#AA66CC\" size=\"-1\">39</font></sup>Saiu então e foi, como de costume, para o Monte das Oliveiras. E os discípulos seguiram também com Ele. <sup><font color=\"#AA66CC\" size=\"-1\">40</font></sup>Quando chegou ao local, disse-lhes: «Orai, para que não entreis em tentação.» <sup><font color=\"#AA66CC\" size=\"-1\">41</font></sup>Depois afastou-se deles, à distância de um tiro de pedra, aproximadamente; e, pondo-se de joelhos, começou a orar, dizendo: <sup><font color=\"#AA66CC\" size=\"-1\">42</font></sup>«Pai, se quiseres, afasta de mim este cálice; contudo, não se faça a minha vontade, mas a tua.»<br><br><sup><font color=\"#AA66CC\" size=\"-1\">43</font></sup>Então, vindo do Céu, apareceu-lhe um anjo que o confortava. <sup><font color=\"#AA66CC\" size=\"-1\">44</font></sup>Cheio de angústia, pôs-se a orar mais instantemente, e o suor tornou-se-lhe como grossas gotas de sangue, que caíam na terra. <sup><font color=\"#AA66CC\" size=\"-1\">45</font></sup>Depois de orar, levantou-se e foi ter com os discípulos, encontrando-os a dormir, devido à tristeza. <sup><font color=\"#AA66CC\" size=\"-1\">46</font></sup>Disse-lhes: «Porque dormis? Levantai-vos e orai, para que não entreis em tentação.»<br></body></html>";
@@ -96,7 +96,7 @@ public final class Misterios {
 	private static final String LUMINOSO5 = "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\"><html><head><meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\"></head><body><div  align=\"center\"><h2>A instituição da Eucaristia <sub><font  size=\"-1\"><i>(Mt 26,26-29)</i></font></sub></h2></div><sup><font color=\"#AA66CC\" size=\"-1\">26</font></sup>Enquanto comiam, Jesus tomou o pão e, depois de pronunciar a bênção, partiu-o e deu-o aos seus discípulos, dizendo: «Tomai, comei: Isto é o meu corpo.»<br><br><sup><font color=\"#AA66CC\" size=\"-1\">27</font></sup>Em seguida, tomou um cálice, deu graças e entregou-lho, dizendo: «Bebei dele todos. <sup><font color=\"#AA66CC\" size=\"-1\">28</font></sup>Porque este é o meu sangue, sangue da Aliança, que vai ser derramado por muitos, para perdão dos pecados.<sup><font color=\"#AA66CC\" size=\"-1\">29</font></sup>Eu vos digo: Não beberei mais deste produto da videira, até ao dia em que beber o vinho novo convosco no Reino de meu Pai.»  <br></body></html>";
 
 	/**
-	 * @param dia_semana
+	 * @param mDiaSemana
 	 *            int com o dia da semana 1 - Domingo 2 - 2ª Feira 3 - 3ª Feira
 	 *            4 - 4ª Feira 5 - 5ª Feira 6 - 6ª Feira 7 - Sábado
 	 * @return String Array com os Mistérios associados ao dia da semana
@@ -120,7 +120,7 @@ public final class Misterios {
 	}
 
 	/**
-	 * @param dia_semana
+	 * @param mDiaSemana
 	 *            int com o dia da semana 1 - Domingo 2 - 2ª Feira 3 - 3ª Feira
 	 *            4 - 4ª Feira 5 - 5ª Feira 6 - 6ª Feira 7 - Sábado
 	 * @return String com a designação dos Mistérios associados ao dia da semana
@@ -129,8 +129,7 @@ public final class Misterios {
 		return DESIGN[MISTERIOS[dia_semana]];
 	}
 
-	public static String Identificar_Misterio_do_Dia(int dia_semana,
-			int misterio) {
+	public static String identificarMisterioDia(int dia_semana, int misterio) {
 
 		if (misterio < 5) {
 			switch (MISTERIOS[dia_semana]) {
@@ -149,24 +148,24 @@ public final class Misterios {
 
 	}
 
-	public static String Obter_Misterio_do_Dia(int dia_semana, int misterio) {
+	public static String obterMisterioDia(int dia_semana, int misterio) {
 
 		switch (MISTERIOS[dia_semana]) {
 		case 0:
-			return Gloriosos(misterio);
+			return gloriosos(misterio);
 		case 1:
-			return Gozosos(misterio);
+			return gozosos(misterio);
 		case 2:
-			return Dolorosos(misterio);
+			return dolorosos(misterio);
 		case 3:
-			return Luminosos(misterio);
+			return luminosos(misterio);
 		}
 
 		return null;
 
 	}
 
-	public static final String Gozosos(int i) {
+	public static final String gozosos(int i) {
 
 		switch (i) {
 		case 0:
@@ -186,7 +185,7 @@ public final class Misterios {
 		return null;
 	}
 
-	public static final String Gloriosos(int i) {
+	public static final String gloriosos(int i) {
 
 		switch (i) {
 		case 0:
@@ -206,7 +205,7 @@ public final class Misterios {
 		return null;
 	}
 
-	public static final String Dolorosos(int i) {
+	public static final String dolorosos(int i) {
 
 		switch (i) {
 		case 0:
@@ -226,7 +225,7 @@ public final class Misterios {
 		return null;
 	}
 
-	public static final String Luminosos(int i) {
+	public static final String luminosos(int i) {
 
 		switch (i) {
 		case 0:
@@ -246,49 +245,49 @@ public final class Misterios {
 		return null;
 	}
 
-	public static final String PaiNosso() {
+	public static final String paiNosso() {
 		return PAINOSSO;
 	}
 
-	public static final String AveMaria() {
+	public static final String aveMaria() {
 		return AVE_MARIA;
 	}
 
-	public static String Gloria() {
+	public static String gloria() {
 		return GLORIA;
 	}
 
-	public static String SalveRainha() {
+	public static String salveRainha() {
 		return SALVERAINHA;
 	}
 
-	public static String Jaculatoria() {
-		return JACULATORIAS;
+	public static String jaculatoria() {
+		return JACULATORIA;
 	}
 
-	public static List<String> Oracoes_do_Misterio(int dia_semana, int misterio) {
-		List<String> oracao = new ArrayList<String>();
+	public static List<String> oracoesDoMisterio(int dia_semana, int misterio) {
+		List<String> mOracao = new ArrayList<String>();
 
 		try {
-			oracao.add(Obter_Misterio_do_Dia(dia_semana, misterio));
+			mOracao.add(obterMisterioDia(dia_semana, misterio));
 
 			if (misterio < 5) { // se for Oração Final (misterio =5) não inclui
 								// as restantes orações
-				oracao.add(PaiNosso());
+				mOracao.add(paiNosso());
 				for (int i = 2; i < 12; i++) {
-					oracao.add(AveMaria());
+					mOracao.add(aveMaria());
 				}
-				oracao.add(Gloria());
-				oracao.add(Jaculatoria());
+				mOracao.add(gloria());
+				mOracao.add(jaculatoria());
 			}
-			return oracao;
+			return mOracao;
 		} catch (Exception e) {
-			Log.e(TAG, "Exception: dia_semana=" + dia_semana + "; misterio="
+			Log.e(TAG, "Exception: mDiaSemana=" + dia_semana + "; misterio="
 					+ misterio);
 			Log.e(TAG, "Oracoes_do_Misterio", e);
 		}
 
-		return oracao;
+		return mOracao;
 	}
 
 }

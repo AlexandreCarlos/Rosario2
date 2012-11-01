@@ -18,7 +18,7 @@
 
     <fragment
         android:id="@+id/misterios_do_dia"
-        android:name="pt.carlos.alex.rosario.misterios_dia_"
+        android:name="pt.carlos.alex.rosario.MisteriosDia_"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp" />

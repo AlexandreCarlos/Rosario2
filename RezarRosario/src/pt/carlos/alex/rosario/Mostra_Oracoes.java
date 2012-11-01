@@ -27,90 +27,89 @@ import de.greenrobot.event.EventBus;
 public class Mostra_Oracoes extends SherlockFragment {
 
 	private static final String TAG = "Rosário.Mostra_Oracoes";
-//	private static final boolean DEBUG = true;
+	// private static final boolean DEBUG = true;
 
-	private EventBus eventBus;
-	private boolean registado = false;
+	private EventBus mEventBus;
+	private boolean mRegistado = false;
 
 	@ViewById(R.id.pager)
-	protected ViewPager pager;
+	protected ViewPager mPager;
 
 	@ViewById(R.id.indicator)
 	ContasRosario mIndicator;
-	
-	@ViewById(R.id.textMisterio)
-	TextView textMisterio;
 
-	protected int index_dia_semana = -1;
-	protected int misterio_selected = 0;
-	public int pagina_actual = 0;
-	
-	protected List<String> oracao;
-	protected List<Integer> coresContas;
+	@ViewById(R.id.textMisterio)
+	TextView mTextMisterio;
+
+	protected int mIndexDiaSemana = -1;
+	protected int mMisterioSelected = 0;
+	public int mPaginaActual = 0;
+
+	protected List<String> mOracao;
+	protected List<Integer> mCoresContas;
 
 	@AfterInject
 	void startUp() {
-		eventBus = EventBus.getDefault();
+		mEventBus = EventBus.getDefault();
 		registaBus();
 
-		FragmentActivity SFA = getActivity();
-		
-		Log.i(TAG, "Activity mother:"+SFA.getClass());
-		
-		
-		if (SFA.getClass() == MainActivity_.class) {
-			
-			Log.i(TAG, "Argumentos da MainActivity");
-			
-			MainActivity ma = (MainActivity) getActivity();
-			index_dia_semana = ma.index_dia_semana;
-			misterio_selected = ma.misterio_selected;
-			pagina_actual = ma.pagina_actual;
-			ma = null;
-		} else {
-			if (SFA.getClass() == MostraOracoes_.class) {
+		FragmentActivity fragmentActivity = getActivity();
 
-				Log.i(TAG, "Argumentos da MostraOracoes");
-				
-				MostraOracoes ma = (MostraOracoes) getActivity();
-				index_dia_semana = ma.index_dia_semana;
-				misterio_selected = ma.misterio_selected;
-				pagina_actual = ma.pagina_actual;
-				ma = null;
+		// Log.i(TAG, "Activity mother:"+fragmentActivity.getClass());
+
+		if (fragmentActivity.getClass() == MainActivity_.class) {
+
+			// Log.i(TAG, "Argumentos da MainActivity");
+
+			MainActivity mMa = (MainActivity) getActivity();
+			mIndexDiaSemana = mMa.mIndexDiaSemana;
+			mMisterioSelected = mMa.mMisterioSelected;
+			mPaginaActual = mMa.mPaginaActual;
+			mMa = null;
+		} else {
+			if (fragmentActivity.getClass() == ActivityMostraOracoes_.class) {
+
+				// Log.i(TAG, "Argumentos da ActivityMostraOracoes");
+
+				ActivityMostraOracoes mMa = (ActivityMostraOracoes) getActivity();
+				mIndexDiaSemana = mMa.index_dia_semana;
+				mMisterioSelected = mMa.misterio_selected;
+				mPaginaActual = mMa.pagina_actual;
+				mMa = null;
 			}
 		}
-	
-		
-		
-//		MainActivity ma = (MainActivity) getActivity();
-//		index_dia_semana = ma.index_dia_semana;
-//		misterio_selected = ma.misterio_selected;
-//		pagina_actual = ma.pagina_actual;
-//		ma = null;
+
+		// MainActivity ma = (MainActivity) getActivity();
+		// mIndexDiaSemana = ma.index_dia_semana;
+		// mMisterioSelected = ma.misterio_selected;
+		// mPaginaActual = ma.pagina_actual;
+		// ma = null;
 
 		if (V.DEBUG) {
-			Log.d(TAG, "Inicializa-index_dia_semana:" + index_dia_semana + "; misterio_selected:" + misterio_selected+"; pagina_actual:"+pagina_actual);
+			Log.d(TAG, "Inicializa-mIndexDiaSemana:" + mIndexDiaSemana
+					+ "; mMisterioSelected:" + mMisterioSelected
+					+ "; mPaginaActual:" + mPaginaActual);
 		}
-				
+
 	}
 
 	@AfterViews
 	void init() {
 
 		try {
-			oracao = Misterios.Oracoes_do_Misterio(index_dia_semana,
-					misterio_selected);
+			mOracao = Misterios.oracoesDoMisterio(mIndexDiaSemana,
+					mMisterioSelected);
 
 			identificarMisterio();
-			
+
 			this.gerarCoresContas();
 
-			pager.setAdapter(new OracoesPageAdapter(this, oracao));
+			mPager.setAdapter(new OracoesPageAdapter(this, mOracao));
 
 			final float density = getResources().getDisplayMetrics().density;
 
-			mIndicator.setViewPager(pager);
-			mIndicator.setCoresContas(coresContas);
+			mIndicator.setViewPager(mPager);
+			mIndicator.setCoresContas(mCoresContas);
 
 			this.detectaPaginaCorrente();
 
@@ -137,16 +136,16 @@ public class Mostra_Oracoes extends SherlockFragment {
 	}
 
 	private void registaBus() {
-		if (!registado) {
-			eventBus.register(this);
-			registado = true;
+		if (!mRegistado) {
+			mEventBus.register(this);
+			mRegistado = true;
 		}
 	}
 
 	private void desregistaBus() {
-		if (registado) {
-			eventBus.unregister(this);
-			registado = false;
+		if (mRegistado) {
+			mEventBus.unregister(this);
+			mRegistado = false;
 		}
 	}
 
@@ -165,44 +164,44 @@ public class Mostra_Oracoes extends SherlockFragment {
 
 	private void gerarCoresContas() {
 
-		coresContas = new ArrayList<Integer>();
+		mCoresContas = new ArrayList<Integer>();
 
-		coresContas.add(getResources().getColor(R.color.ics_yellow)); // Evangelho
-		coresContas.add(getResources().getColor(R.color.ics_green)); // Pai-Nosso
+		mCoresContas.add(getResources().getColor(R.color.ics_yellow)); // Evangelho
+		mCoresContas.add(getResources().getColor(R.color.ics_green)); // Pai-Nosso
 
 		for (int i = 2; i < 12; i++) {
-			coresContas.add(getResources().getColor(R.color.ics_blue)); // Avé-Maria
+			mCoresContas.add(getResources().getColor(R.color.ics_blue)); // Avé-Maria
 		}
 
-		coresContas.add(getResources().getColor(R.color.ics_bold_yellow)); // Glória
-		coresContas.add(getResources().getColor(R.color.ics_violet)); // Jaculatória
+		mCoresContas.add(getResources().getColor(R.color.ics_bold_yellow)); // Glória
+		mCoresContas.add(getResources().getColor(R.color.ics_violet)); // Jaculatória
 
 	}
-
 
 	private void identificarMisterio() {
-		
-		textMisterio.setText(Misterios.Identificar_Misterio_do_Dia(index_dia_semana, misterio_selected));
-		
+
+		mTextMisterio.setText(Misterios.identificarMisterioDia(
+				mIndexDiaSemana, mMisterioSelected));
+
 	}
-	
+
 	private void detectaPaginaCorrente() {
 
-		// We set this on the indicator, NOT the pager
+		// We set this on the indicator, NOT the mPager
 		mIndicator
 				.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 					@Override
 					public void onPageSelected(int position) {
-						pagina_actual = position;
+						mPaginaActual = position;
 						// Toast.makeText(getSherlockActivity(),
 						// "Changed to page " + position,
 						// Toast.LENGTH_SHORT).show();
-						
-						eventBus.post((Integer)position);
-						
+
+						mEventBus.post((Integer) position);
+
 						if (V.DEBUG) {
-							Log.d(TAG, "onPageSelected-position:"+position);
-							Log.d(TAG, "Página (Integer) eventBus generated");
+							Log.d(TAG, "onPageSelected-position:" + position);
+							Log.d(TAG, "Página (Integer) mEventBus generated");
 						}
 					}
 
@@ -223,16 +222,17 @@ public class Mostra_Oracoes extends SherlockFragment {
 			Log.d(TAG, "Evento Rezar recebido:" + event);
 		}
 
-		index_dia_semana = event.dia_semana;
-		misterio_selected = event.misterio;
-		
-		identificarMisterio();
-		
-		oracao.clear();
-		oracao.addAll(Misterios.Oracoes_do_Misterio(index_dia_semana, misterio_selected));
-		pager.getAdapter().notifyDataSetChanged();
+		mIndexDiaSemana = event.dia_semana;
+		mMisterioSelected = event.misterio;
 
-		this.pager.setCurrentItem(event.pagina);
+		identificarMisterio();
+
+		mOracao.clear();
+		mOracao.addAll(Misterios.oracoesDoMisterio(mIndexDiaSemana,
+				mMisterioSelected));
+		mPager.getAdapter().notifyDataSetChanged();
+
+		this.mPager.setCurrentItem(event.pagina);
 	}
 
 }

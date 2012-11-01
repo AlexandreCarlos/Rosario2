@@ -15,7 +15,7 @@ import com.googlecode.androidannotations.annotations.ViewById;
 
 @EActivity(R.layout.activity_mostra_oracoes)
 @OptionsMenu(R.menu.activity_main)
-public class MostraOracoes extends SherlockFragmentActivity {
+public class ActivityMostraOracoes extends SherlockFragmentActivity {
 
 	final static String TAG = "Rosário.MostraOracoes Activity";
 
@@ -47,7 +47,7 @@ public class MostraOracoes extends SherlockFragmentActivity {
 		}
 
 		if (V.DEBUG) {
-			Log.d(TAG, "index_dia_semana: " + index_dia_semana);
+			Log.d(TAG, "mIndexDiaSemana: " + index_dia_semana);
 		}
 	}
 
@@ -57,13 +57,13 @@ public class MostraOracoes extends SherlockFragmentActivity {
 		try {
 //			eventBus.register(this);
 
-//			index_dia_semana = getIntent().getIntExtra(V.DIA, -1);
-//			misterio_selected = getIntent().getIntExtra(V.MISTERIO, -1);
-//			pagina_actual = getIntent().getIntExtra(V.PAGINA, -1);
+//			mIndexDiaSemana = getIntent().getIntExtra(V.DIA, -1);
+//			mMisterioSelected = getIntent().getIntExtra(V.MISTERIO, -1);
+//			mPaginaActual = getIntent().getIntExtra(V.PAGINA, -1);
 //			
 //			if (V.DEBUG) {
-//				Log.d(TAG, "IntentExtra values -Dia:"+index_dia_semana+"; Mistério:"+misterio_selected+"; Página:"+pagina_actual);
-//				Log.d(TAG, "Dia Semana:"+V.DIA_SEMANA[index_dia_semana]);
+//				Log.d(TAG, "IntentExtra values -Dia:"+mIndexDiaSemana+"; Mistério:"+mMisterioSelected+"; Página:"+mPaginaActual);
+//				Log.d(TAG, "Dia Semana:"+V.DIA_SEMANA[mIndexDiaSemana]);
 //			}
 
 			dia_semana.setText(V.DIA_SEMANA[index_dia_semana]);

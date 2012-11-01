@@ -20,7 +20,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MostraOracoes_" android:label="@string/oracoes_dia" android:icon="@drawable/ic_launcher"></activity>
+        <activity android:name=".ActivityMostraOracoes_" android:label="@string/oracoes_dia" android:icon="@drawable/ic_launcher"></activity>
     </application>
 
 </manifest>
