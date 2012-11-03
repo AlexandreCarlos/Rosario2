@@ -86,4 +86,12 @@ public class Estado {
 		this.mDualPage = mDualPage;
 	}
 	
+	/**
+	 * @return String representation of Estado
+	 */
+	@Override
+	public String toString() {
+		return "Estado [mDiaSemana=" + mDiaSemana + ", mMisterio=" + mMisterio
+				+ ", mPagina=" + mPagina + ", mDualPage=" + mDualPage + "]";
+	}
 }

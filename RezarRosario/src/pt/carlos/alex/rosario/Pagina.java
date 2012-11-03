@@ -39,4 +39,11 @@ public class Pagina {
 		this.mPagina = mPagina;
 	}
 	
+	/**
+	 * @return String representation of Pagina
+	 */
+	@Override
+	public String toString() {
+		return "Pagina [mPagina=" + mPagina + "]";
+	}
 }

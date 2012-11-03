@@ -5,8 +5,8 @@ package pt.carlos.alex.rosario;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.CountDownLatch;
 
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.widget.TextView;
@@ -14,7 +14,9 @@ import android.widget.TextView;
 import com.actionbarsherlock.app.SherlockFragment;
 import com.googlecode.androidannotations.annotations.AfterInject;
 import com.googlecode.androidannotations.annotations.AfterViews;
+import com.googlecode.androidannotations.annotations.Background;
 import com.googlecode.androidannotations.annotations.EFragment;
+import com.googlecode.androidannotations.annotations.UiThread;
 import com.googlecode.androidannotations.annotations.ViewById;
 
 import de.greenrobot.event.EventBus;
@@ -27,10 +29,10 @@ import de.greenrobot.event.EventBus;
 public class Mostra_Oracoes extends SherlockFragment {
 
 	private static final String TAG = "Rosário.Mostra_Oracoes";
-	// private static final boolean DEBUG = true;
 
 	private EventBus mEventBus;
 	private boolean mRegistado = false;
+	private final CountDownLatch startSignal = new CountDownLatch(2);
 
 	@ViewById(R.id.pager)
 	protected ViewPager mPager;
@@ -49,86 +51,29 @@ public class Mostra_Oracoes extends SherlockFragment {
 	protected List<Integer> mCoresContas;
 
 	@AfterInject
-	void startUp() {
+	void beforeCreate() {
 		mEventBus = EventBus.getDefault();
+
 		registaBus();
-
-		FragmentActivity fragmentActivity = getActivity();
-
-		// Log.i(TAG, "Activity mother:"+fragmentActivity.getClass());
-
-		if (fragmentActivity.getClass() == MainActivity_.class) {
-
-			// Log.i(TAG, "Argumentos da MainActivity");
-
-			MainActivity mMa = (MainActivity) getActivity();
-			mIndexDiaSemana = mMa.mIndexDiaSemana;
-			mMisterioSelected = mMa.mMisterioSelected;
-			mPaginaActual = mMa.mPaginaActual;
-			mMa = null;
-		} else {
-			if (fragmentActivity.getClass() == ActivityMostraOracoes_.class) {
-
-				// Log.i(TAG, "Argumentos da ActivityMostraOracoes");
-
-				ActivityMostraOracoes mMa = (ActivityMostraOracoes) getActivity();
-				mIndexDiaSemana = mMa.index_dia_semana;
-				mMisterioSelected = mMa.misterio_selected;
-				mPaginaActual = mMa.pagina_actual;
-				mMa = null;
-			}
-		}
-
-		// MainActivity ma = (MainActivity) getActivity();
-		// mIndexDiaSemana = ma.index_dia_semana;
-		// mMisterioSelected = ma.misterio_selected;
-		// mPaginaActual = ma.pagina_actual;
-		// ma = null;
 
 		if (V.DEBUG) {
 			Log.d(TAG, "Inicializa-mIndexDiaSemana:" + mIndexDiaSemana
 					+ "; mMisterioSelected:" + mMisterioSelected
 					+ "; mPaginaActual:" + mPaginaActual);
+			Log.d(TAG, "beforeCreate.startSignal=" + startSignal.getCount());
 		}
-
 	}
 
 	@AfterViews
-	void init() {
+	void afterCreate() {
 
 		try {
-			mOracao = Misterios.oracoesDoMisterio(mIndexDiaSemana,
-					mMisterioSelected);
 
-			identificarMisterio();
+			startSignal.countDown();
 
-			this.gerarCoresContas();
-
-			mPager.setAdapter(new OracoesPageAdapter(this, mOracao));
-
-			final float density = getResources().getDisplayMetrics().density;
-
-			mIndicator.setViewPager(mPager);
-			mIndicator.setCoresContas(mCoresContas);
-
-			this.detectaPaginaCorrente();
-
-			mIndicator.setBackgroundColor(getResources().getColor(
-					R.color.ics_dark_grey)); // cor de fundo do ViewPage
-												// Indicator
-			mIndicator.setRadius(6 * density);
-			mIndicator.setPageColor(getResources().getColor(R.color.ics_blue)); // Cor
-																				// de
-																				// fundo
-																				// dos
-																				// circulos
-			mIndicator.setFillColor(getResources().getColor(
-					R.color.ics_clear_grey)); // Cor de fundo do circulo da
-												// página visivel
-			mIndicator.setStrokeColor(getResources()
-					.getColor(R.color.ics_black)); // Cor da circunferencia dos
-													// circulos
-
+			if (V.DEBUG) {
+				Log.d(TAG, "afterCreate.startSignal=" + startSignal.getCount());
+			}
 		} catch (Exception e) {
 			Log.e(TAG, "Erro no init() @AfterViews:", e);
 		}
@@ -162,27 +107,88 @@ public class Mostra_Oracoes extends SherlockFragment {
 		super.onPause();
 	}
 
-	private void gerarCoresContas() {
+	@Background
+	protected void initDezena() {
+		try {
+			mCoresContas = new ArrayList<Integer>();
 
-		mCoresContas = new ArrayList<Integer>();
+			mCoresContas.add(getResources().getColor(R.color.ics_yellow)); // Evangelho
+			mCoresContas.add(getResources().getColor(R.color.ics_green)); // Pai-Nosso
 
-		mCoresContas.add(getResources().getColor(R.color.ics_yellow)); // Evangelho
-		mCoresContas.add(getResources().getColor(R.color.ics_green)); // Pai-Nosso
+			for (int i = 2; i < 12; i++) {
+				mCoresContas.add(getResources().getColor(R.color.ics_blue)); // Avé-Maria
+			}
 
-		for (int i = 2; i < 12; i++) {
-			mCoresContas.add(getResources().getColor(R.color.ics_blue)); // Avé-Maria
+			mCoresContas.add(getResources().getColor(R.color.ics_bold_yellow)); // Glória
+			mCoresContas.add(getResources().getColor(R.color.ics_violet)); // Jaculatória
+
+			if (V.DEBUG) {
+				Log.d(TAG, "initDezena before.await.startSignal=" + startSignal.getCount());
+			}
+			
+			startSignal.await();  // Espera pela conclusão da inicialização do estado e das Views
+			
+			if (V.DEBUG) {
+				Log.d(TAG, "initDezena after.await.startSignal=" + startSignal.getCount());
+			}
+			
+			mOracao = Misterios.oracoesDoMisterio(mIndexDiaSemana,
+					mMisterioSelected);
+
+			geraPageView();
+
+		} catch (InterruptedException e) {
+			Log.e(TAG, "initDezena startSignal await Interrupted", e);
 		}
-
-		mCoresContas.add(getResources().getColor(R.color.ics_bold_yellow)); // Glória
-		mCoresContas.add(getResources().getColor(R.color.ics_violet)); // Jaculatória
-
 	}
 
 	private void identificarMisterio() {
 
-		mTextMisterio.setText(Misterios.identificarMisterioDia(
-				mIndexDiaSemana, mMisterioSelected));
+		mTextMisterio.setText(Misterios.identificarMisterioDia(mIndexDiaSemana,
+				mMisterioSelected));
 
+	}
+
+	/**
+	 * 
+	 */
+	@UiThread
+	protected void geraPageView() {
+
+		identificarMisterio();
+
+		mPager.setAdapter(new OracoesPageAdapter(this, mOracao));
+
+		final float density = getResources().getDisplayMetrics().density;
+
+		mIndicator.setViewPager(mPager);
+		mIndicator.setCoresContas(mCoresContas);
+
+		this.detectaPaginaCorrente();
+
+		mIndicator.setBackgroundColor(getResources().getColor(
+				R.color.ics_dark_grey)); // cor de fundo do ViewPage
+											// Indicator
+		mIndicator.setRadius(6 * density);
+		mIndicator.setPageColor(getResources().getColor(R.color.ics_blue)); // Cor
+																			// de
+																			// fundo
+																			// dos
+																			// circulos
+		mIndicator
+				.setFillColor(getResources().getColor(R.color.ics_clear_grey)); // Cor
+																				// de
+																				// fundo
+																				// do
+																				// circulo
+																				// da
+																				// página
+																				// visivel
+		mIndicator.setStrokeColor(getResources().getColor(R.color.ics_black)); // Cor
+																				// da
+																				// circunferencia
+																				// dos
+																				// circulos
 	}
 
 	private void detectaPaginaCorrente() {
@@ -192,10 +198,8 @@ public class Mostra_Oracoes extends SherlockFragment {
 				.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 					@Override
 					public void onPageSelected(int position) {
+
 						mPaginaActual = position;
-						// Toast.makeText(getSherlockActivity(),
-						// "Changed to page " + position,
-						// Toast.LENGTH_SHORT).show();
 
 						mEventBus.post(new Pagina(position));
 
@@ -226,7 +230,9 @@ public class Mostra_Oracoes extends SherlockFragment {
 		mMisterioSelected = event.misterio;
 
 		identificarMisterio();
-
+/*
+ * Refresca o conteudo das páginas de acordo com o mistério escolhido 
+ */
 		mOracao.clear();
 		mOracao.addAll(Misterios.oracoesDoMisterio(mIndexDiaSemana,
 				mMisterioSelected));
@@ -235,4 +241,22 @@ public class Mostra_Oracoes extends SherlockFragment {
 		this.mPager.setCurrentItem(event.pagina);
 	}
 
+	public void onEvent(Estado event) {
+		if (V.DEBUG) {
+			Log.d(TAG, "Evento Estado recebido:" + event);
+		}
+
+		this.mIndexDiaSemana = event.getDiaSemana();
+		this.mMisterioSelected = event.getMisterio();
+		this.mPaginaActual = event.getPagina();
+
+		startSignal.countDown();
+		
+		if (V.DEBUG) {
+			Log.d(TAG, "onEvent(Estado event) startSignal=" + startSignal.getCount());
+		}
+
+		this.initDezena(); // Estado inicial obtido, iniciar a criação da ViewPageindicator 
+
+	}
 }

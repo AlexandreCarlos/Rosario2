@@ -62,10 +62,8 @@ public class Rezar {
 		this.pagina = pagina;
 	}
 	
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#toString()
+	/**
+	 * @return String representation of Rezar
 	 */
 	@Override
 	public String toString() {

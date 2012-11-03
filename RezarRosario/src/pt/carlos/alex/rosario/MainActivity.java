@@ -59,19 +59,25 @@ public class MainActivity extends SherlockFragmentActivity {
 	@AfterViews
 	void init() {
 
-//		try {
-			mEventBus.register(this);
+		// try {
+		mEventBus.register(this);
 
-			mDiaSemana.setText(V.DIA_SEMANA[mIndexDiaSemana] + " - "
-					+ Misterios.designacaoMisterio(mIndexDiaSemana));
+		mDiaSemana.setText(V.DIA_SEMANA[mIndexDiaSemana] + " - "
+				+ Misterios.designacaoMisterio(mIndexDiaSemana));
 
-			this.mDualPage = this.mOracoes != null
-					&& this.mOracoes.getVisibility() == View.VISIBLE;
+		this.mDualPage = this.mOracoes != null
+				&& this.mOracoes.getVisibility() == View.VISIBLE;
 
-			
-			mEventBus.post(new Estado(mIndexDiaSemana, mMisterioSelected, mPaginaActual, mDualPage));
-			
-			Log.i(TAG, "Dual Mode:" + this.mDualPage);
+		mEventBus.post(new Estado(mIndexDiaSemana, mMisterioSelected,
+				mPaginaActual, mDualPage));
+
+		if (V.DEBUG) {
+			Log.d(TAG, "Triggered event Estado. Dia:" + mIndexDiaSemana
+					+ "; Mistério:" + mMisterioSelected + "; Página:"
+					+ mPaginaActual + "; DualPage:" + mDualPage);
+		}
+
+//		Log.i(TAG, "Dual Mode:" + this.mDualPage);
 
 		// } catch (Exception e) {
 		// Log.e(TAG, "Erro no init() @AfterViews:", e);
