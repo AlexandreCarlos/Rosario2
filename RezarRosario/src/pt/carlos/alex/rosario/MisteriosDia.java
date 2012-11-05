@@ -1,5 +1,20 @@
+/*
+ * Copyright (C) 2012 Alexandre Carlos 
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */ 
 /**
- * 
+ * Fragmento com a visualização dos mistérios do dia. 
  */
 package pt.carlos.alex.rosario;
 
@@ -34,8 +49,11 @@ public class MisteriosDia extends SherlockListFragment {
 	@ViewById(R.id.oracoes)
 	protected View mOracoes;
 
+   /**
+    * Inicialização do event bus e respeito registo. 
+    */
 	@AfterInject
-	void obterDiaSemana() {
+	void beforeCreate() {
 
 		mEventBus = EventBus.getDefault();
 		mEventBus.register(this);
@@ -52,6 +70,9 @@ public class MisteriosDia extends SherlockListFragment {
 
 	}
 
+   /**
+    * Criação da List View com os mistérios do dia. 
+    */
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
@@ -69,6 +90,14 @@ public class MisteriosDia extends SherlockListFragment {
 
 	}
 
+   /**
+    * Tratamento do mistério selecionado. 
+    *
+    * Se o atividade tiver 2 fragmentos desencadeia o evento Rezar. 
+    * Senão inicia a atividade ActivityMostraOracoes com o estado da aplicação
+    * como parâmetros 'Extra'.
+    *
+    */
 	@Override
 	public void onListItemClick(ListView l, View v, int position, long id) {
 		if (V.DEBUG) {
@@ -103,6 +132,9 @@ public class MisteriosDia extends SherlockListFragment {
 
 	}
 	
+	/**
+	 * Trata os eventos de alteração de estado da aplicação. 
+	 */
 	public void onEvent(Estado event) {
 		mIndexDiaSemana = event.getDiaSemana();
 		this.mDualPage = event.isDualPage();

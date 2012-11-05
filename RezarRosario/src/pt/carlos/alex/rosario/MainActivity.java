@@ -1,4 +1,19 @@
-package pt.carlos.alex.rosario;
+/*
+ * Copyright (C) 2012 Alexandre Carlos 
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+ package pt.carlos.alex.rosario;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;
@@ -16,7 +31,11 @@ import com.googlecode.androidannotations.annotations.OptionsMenu;
 import com.googlecode.androidannotations.annotations.ViewById;
 
 import de.greenrobot.event.EventBus;
-
+/**
+ *
+ * Atividade principal que inicializa e controla os estados da aplicaçã. 
+ *
+ */
 @EActivity(R.layout.activity_main)
 @OptionsMenu(R.menu.activity_main)
 public class MainActivity extends SherlockFragmentActivity {
@@ -43,6 +62,10 @@ public class MainActivity extends SherlockFragmentActivity {
 	protected int mPaginaActual = 0;
 	protected boolean mDualPage = false;
 
+   /**
+    * Inicialização antes da criação das views. 
+    * Determina o dia da semana atual. 
+    */
 	@AfterInject
 	void startup() {
 		mCalendario = (GregorianCalendar) GregorianCalendar.getInstance();
@@ -56,6 +79,11 @@ public class MainActivity extends SherlockFragmentActivity {
 		}
 	}
 
+   /**
+    * Inicialização depois da criação das views. 
+    * Determina se o layout inclui 2 views. 
+    * Notifica o novo estado da aplicação. 
+    */
 	@AfterViews
 	void init() {
 
@@ -85,6 +113,9 @@ public class MainActivity extends SherlockFragmentActivity {
 
 	}
 
+   /**
+    * Guarda o estado da aplicação. 
+    */
 	@Override
 	protected void onSaveInstanceState(Bundle outState) {
 		super.onSaveInstanceState(outState);
@@ -100,7 +131,12 @@ public class MainActivity extends SherlockFragmentActivity {
 		}
 
 	}
-
+	
+   /**
+    *
+    * Recupera o estado da aplicação e notifica as alterações. 
+    *
+    */
 	@Override
 	protected void onRestoreInstanceState(Bundle inState) {
 		super.onRestoreInstanceState(inState);
@@ -148,6 +184,9 @@ public class MainActivity extends SherlockFragmentActivity {
 
 	}
 
+   /**
+    * Recebe as notificações de mudança de página e guarda no estado. 
+    */
 	public void onEvent(Pagina event) {
 
 		if (V.DEBUG) {
@@ -158,6 +197,10 @@ public class MainActivity extends SherlockFragmentActivity {
 
 	}
 
+   /**
+    * Recebe a notificação de mistério selecionado e guarda no estado. 
+    *
+    */
 	public void onEvent(Rezar event) {
 
 		if (V.DEBUG) {

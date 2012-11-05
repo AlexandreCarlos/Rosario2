@@ -1,3 +1,18 @@
+/*
+ * Copyright (C) 2012 Alexandre Carlos 
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 /**
  * Fragment que mostra as orações associadas a um mistério
  */
@@ -32,7 +47,7 @@ public class Mostra_Oracoes extends SherlockFragment {
 
 	private EventBus mEventBus;
 	private boolean mRegistado = false;
-	private final CountDownLatch startSignal = new CountDownLatch(2);
+	private final CountDownLatch startSignal = new CountDownLatch(2); // Controlo da ocorrência das condições de inicialização do Page Viewer. 
 
 	@ViewById(R.id.pager)
 	protected ViewPager mPager;
@@ -49,7 +64,10 @@ public class Mostra_Oracoes extends SherlockFragment {
 
 	protected List<String> mOracao;
 	protected List<Integer> mCoresContas;
-
+   
+   /**
+    * Inicialização e registo no event bus. 
+    */
 	@AfterInject
 	void beforeCreate() {
 		mEventBus = EventBus.getDefault();
@@ -64,6 +82,9 @@ public class Mostra_Oracoes extends SherlockFragment {
 		}
 	}
 
+   /**
+    * Ativação da condição de View (group) inicializada.
+    */
 	@AfterViews
 	void afterCreate() {
 
@@ -80,6 +101,9 @@ public class Mostra_Oracoes extends SherlockFragment {
 
 	}
 
+   /**
+    * Método auxiliar de controlo do registo no event bus. 
+    */
 	private void registaBus() {
 		if (!mRegistado) {
 			mEventBus.register(this);
@@ -87,6 +111,9 @@ public class Mostra_Oracoes extends SherlockFragment {
 		}
 	}
 
+   /**
+    * Método auxiliar de controlo do desregisto no event bus. 
+    */
 	private void desregistaBus() {
 		if (mRegistado) {
 			mEventBus.unregister(this);
@@ -107,6 +134,11 @@ public class Mostra_Oracoes extends SherlockFragment {
 		super.onPause();
 	}
 
+   /**
+    *
+    * Processo background de inicialização das orações associadas ao mistério selecionado. 
+    *
+    */
 	@Background
 	protected void initDezena() {
 		try {
@@ -142,6 +174,10 @@ public class Mostra_Oracoes extends SherlockFragment {
 		}
 	}
 
+
+   /**
+    * Método auxiliar que identifica o tipo de mistério do dia. 
+    */
 	private void identificarMisterio() {
 
 		mTextMisterio.setText(Misterios.identificarMisterioDia(mIndexDiaSemana,
@@ -150,7 +186,7 @@ public class Mostra_Oracoes extends SherlockFragment {
 	}
 
 	/**
-	 * 
+	 * Método auxiliar gerador da View Page com as orações associadas ao mistério selecionado. 
 	 */
 	@UiThread
 	protected void geraPageView() {
@@ -191,6 +227,9 @@ public class Mostra_Oracoes extends SherlockFragment {
 																				// circulos
 	}
 
+   /**
+    * Definição do Page Change Listener para as mudanças de página na View Page. 
+    */
 	private void detectaPaginaCorrente() {
 
 		// We set this on the indicator, NOT the mPager
@@ -220,6 +259,9 @@ public class Mostra_Oracoes extends SherlockFragment {
 				});
 	}
 
+   /**
+    * Trata da mudança de Mistério, notificado pelo evento Rezar. 
+    */
 	public void onEvent(Rezar event) {
 
 		if (V.DEBUG) {
@@ -241,6 +283,9 @@ public class Mostra_Oracoes extends SherlockFragment {
 		this.mPager.setCurrentItem(event.pagina);
 	}
 
+   /**
+    * Recebe a notificação do estado da aplicação e ativa a condição de estado inicial da aplicação definido. 
+    */
 	public void onEvent(Estado event) {
 		if (V.DEBUG) {
 			Log.d(TAG, "Evento Estado recebido:" + event);

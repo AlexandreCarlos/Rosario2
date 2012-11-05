@@ -1,5 +1,20 @@
+/*
+ * Copyright (C) 2012 Alexandre Carlos 
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */ 
 /**
- * 
+ * Classe agregadora de todos os mistérios e orações do Rosário de Fátima. 
  */
 package pt.carlos.alex.rosario;
 
@@ -96,6 +111,8 @@ public final class Misterios {
 	private static final String LUMINOSO5 = "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\"><html><head><meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\"></head><body><div  align=\"center\"><h2>A instituição da Eucaristia <sub><font  size=\"-1\"><i>(Mt 26,26-29)</i></font></sub></h2></div><sup><font color=\"#AA66CC\" size=\"-1\">26</font></sup>Enquanto comiam, Jesus tomou o pão e, depois de pronunciar a bênção, partiu-o e deu-o aos seus discípulos, dizendo: «Tomai, comei: Isto é o meu corpo.»<br><br><sup><font color=\"#AA66CC\" size=\"-1\">27</font></sup>Em seguida, tomou um cálice, deu graças e entregou-lho, dizendo: «Bebei dele todos. <sup><font color=\"#AA66CC\" size=\"-1\">28</font></sup>Porque este é o meu sangue, sangue da Aliança, que vai ser derramado por muitos, para perdão dos pecados.<sup><font color=\"#AA66CC\" size=\"-1\">29</font></sup>Eu vos digo: Não beberei mais deste produto da videira, até ao dia em que beber o vinho novo convosco no Reino de meu Pai.»  <br></body></html>";
 
 	/**
+	 * Obter a designação dos Mistérios do dia da semana. 
+	 *
 	 * @param dia_semana
 	 *            int com o dia da semana 1 - Domingo 2 - 2ª Feira 3 - 3ª Feira
 	 *            4 - 4ª Feira 5 - 5ª Feira 6 - 6ª Feira 7 - Sábado
@@ -120,22 +137,26 @@ public final class Misterios {
 	}
 
 	/**
+	 * Obter a designação do tipo de Mistério do dia da semana. 
+	 *
 	 * @param dia_semana
 	 *            int com o dia da semana 1 - Domingo 2 - 2ª Feira 3 - 3ª Feira
 	 *            4 - 4ª Feira 5 - 5ª Feira 6 - 6ª Feira 7 - Sábado
-	 * @return String com a designação dos Mistérios associados ao dia da semana
+	 * @return String com a designação do tipo de Mistério do dia da semana
 	 */
 	public static String designacaoMisterio(int dia_semana) {
 		return DESIGN[MISTERIOS[dia_semana]];
 	}
 
 	/**
+	 * Obter a identificação do Mistério selecionado para o dia da semana. 
+	 *
 	 * @param dia_semana
 	 *            int com o dia da semana 1 - Domingo 2 - 2ª Feira 3 - 3ª Feira
 	 *            4 - 4ª Feira 5 - 5ª Feira 6 - 6ª Feira 7 - Sábado
 	 * @param misterio
 	 *            int com o mistério selecionado (Base de Referência 0)
-	 * @return String com a designação do Mistério selecionado para o dia da semana
+	 * @return String com a identificação do Mistério selecionado para o dia da semana
 	 */
 	public static String identificarMisterioDia(int dia_semana, int misterio) {
 
@@ -157,6 +178,8 @@ public final class Misterios {
 	}
 
 	/**
+	 * Obter o texto bíblico referente ao Mistério selecionado para o dia da semana.
+	 *
 	 * @param dia_semana
 	 *            int com o dia da semana 1 - Domingo 2 - 2ª Feira 3 - 3ª Feira
 	 *            4 - 4ª Feira 5 - 5ª Feira 6 - 6ª Feira 7 - Sábado
@@ -182,6 +205,8 @@ public final class Misterios {
 	}
 
 	/**
+	 * Obter o texto bíblico referente ao Mistério Gozoso selecionado.
+	 *
 	 * @param i
 	 *            int com o mistério selecionado (Base de Referência 0)
 	 * @return String com o texto bíblico referente ao Mistério Gozoso selecionado
@@ -207,6 +232,8 @@ public final class Misterios {
 	}
 
 	/**
+	 * Obter o texto bíblico referente ao Mistério Glorioso selecionado.
+	 *
 	 * @param i
 	 *            int com o mistério selecionado (Base de Referência 0)
 	 * @return String com o texto bíblico referente ao Mistério Glorioso selecionado
@@ -232,6 +259,8 @@ public final class Misterios {
 	}
 
 	/**
+	 * Obter o texto bíblico referente ao Mistério Doloroso selecionado.
+	 *
 	 * @param i
 	 *            int com o mistério selecionado (Base de Referência 0)
 	 * @return String com o texto bíblico referente ao Mistério Doloroso selecionado
@@ -257,6 +286,8 @@ public final class Misterios {
 	}
 
 	/**
+	 * Obter o texto bíblico referente ao Mistério Luminoso selecionado.
+	 *
 	 * @param i
 	 *            int com o mistério selecionado (Base de Referência 0)
 	 * @return String com o texto bíblico referente ao Mistério Luminoso selecionado
@@ -282,13 +313,17 @@ public final class Misterios {
 	}
 
 	/**
+	 * Obter o Pai Nosso. 
+	 *
 	 * @return String com a oração do Pai Nosso
 	 */
 	public static final String paiNosso() {
 		return PAINOSSO;
 	}
 
-		/**
+	/**
+	 * Obter a Avé Maria. 
+	 *
 	 * @return String com a oração da Avé Maria
 	 */
 	public static final String aveMaria() {
@@ -296,6 +331,8 @@ public final class Misterios {
 	}
 
 	/**
+	 * Obter o Glória. 
+	 *
 	 * @return String com a oração do Glória
 	 */
 	public static String gloria() {
@@ -303,6 +340,8 @@ public final class Misterios {
 	}
 
 	/**
+	 * Obter o Salvé Rainha. 
+	 *
 	 * @return String com a oração da Salvé Rainha
 	 */
 	public static String salveRainha() {
@@ -310,6 +349,8 @@ public final class Misterios {
 	}
 
 	/**
+	 * Obter a Jaculatória final. 
+	 *
 	 * @return String com a Jaculatória final
 	 */
 	public static String jaculatoria() {
@@ -317,6 +358,8 @@ public final class Misterios {
 	}
 
 	/**
+	 * Obter a lista das orações da Dezena do Mistério selecionado para o dia da semana. 
+	 *
 	 * @param dia_semana
 	 *            int com o dia da semana 1 - Domingo 2 - 2ª Feira 3 - 3ª Feira
 	 *            4 - 4ª Feira 5 - 5ª Feira 6 - 6ª Feira 7 - Sábado
