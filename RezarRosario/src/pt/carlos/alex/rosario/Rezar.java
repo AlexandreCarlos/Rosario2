@@ -23,7 +23,7 @@ package pt.carlos.alex.rosario;
  * 
  */
 public class Rezar {
-	protected int dia_semana;
+	protected int diaSemana;
 	protected int misterio;
 	protected int pagina;
 
@@ -32,7 +32,7 @@ public class Rezar {
  * Construtor que inicializa a classe com os atributos a zero
  */
 	public Rezar() {
-		this.dia_semana = 0;
+		this.diaSemana = 0;
 		this.misterio = 0;
 		this.pagina = 0;
 	}
@@ -40,29 +40,29 @@ public class Rezar {
 /**
  * Construtor com os parâmetros de inicialização dos atributos
  *
- * @Param int dia_semana inicializa o dia da semana
+ * @Param int diaSemana inicializa o dia da semana
  * @Param int mistério inicializa o index do mistério selecionado
  * @Param int pagina inicializa o índex da página selecionada
  */
-	public Rezar(int dia_semana, int mistério, int pagina) {
-		this.dia_semana = dia_semana;
-		this.misterio = mistério;
-		this.pagina = pagina;
+	public Rezar(final int pDiaSemana, final int pmisterio, final int ppagina) {
+		this.diaSemana = pDiaSemana;
+		this.misterio = pmisterio;
+		this.pagina = ppagina;
 	}
 
 	/**
 	 * @return O dia da semana
 	 */
-	public int getDia_semana() {
-		return dia_semana;
+	public int getDiaSemana() {
+		return diaSemana;
 	}
 
 	/**
-	 * @param int dia_semana
+	 * @param int diaSemana
 	 *            Assigna o Dia da semana
 	 */
-	public void setDia_semana(int dia_semana) {
-		this.dia_semana = dia_semana;
+	public void setDiaSemana(final int pDiaSemana) {
+		this.diaSemana = pDiaSemana;
 	}
 
 	/**
@@ -76,8 +76,8 @@ public class Rezar {
 	 * @param int misterio
 	 *            Assigna o índex do Mistério selecionado
 	 */
-	public void setMisterio(int misterio) {
-		this.misterio = misterio;
+	public void setMisterio(final int pMisterio) {
+		this.misterio = pMisterio;
 	}
 	
 	/**
@@ -91,8 +91,8 @@ public class Rezar {
 	 * @param int pagina
 	 *            Assigna o índex da Página selecionada
 	 */
-	public void setPagina(int pagina) {
-		this.pagina = pagina;
+	public void setPagina(final int pPagina) {
+		this.pagina = pPagina;
 	}
 	
 	/**
@@ -100,7 +100,7 @@ public class Rezar {
 	 */
 	@Override
 	public String toString() {
-		return "Rezar [mDiaSemana=" + dia_semana + ", misterio=" + misterio
+		return "Rezar [mDiaSemana=" + diaSemana + ", misterio=" + misterio
 				+ ", pagina=" + pagina + "]";
 	}
 

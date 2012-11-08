@@ -40,7 +40,7 @@ import de.greenrobot.event.EventBus;
 @OptionsMenu(R.menu.activity_main)
 public class MainActivity extends SherlockFragmentActivity {
 
-	final static String TAG = "Rosário.MainActivity";
+	static final String TAG = "Rosário.MainActivity";
 	// final static boolean DEBUG = true;
 	// final static String MISTERIO = "Misterio";
 	// final static String DIA = "Dia";
@@ -117,7 +117,7 @@ public class MainActivity extends SherlockFragmentActivity {
     * Guarda o estado da aplicação. 
     */
 	@Override
-	protected void onSaveInstanceState(Bundle outState) {
+	protected void onSaveInstanceState(final Bundle outState) {
 		super.onSaveInstanceState(outState);
 
 		outState.putInt(V.MISTERIO, this.mMisterioSelected);
@@ -138,7 +138,7 @@ public class MainActivity extends SherlockFragmentActivity {
     *
     */
 	@Override
-	protected void onRestoreInstanceState(Bundle inState) {
+	protected void onRestoreInstanceState(final Bundle inState) {
 		super.onRestoreInstanceState(inState);
 
 		int d = inState.getInt(V.DIA);
@@ -187,7 +187,7 @@ public class MainActivity extends SherlockFragmentActivity {
    /**
     * Recebe as notificações de mudança de página e guarda no estado. 
     */
-	public void onEvent(Pagina event) {
+	public void onEvent(final Pagina event) {
 
 		if (V.DEBUG) {
 			Log.d(TAG, "Evento (Integer) página recebido:" + event);
@@ -201,13 +201,13 @@ public class MainActivity extends SherlockFragmentActivity {
     * Recebe a notificação de mistério selecionado e guarda no estado. 
     *
     */
-	public void onEvent(Rezar event) {
+	public void onEvent(final Rezar event) {
 
 		if (V.DEBUG) {
 			Log.d(TAG, "Evento Rezar recebido:" + event);
 		}
 
-		mIndexDiaSemana = event.dia_semana;
+		mIndexDiaSemana = event.diaSemana;
 		mMisterioSelected = event.misterio;
 
 	}

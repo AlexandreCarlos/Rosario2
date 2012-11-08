@@ -24,10 +24,10 @@ package pt.carlos.alex.rosario;
  */
 public class Estado {
 
-	private int mDiaSemana;
-	private int mMisterio;
-	private int mPagina;
-	private Boolean mDualPage;
+	private int diaSemana;
+	private int misterio;
+	private int pagina;
+	private Boolean dualPage;
 	/**
 	 * Construtor de defeito
 	 * Inicializa os atributos com valores incorretos (int = -1)
@@ -46,67 +46,67 @@ public class Estado {
    * @Param int pagina o índex da página selecionada
    * @Param Boolean dualPage o indicador se o layout tem 2 fragmentos visíveis 
    */
-	public Estado(int diaSemana, int misterio, int pagina, Boolean dualPage) {
-		this.setDiaSemana(diaSemana);
-		this.setMisterio(misterio);
-		this.setPagina(pagina);
-		this.setDualPage(dualPage);
+	public Estado(final int pDiaSemana, final int pMisterio, final int pPagina, final Boolean pDualPage) {
+		this.setDiaSemana(pDiaSemana);
+		this.setMisterio(pMisterio);
+		this.setPagina(pPagina);
+		this.setDualPage(pDualPage);
 	}
 
 	/**
 	 * @return o dia da semana
 	 */
 	public int getDiaSemana() {
-		return mDiaSemana;
+		return diaSemana;
 	}
 
 	/**
-	 * @param int mDiaSemana o dia da semana a assignar 
+	 * @param int diaSemana o dia da semana a assignar 
 	 */
-	public void setDiaSemana(int mDiaSemana) {
-		this.mDiaSemana = mDiaSemana;
+	public void setDiaSemana(final int mDiaSemana) {
+		this.diaSemana = mDiaSemana;
 	}
 
 	/**
 	 * @return o índex do mistério selecionado
 	 */
 	public int getMisterio() {
-		return mMisterio;
+		return misterio;
 	}
 
 	/**
-	 * @param mMisterio o índex do mistério, a assignar
+	 * @param misterio o índex do mistério, a assignar
 	 */
-	public void setMisterio(int mMisterio) {
-		this.mMisterio = mMisterio;
+	public void setMisterio(final int mMisterio) {
+		this.misterio = mMisterio;
 	}
 
 	/**
 	 * @return o índex da página selecionada
 	 */
 	public int getPagina() {
-		return mPagina;
+		return pagina;
 	}
 
 	/**
-	 * @param mPagina o índex da página selecionada, a assignar
+	 * @param pagina o índex da página selecionada, a assignar
 	 */
-	public void setPagina(int mPagina) {
-		this.mPagina = mPagina;
+	public void setPagina(final int mPagina) {
+		this.pagina = mPagina;
 	}
 
 	/**
 	 * @return true se os 2 fragmentos estão visíveis
 	 */
 	public Boolean isDualPage() {
-		return mDualPage;
+		return dualPage;
 	}
 
 	/**
-	 * @param Boolean mDualPage Assigna o estado da visibilidade dos 2 fragmentos
+	 * @param Boolean dualPage Assigna o estado da visibilidade dos 2 fragmentos
 	 */
-	public void setDualPage(Boolean mDualPage) {
-		this.mDualPage = mDualPage;
+	public void setDualPage(final Boolean mDualPage) {
+		this.dualPage = mDualPage;
 	}
 	
 	/**
@@ -114,7 +114,7 @@ public class Estado {
 	 */
 	@Override
 	public String toString() {
-		return "Estado [mDiaSemana=" + mDiaSemana + ", mMisterio=" + mMisterio
-				+ ", mPagina=" + mPagina + ", mDualPage=" + mDualPage + "]";
+		return "Estado [diaSemana=" + diaSemana + ", misterio=" + misterio
+				+ ", pagina=" + pagina + ", dualPage=" + dualPage + "]";
 	}
 }

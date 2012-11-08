@@ -41,9 +41,9 @@ import de.greenrobot.event.EventBus;
  * 
  */
 @EFragment(R.layout.oracoes_page_layout)
-public class Mostra_Oracoes extends SherlockFragment {
+public class MostraOracoes extends SherlockFragment {
 
-	private static final String TAG = "Rosário.Mostra_Oracoes";
+	private static final String TAG = "Rosário.MostraOracoes";
 
 	private EventBus mEventBus;
 	private boolean mRegistado = false;
@@ -236,7 +236,7 @@ public class Mostra_Oracoes extends SherlockFragment {
 		mIndicator
 				.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 					@Override
-					public void onPageSelected(int position) {
+					public void onPageSelected(final int position) {
 
 						mPaginaActual = position;
 
@@ -249,12 +249,12 @@ public class Mostra_Oracoes extends SherlockFragment {
 					}
 
 					@Override
-					public void onPageScrolled(int position,
-							float positionOffset, int positionOffsetPixels) {
+					public void onPageScrolled(final int position,
+							final float positionOffset, final int positionOffsetPixels) {
 					}
 
 					@Override
-					public void onPageScrollStateChanged(int state) {
+					public void onPageScrollStateChanged(final int state) {
 					}
 				});
 	}
@@ -262,13 +262,13 @@ public class Mostra_Oracoes extends SherlockFragment {
    /**
     * Trata da mudança de Mistério, notificado pelo evento Rezar. 
     */
-	public void onEvent(Rezar event) {
+	public void onEvent(final Rezar event) {
 
 		if (V.DEBUG) {
 			Log.d(TAG, "Evento Rezar recebido:" + event);
 		}
 
-		mIndexDiaSemana = event.dia_semana;
+		mIndexDiaSemana = event.diaSemana;
 		mMisterioSelected = event.misterio;
 
 		identificarMisterio();
@@ -286,7 +286,7 @@ public class Mostra_Oracoes extends SherlockFragment {
    /**
     * Recebe a notificação do estado da aplicação e ativa a condição de estado inicial da aplicação definido. 
     */
-	public void onEvent(Estado event) {
+	public void onEvent(final Estado event) {
 		if (V.DEBUG) {
 			Log.d(TAG, "Evento Estado recebido:" + event);
 		}

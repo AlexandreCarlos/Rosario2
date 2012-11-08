@@ -35,21 +35,21 @@ import android.widget.TextView;
  */
 public class OracoesPageAdapter extends PagerAdapter {
 
-	final static String TAG = "Rosário.OracoesPageAdapter";
+	static final String TAG = "Rosário.OracoesPageAdapter";
 //	final static boolean DEBUG = true;
 
 	private List <String> oracao;
-	private Mostra_Oracoes ctx;
+	private MostraOracoes ctx;
 
 	
-	public OracoesPageAdapter(Mostra_Oracoes ctx, List <String> oracao) {
+	public OracoesPageAdapter(final MostraOracoes cntx, final List <String> oracoes) {
 		
 	    if (V.DEBUG) {
 	    	Log.d(TAG, "Constructor");
 	    }
 	    
-	    this.oracao = oracao;
-	    this.ctx =ctx;
+	    this.oracao = oracoes;
+	    this.ctx =cntx;
 	    
 	  }
 	
@@ -60,7 +60,7 @@ public class OracoesPageAdapter extends PagerAdapter {
 	}
 
     @Override
-    public Object instantiateItem(View collection, int position) {
+    public Object instantiateItem(final View collection, final int position) {
     	if (V.DEBUG){
 			Log.d(TAG, "Object instantiateItem-position:"+position);
 		}
@@ -79,12 +79,12 @@ public class OracoesPageAdapter extends PagerAdapter {
     }
 
     @Override
-    public void destroyItem(View collection, int position, Object view) {
+    public void destroyItem(final View collection, final int position, final Object view) {
          ((ViewPager) collection).removeView((View) view);
     }
 
 	@Override
-	public int getItemPosition(Object object) {
+	public int getItemPosition(final Object object) {
 	    
 		if (V.DEBUG){
 			Log.d(TAG, "getItemPosition-object:"+object.getClass());
@@ -95,7 +95,7 @@ public class OracoesPageAdapter extends PagerAdapter {
 	}
 
 	@Override
-	public boolean isViewFromObject(View view, Object object) {
+	public boolean isViewFromObject(final View view, final Object object) {
 		return view == object;
 
 	}
@@ -106,15 +106,15 @@ public class OracoesPageAdapter extends PagerAdapter {
     }
 
     @Override
-    public void restoreState(Parcelable arg0, ClassLoader arg1) {
+    public void restoreState(final Parcelable arg0, final ClassLoader arg1) {
     }
 
     @Override
-    public void startUpdate(View arg0) {
+    public void startUpdate(final View arg0) {
     }
 
     @Override
-    public void finishUpdate(View arg0) {
+    public void finishUpdate(final View arg0) {
     }
 
  

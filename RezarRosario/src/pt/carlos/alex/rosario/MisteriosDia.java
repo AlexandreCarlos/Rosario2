@@ -38,7 +38,7 @@ import de.greenrobot.event.EventBus;
  */
 @EFragment
 public class MisteriosDia extends SherlockListFragment {
-	final static String TAG = "Rosário.misterios_dia";
+	static final String TAG = "Rosário.misterios_dia";
 	// final static boolean DEBUG = true;
 
 	private int mIndexDiaSemana = -1;
@@ -65,7 +65,7 @@ public class MisteriosDia extends SherlockListFragment {
 
 		if (V.DEBUG) {
 			Log.d(TAG, "Inicializa-mIndexDiaSemana: " + mIndexDiaSemana
-					+ "; mDualPage:" + mDualPage);
+					+ "; dualPage:" + mDualPage);
 		}
 
 	}
@@ -74,7 +74,7 @@ public class MisteriosDia extends SherlockListFragment {
     * Criação da List View com os mistérios do dia. 
     */
 	@Override
-	public void onActivityCreated(Bundle savedInstanceState) {
+	public void onActivityCreated(final Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
 
 		// setListAdapter(new ArrayAdapter<String>(getActivity(),
@@ -99,7 +99,7 @@ public class MisteriosDia extends SherlockListFragment {
     *
     */
 	@Override
-	public void onListItemClick(ListView l, View v, int position, long id) {
+	public void onListItemClick(final ListView l, final View v, final int position, final long id) {
 		if (V.DEBUG) {
 			Log.d(TAG, "List Item Click: " + position);
 
@@ -135,7 +135,7 @@ public class MisteriosDia extends SherlockListFragment {
 	/**
 	 * Trata os eventos de alteração de estado da aplicação. 
 	 */
-	public void onEvent(Estado event) {
+	public void onEvent(final Estado event) {
 		mIndexDiaSemana = event.getDiaSemana();
 		this.mDualPage = event.isDualPage();
 	}

@@ -1,3 +1,4 @@
+package pt.carlos.alex.rosario;
 /*
  * Copyright (C) 2012 Alexandre Carlos 
  *
@@ -13,8 +14,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package pt.carlos.alex.rosario;
-
 import android.util.Log;
 import android.widget.TextView;
 
@@ -34,17 +33,17 @@ import de.greenrobot.event.EventBus;
 @OptionsMenu(R.menu.activity_main)
 public class ActivityMostraOracoes extends SherlockFragmentActivity {
 
-	final static String TAG = "Rosário.MostraOracoes Activity";
+	static final String TAG = "Rosário.MostraOracoes Activity";
 
 	@ViewById(R.id.dia_semana_p)
-	protected TextView dia_semana;
+	protected TextView diaSemana;
 
 	private EventBus eventBus;
 //	private GregorianCalendar calendario;
-	protected int index_dia_semana = -1;
-	protected int misterio_selected = 0;
-	protected int pagina_actual = 0;
-	protected boolean mDualPage = false;
+	protected int indexDiaSemana = -1;
+	protected int misterioSelected = 0;
+	protected int paginaActual = 0;
+	protected boolean dualPage = false;
 	
    /**
     * Inicialização antes da criação da Vida View.
@@ -54,21 +53,21 @@ public class ActivityMostraOracoes extends SherlockFragmentActivity {
 	void startup() {
 //		calendario = (GregorianCalendar) GregorianCalendar.getInstance();
 //
-//		index_dia_semana = calendario.get(Calendar.DAY_OF_WEEK);
+//		indexDiaSemana = calendario.get(Calendar.DAY_OF_WEEK);
 
 		eventBus = EventBus.getDefault();
 
-		index_dia_semana = getIntent().getIntExtra(V.DIA, -1);
-		misterio_selected = getIntent().getIntExtra(V.MISTERIO, -1);
-		pagina_actual = getIntent().getIntExtra(V.PAGINA, -1);
+		indexDiaSemana = getIntent().getIntExtra(V.DIA, -1);
+		misterioSelected = getIntent().getIntExtra(V.MISTERIO, -1);
+		paginaActual = getIntent().getIntExtra(V.PAGINA, -1);
 		
 		if (V.DEBUG) {
-			Log.d(TAG, "IntentExtra values -Dia:"+index_dia_semana+"; Mistério:"+misterio_selected+"; Página:"+pagina_actual);
-			Log.d(TAG, "Dia Semana:"+V.DIA_SEMANA[index_dia_semana]);
+			Log.d(TAG, "IntentExtra values -Dia:"+indexDiaSemana+"; Mistério:"+misterioSelected+"; Página:"+paginaActual);
+			Log.d(TAG, "Dia Semana:"+V.DIA_SEMANA[indexDiaSemana]);
 		}
 
 		if (V.DEBUG) {
-			Log.d(TAG, "mIndexDiaSemana: " + index_dia_semana);
+			Log.d(TAG, "mIndexDiaSemana: " + indexDiaSemana);
 		}
 	}
 
@@ -90,9 +89,9 @@ public class ActivityMostraOracoes extends SherlockFragmentActivity {
 //				Log.d(TAG, "Dia Semana:"+V.DIA_SEMANA[mIndexDiaSemana]);
 //			}
 
-			dia_semana.setText(V.DIA_SEMANA[index_dia_semana]);
+			diaSemana.setText(V.DIA_SEMANA[indexDiaSemana]);
 			
-			eventBus.post(new Estado(index_dia_semana, misterio_selected, pagina_actual, false));
+			eventBus.post(new Estado(indexDiaSemana, misterioSelected, paginaActual, false));
 			
 		} catch (Exception e) {
 			Log.e(TAG, "Erro no init() @AfterViews:", e);

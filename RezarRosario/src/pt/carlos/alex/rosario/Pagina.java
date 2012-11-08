@@ -1,3 +1,4 @@
+package pt.carlos.alex.rosario;
 /*
  * Copyright (C) 2012 Alexandre Carlos 
  *
@@ -14,11 +15,7 @@
  * limitations under the License.
  */
 /**
- * Evento de mudança de página
- */
-package pt.carlos.alex.rosario;
-
-/**
+ * Evento de mudança de página.
  * @author alexandre
  *
  */
@@ -35,10 +32,10 @@ public class Pagina {
 	}
 	
 	/**
-	 * Construtor com parâmetro de inicialização do atributo
-	 * @Param int pagina Índex da página selecionada
+	 * Construtor com parâmetro de inicialização do atributo.
+	 * @param pagina Índex da página selecionada
 	 */
-	public Pagina (int pagina){
+	public Pagina(final int pagina) {
 		setPagina(pagina);
 	}
 
@@ -52,8 +49,8 @@ public class Pagina {
 	/**
 	 * @param int mPagina o valor do índex da página selecionada
 	 */
-	public void setPagina(int mPagina) {
-		this.mPagina = mPagina;
+	public void setPagina(final int pPagina) {
+		this.mPagina = pPagina;
 	}
 	
 	/**

@@ -37,7 +37,7 @@ public final class Misterios {
 			"Mistérios Luminosos (da Luz)" // 3
 	};
 
-	public final static int[] MISTERIOS = { -1, // Erro ???
+	public static final int[] MISTERIOS = { -1, // Erro ???
 			0, // Domingo - Mistérios Gloriosos (da Glória)
 			1, // 2ª Feira - Mistérios Gozosos (da Alegria)
 			2, // 3ª Feira - Mistérios Dolorosos (da Dor)
@@ -47,7 +47,7 @@ public final class Misterios {
 			1 // Sábado - Mistérios Gozosos (da Alegria)
 	};
 
-	public final static String[] GLORIOSOS = {
+	public static final String[] GLORIOSOS = {
 			"1º Mistério - A ressureição de Nosso Senhor Jesus Cristo",
 			"2º Mistério - A Ascensão de Jesus ao Céu",
 			"3º Mistério - A descida do Espírito Santo sobre Nossa Senhora e os Apóstolos",
@@ -55,7 +55,7 @@ public final class Misterios {
 			"5º Mistério - A Coroação de Nossa Senhora, no Céu, como Rainha dos Anjos e dos Santos",
 			"Orações finais" };
 
-	public final static String[] GOZOSOS = {
+	public static final String[] GOZOSOS = {
 			"1º Mistério - Anunciação do Anjo a Nossa Senhora",
 			"2º Mistério - A visita de Nossa Senhora a Sua prima Santa Isabel",
 			"3º Mistério - Nascimento de Jesus em Belém",
@@ -63,14 +63,14 @@ public final class Misterios {
 			"5º Mistério - Jesus no Templo, entre os Doutores",
 			"Orações finais" };
 
-	public final static String[] DOLOROSOS = {
+	public static final String[] DOLOROSOS = {
 			"1º Mistério - Agonia de Jesus no Horto das Oliveiras",
 			"2º Mistério - A flagelação de Jesus",
 			"3º Mistério - A coroação de espinhos",
 			"4º Mistério - Jesus a caminho do Calvário com a cruz às costas",
 			"5º Mistério - A crucificação e morte de Jesus", "Orações finais" };
 
-	public final static String[] LUMINOSOS = {
+	public static final String[] LUMINOSOS = {
 			"1º Mistério - O Batismo de Jesus no rio Jordão",
 			"2º Mistério - A revelação de Jesus nas bodas de Caná",
 			"3º Mistério - O Anúncio do Reino de Deus e o convite à conversão",
@@ -113,13 +113,13 @@ public final class Misterios {
 	/**
 	 * Obter a designação dos Mistérios do dia da semana. 
 	 *
-	 * @param dia_semana
+	 * @param diaSemana
 	 *            int com o dia da semana 1 - Domingo 2 - 2ª Feira 3 - 3ª Feira
 	 *            4 - 4ª Feira 5 - 5ª Feira 6 - 6ª Feira 7 - Sábado
 	 * @return String Array com os Mistérios associados ao dia da semana
 	 */
-	public static String[] designacaoMisterios(int dia_semana) {
-		switch (MISTERIOS[dia_semana]) {
+	public static String[] designacaoMisterios(final int pDiaSemana) {
+		switch (MISTERIOS[pDiaSemana]) {
 		case 0:
 			return GLORIOSOS;
 		case 1:
@@ -139,29 +139,29 @@ public final class Misterios {
 	/**
 	 * Obter a designação do tipo de Mistério do dia da semana. 
 	 *
-	 * @param dia_semana
+	 * @param diaSemana
 	 *            int com o dia da semana 1 - Domingo 2 - 2ª Feira 3 - 3ª Feira
 	 *            4 - 4ª Feira 5 - 5ª Feira 6 - 6ª Feira 7 - Sábado
 	 * @return String com a designação do tipo de Mistério do dia da semana
 	 */
-	public static String designacaoMisterio(int dia_semana) {
-		return DESIGN[MISTERIOS[dia_semana]];
+	public static String designacaoMisterio(final int pDiaSemana) {
+		return DESIGN[MISTERIOS[pDiaSemana]];
 	}
 
 	/**
 	 * Obter a identificação do Mistério selecionado para o dia da semana. 
 	 *
-	 * @param dia_semana
+	 * @param diaSemana
 	 *            int com o dia da semana 1 - Domingo 2 - 2ª Feira 3 - 3ª Feira
 	 *            4 - 4ª Feira 5 - 5ª Feira 6 - 6ª Feira 7 - Sábado
 	 * @param misterio
 	 *            int com o mistério selecionado (Base de Referência 0)
 	 * @return String com a identificação do Mistério selecionado para o dia da semana
 	 */
-	public static String identificarMisterioDia(int dia_semana, int misterio) {
+	public static String identificarMisterioDia(final int pDiaSemana, final int misterio) {
 
 		if (misterio < 5) {
-			switch (MISTERIOS[dia_semana]) {
+			switch (MISTERIOS[pDiaSemana]) {
 			case 0:
 				return (misterio + 1) + "º Mistério Glorioso";
 			case 1:
@@ -170,6 +170,8 @@ public final class Misterios {
 				return (misterio + 1) + "º Mistério Doloroso";
 			case 3:
 				return (misterio + 1) + "º Mistério Luminoso";
+			default:
+				return null;
 			}
 		}
 
@@ -180,16 +182,16 @@ public final class Misterios {
 	/**
 	 * Obter o texto bíblico referente ao Mistério selecionado para o dia da semana.
 	 *
-	 * @param dia_semana
+	 * @param diaSemana
 	 *            int com o dia da semana 1 - Domingo 2 - 2ª Feira 3 - 3ª Feira
 	 *            4 - 4ª Feira 5 - 5ª Feira 6 - 6ª Feira 7 - Sábado
 	 * @param misterio
 	 *            int com o mistério selecionado (Base de Referência 0)
 	 * @return String com o texto bíblico referente ao Mistério selecionado para o dia da semana
 	 */
-	public static String obterMisterioDia(int dia_semana, int misterio) {
+	public static String obterMisterioDia(final int pDiaSemana, final int misterio) {
 
-		switch (MISTERIOS[dia_semana]) {
+		switch (MISTERIOS[pDiaSemana]) {
 		case 0:
 			return gloriosos(misterio);
 		case 1:
@@ -198,9 +200,9 @@ public final class Misterios {
 			return dolorosos(misterio);
 		case 3:
 			return luminosos(misterio);
+		default:
+			return null;
 		}
-
-		return null;
 
 	}
 
@@ -211,7 +213,7 @@ public final class Misterios {
 	 *            int com o mistério selecionado (Base de Referência 0)
 	 * @return String com o texto bíblico referente ao Mistério Gozoso selecionado
 	 */
-	public static final String gozosos(int i) {
+	public static String gozosos(final int i) {
 
 		switch (i) {
 		case 0:
@@ -226,9 +228,9 @@ public final class Misterios {
 			return GOZOSO5;
 		case 5:
 			return ORACOESFINAIS;
+		default:
+			return null;
 		}
-
-		return null;
 	}
 
 	/**
@@ -238,7 +240,7 @@ public final class Misterios {
 	 *            int com o mistério selecionado (Base de Referência 0)
 	 * @return String com o texto bíblico referente ao Mistério Glorioso selecionado
 	 */
-	public static final String gloriosos(int i) {
+	public static String gloriosos(final int i) {
 
 		switch (i) {
 		case 0:
@@ -253,9 +255,9 @@ public final class Misterios {
 			return GLORIOSO5;
 		case 5:
 			return ORACOESFINAIS;
+		default:
+			return null;
 		}
-
-		return null;
 	}
 
 	/**
@@ -265,7 +267,7 @@ public final class Misterios {
 	 *            int com o mistério selecionado (Base de Referência 0)
 	 * @return String com o texto bíblico referente ao Mistério Doloroso selecionado
 	 */
-	public static final String dolorosos(int i) {
+	public static String dolorosos(final int i) {
 
 		switch (i) {
 		case 0:
@@ -280,9 +282,9 @@ public final class Misterios {
 			return DOLOROSO5;
 		case 5:
 			return ORACOESFINAIS;
+		default:
+			return null;
 		}
-
-		return null;
 	}
 
 	/**
@@ -292,7 +294,7 @@ public final class Misterios {
 	 *            int com o mistério selecionado (Base de Referência 0)
 	 * @return String com o texto bíblico referente ao Mistério Luminoso selecionado
 	 */
-	public static final String luminosos(int i) {
+	public static String luminosos(final int i) {
 
 		switch (i) {
 		case 0:
@@ -307,9 +309,9 @@ public final class Misterios {
 			return LUMINOSO5;
 		case 5:
 			return ORACOESFINAIS;
+		default:
+			return null;	
 		}
-
-		return null;
 	}
 
 	/**
@@ -317,7 +319,7 @@ public final class Misterios {
 	 *
 	 * @return String com a oração do Pai Nosso
 	 */
-	public static final String paiNosso() {
+	public static String paiNosso() {
 		return PAINOSSO;
 	}
 
@@ -326,7 +328,7 @@ public final class Misterios {
 	 *
 	 * @return String com a oração da Avé Maria
 	 */
-	public static final String aveMaria() {
+	public static String aveMaria() {
 		return AVE_MARIA;
 	}
 
@@ -360,20 +362,20 @@ public final class Misterios {
 	/**
 	 * Obter a lista das orações da Dezena do Mistério selecionado para o dia da semana. 
 	 *
-	 * @param dia_semana
+	 * @param diaSemana
 	 *            int com o dia da semana 1 - Domingo 2 - 2ª Feira 3 - 3ª Feira
 	 *            4 - 4ª Feira 5 - 5ª Feira 6 - 6ª Feira 7 - Sábado
 	 * @param misterio
 	 *            int com o mistério selecionado (Base de Referência 0)
 	 * @return String List com as Orações (Dezena) do Mistério selecionado para o dia da semana
 	 */
-	public static List<String> oracoesDoMisterio(int dia_semana, int misterio) {
+	public static List<String> oracoesDoMisterio(final int pDiaSemana, final int misterio) {
 		List<String> mOracao = new ArrayList<String>();
 
 		try {
-			mOracao.add(obterMisterioDia(dia_semana, misterio));
+			mOracao.add(obterMisterioDia(pDiaSemana, misterio));
 
-			if (misterio < 5) { // se for Oração Final (misterio =5) não inclui
+			if (misterio < 5) { // se for Oração Final (misterio = 5) não inclui
 								// as restantes orações
 				mOracao.add(paiNosso());
 				for (int i = 2; i < 12; i++) {
@@ -384,7 +386,7 @@ public final class Misterios {
 			}
 			return mOracao;
 		} catch (Exception e) {
-			Log.e(TAG, "Exception: mDiaSemana=" + dia_semana + "; misterio="
+			Log.e(TAG, "Exception: mDiaSemana=" + pDiaSemana + "; misterio="
 					+ misterio);
 			Log.e(TAG, "Oracoes_do_Misterio", e);
 		}

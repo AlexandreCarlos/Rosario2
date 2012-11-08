@@ -50,7 +50,7 @@ public class ContasRosario extends View implements PageIndicator {
     private static final int INVALID_POINTER = -1;
 
     private final Paint iPaintPageFill = new Paint(ANTI_ALIAS_FLAG);
-    private List <Integer> iCoresContas;
+    private List <Integer> coresContas;
     
   	private float mRadius;
     private final Paint mPaintPageFill = new Paint(ANTI_ALIAS_FLAG);
@@ -72,18 +72,20 @@ public class ContasRosario extends View implements PageIndicator {
     private boolean mIsDragging;
 
 
-    public ContasRosario(Context context) {
+    public ContasRosario(final Context context) {
         this(context, null);
     }
 
-    public ContasRosario(Context context, AttributeSet attrs) {
+    public ContasRosario(final Context context, final AttributeSet attrs) {
         this(context, attrs, R.attr.vpiCirclePageIndicatorStyle);
     }
 
     @SuppressWarnings("deprecation")
-	public ContasRosario(Context context, AttributeSet attrs, int defStyle) {
+	public ContasRosario(final Context context, final AttributeSet attrs, final int defStyle) {
         super(context, attrs, defStyle);
-        if (isInEditMode()) return;
+        if (isInEditMode()) {
+			return;
+		}
 
         //Load defaults from resources
         final Resources res = getResources();
@@ -123,14 +125,14 @@ public class ContasRosario extends View implements PageIndicator {
     }
 
     public List<Integer> getCoresContas() {
-  		return iCoresContas;
+  		return coresContas;
   	}
 
-  	public void setCoresContas(List<Integer> iCoresContas) {
-  		this.iCoresContas = iCoresContas;
+  	public void setCoresContas(final List<Integer> iCoresContas) {
+  		this.coresContas = iCoresContas;
   	}
   	
-    public void setCentered(boolean centered) {
+    public void setCentered(final boolean centered) {
         mCentered = centered;
         invalidate();
     }
@@ -139,7 +141,7 @@ public class ContasRosario extends View implements PageIndicator {
         return mCentered;
     }
 
-    public void setPageColor(int pageColor) {
+    public void setPageColor(final int pageColor) {
         mPaintPageFill.setColor(pageColor);
         invalidate();
     }
@@ -148,7 +150,7 @@ public class ContasRosario extends View implements PageIndicator {
         return mPaintPageFill.getColor();
     }
 
-    public void setFillColor(int fillColor) {
+    public void setFillColor(final int fillColor) {
         mPaintFill.setColor(fillColor);
         invalidate();
     }
@@ -157,7 +159,7 @@ public class ContasRosario extends View implements PageIndicator {
         return mPaintFill.getColor();
     }
 
-    public void setOrientation(int orientation) {
+    public void setOrientation(final int orientation) {
         switch (orientation) {
             case HORIZONTAL:
             case VERTICAL:
@@ -174,7 +176,7 @@ public class ContasRosario extends View implements PageIndicator {
         return mOrientation;
     }
 
-    public void setStrokeColor(int strokeColor) {
+    public void setStrokeColor(final int strokeColor) {
         mPaintStroke.setColor(strokeColor);
         invalidate();
     }
@@ -183,7 +185,7 @@ public class ContasRosario extends View implements PageIndicator {
         return mPaintStroke.getColor();
     }
 
-    public void setStrokeWidth(float strokeWidth) {
+    public void setStrokeWidth(final float strokeWidth) {
         mPaintStroke.setStrokeWidth(strokeWidth);
         invalidate();
     }
@@ -192,7 +194,7 @@ public class ContasRosario extends View implements PageIndicator {
         return mPaintStroke.getStrokeWidth();
     }
 
-    public void setRadius(float radius) {
+    public void setRadius(final float radius) {
         mRadius = radius;
         invalidate();
     }
@@ -201,7 +203,7 @@ public class ContasRosario extends View implements PageIndicator {
         return mRadius;
     }
 
-    public void setSnap(boolean snap) {
+    public void setSnap(final boolean snap) {
         mSnap = snap;
         invalidate();
     }
@@ -211,7 +213,7 @@ public class ContasRosario extends View implements PageIndicator {
     }
 
     @Override
-    protected void onDraw(Canvas canvas) {
+    protected void onDraw(final Canvas canvas) {
         super.onDraw(canvas);
 
         if (mViewPager == null) {
@@ -290,7 +292,7 @@ public class ContasRosario extends View implements PageIndicator {
 //            		iPaintPageFill.setColor(mPaintPageFill.getColor());
 //            	}
             	          	
-            	iPaintPageFill.setColor(iCoresContas.get(iLoop));
+            	iPaintPageFill.setColor(coresContas.get(iLoop));
             	
             	canvas.drawCircle(dX, dY, pageFillRadius, iPaintPageFill);
 //            	canvas.drawCircle(dX, dY, pageFillRadius, mPaintPageFill);
@@ -317,7 +319,7 @@ public class ContasRosario extends View implements PageIndicator {
         canvas.drawCircle(dX, dY, mRadius, mPaintFill);
     }
 
-    public boolean onTouchEvent(android.view.MotionEvent ev) {
+    public boolean onTouchEvent(final android.view.MotionEvent ev) {
         if (super.onTouchEvent(ev)) {
             return true;
         }
@@ -376,7 +378,9 @@ public class ContasRosario extends View implements PageIndicator {
 
                 mIsDragging = false;
                 mActivePointerId = INVALID_POINTER;
-                if (mViewPager.isFakeDragging()) mViewPager.endFakeDrag();
+                if (mViewPager.isFakeDragging()) {
+					mViewPager.endFakeDrag();
+				}
                 break;
 
             case MotionEventCompat.ACTION_POINTER_DOWN: {
@@ -395,13 +399,15 @@ public class ContasRosario extends View implements PageIndicator {
                 }
                 mLastMotionX = MotionEventCompat.getX(ev, MotionEventCompat.findPointerIndex(ev, mActivePointerId));
                 break;
+            default:
+            	break;
         }
 
         return true;
     }
 
     @Override
-    public void setViewPager(ViewPager view) {
+    public void setViewPager(final ViewPager view) {
         if (mViewPager == view) {
             return;
         }
@@ -417,13 +423,13 @@ public class ContasRosario extends View implements PageIndicator {
     }
 
     @Override
-    public void setViewPager(ViewPager view, int initialPosition) {
+    public void setViewPager(final ViewPager view, final int initialPosition) {
         setViewPager(view);
         setCurrentItem(initialPosition);
     }
 
     @Override
-    public void setCurrentItem(int item) {
+    public void setCurrentItem(final int item) {
         if (mViewPager == null) {
             throw new IllegalStateException("ViewPager has not been bound.");
         }
@@ -438,7 +444,7 @@ public class ContasRosario extends View implements PageIndicator {
     }
 
     @Override
-    public void onPageScrollStateChanged(int state) {
+    public void onPageScrollStateChanged(final int state) {
         mScrollState = state;
 
         if (mListener != null) {
@@ -447,7 +453,7 @@ public class ContasRosario extends View implements PageIndicator {
     }
 
     @Override
-    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+    public void onPageScrolled(final int position, final float positionOffset, final int positionOffsetPixels) {
         mCurrentPage = position;
         mPageOffset = positionOffset;
         invalidate();
@@ -458,7 +464,7 @@ public class ContasRosario extends View implements PageIndicator {
     }
 
     @Override
-    public void onPageSelected(int position) {
+    public void onPageSelected(final int position) {
         if (mSnap || mScrollState == ViewPager.SCROLL_STATE_IDLE) {
             mCurrentPage = position;
             mSnapPage = position;
@@ -471,7 +477,7 @@ public class ContasRosario extends View implements PageIndicator {
     }
 
     @Override
-    public void setOnPageChangeListener(ViewPager.OnPageChangeListener listener) {
+    public void setOnPageChangeListener(final ViewPager.OnPageChangeListener listener) {
         mListener = listener;
     }
 
@@ -481,7 +487,7 @@ public class ContasRosario extends View implements PageIndicator {
      * @see android.view.View#onMeasure(int, int)
      */
     @Override
-    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+    protected void onMeasure(final int widthMeasureSpec, final int heightMeasureSpec) {
         if (mOrientation == HORIZONTAL) {
             setMeasuredDimension(measureLong(widthMeasureSpec), measureShort(heightMeasureSpec));
         } else {
@@ -496,7 +502,7 @@ public class ContasRosario extends View implements PageIndicator {
      *            A measureSpec packed into an int
      * @return The width of the view, honoring constraints from measureSpec
      */
-    private int measureLong(int measureSpec) {
+    private int measureLong(final int measureSpec) {
         int result;
         int specMode = MeasureSpec.getMode(measureSpec);
         int specSize = MeasureSpec.getSize(measureSpec);
@@ -524,7 +530,7 @@ public class ContasRosario extends View implements PageIndicator {
      *            A measureSpec packed into an int
      * @return The height of the view, honoring constraints from measureSpec
      */
-    private int measureShort(int measureSpec) {
+    private int measureShort(final int measureSpec) {
         int result;
         int specMode = MeasureSpec.getMode(measureSpec);
         int specSize = MeasureSpec.getSize(measureSpec);
@@ -544,7 +550,7 @@ public class ContasRosario extends View implements PageIndicator {
     }
 
     @Override
-    public void onRestoreInstanceState(Parcelable state) {
+    public void onRestoreInstanceState(final Parcelable state) {
         SavedState savedState = (SavedState)state;
         super.onRestoreInstanceState(savedState.getSuperState());
         mCurrentPage = savedState.currentPage;
@@ -563,17 +569,17 @@ public class ContasRosario extends View implements PageIndicator {
     static class SavedState extends BaseSavedState {
         int currentPage;
 
-        public SavedState(Parcelable superState) {
+        public SavedState(final Parcelable superState) {
             super(superState);
         }
 
-        private SavedState(Parcel in) {
+        private SavedState(final Parcel in) {
             super(in);
             currentPage = in.readInt();
         }
 
         @Override
-        public void writeToParcel(Parcel dest, int flags) {
+        public void writeToParcel(final Parcel dest, final int flags) {
             super.writeToParcel(dest, flags);
             dest.writeInt(currentPage);
         }
@@ -581,12 +587,12 @@ public class ContasRosario extends View implements PageIndicator {
 //        @SuppressWarnings("UnusedDeclaration")
         public static final Parcelable.Creator<SavedState> CREATOR = new Parcelable.Creator<SavedState>() {
             @Override
-            public SavedState createFromParcel(Parcel in) {
+            public SavedState createFromParcel(final Parcel in) {
                 return new SavedState(in);
             }
 
             @Override
-            public SavedState[] newArray(int size) {
+            public SavedState[] newArray(final int size) {
                 return new SavedState[size];
             }
         };
