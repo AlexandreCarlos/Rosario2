@@ -1,4 +1,19 @@
-package pt.carlos.alex.rosario;
+/*
+ * Copyright (C) 2012 Alexandre Carlos 
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+ package pt.carlos.alex.rosario;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;
@@ -16,82 +31,114 @@ import com.googlecode.androidannotations.annotations.OptionsMenu;
 import com.googlecode.androidannotations.annotations.ViewById;
 
 import de.greenrobot.event.EventBus;
-
+/**
+ *
+ * Atividade principal que inicializa e controla os estados da aplicaçã. 
+ *
+ */
 @EActivity(R.layout.activity_main)
 @OptionsMenu(R.menu.activity_main)
 public class MainActivity extends SherlockFragmentActivity {
 
-	final static String TAG = "Rosário.MainActivity";
-//	final static boolean DEBUG = true;
-//	final static String MISTERIO = "Misterio";
-//	final static String DIA = "Dia";
-//	final static String PAGINA = "Pagina";
-//	final static String[] DIA_SEMANA = { "Que dia é este?", "Domingo",
-//			"2ª Feira", "3ª Feira", "4ª Feira", "5ª Feira", "6ª Feira",
-//			"Sábado" };
+	static final String TAG = "Rosário.MainActivity";
+	// final static boolean DEBUG = true;
+	// final static String MISTERIO = "Misterio";
+	// final static String DIA = "Dia";
+	// final static String PAGINA = "Pagina";
+	// final static String[] DIA_SEMANA = { "Que dia é este?", "Domingo",
+	// "2ª Feira", "3ª Feira", "4ª Feira", "5ª Feira", "6ª Feira",
+	// "Sábado" };
 
 	@ViewById(R.id.dia_semana)
-	protected TextView dia_semana;
+	protected TextView mDiaSemana;
 
 	@ViewById(R.id.oracoes)
-	protected View oracoes;
+	protected View mOracoes;
 
-	private EventBus eventBus;
-	private GregorianCalendar calendario;
-	protected int index_dia_semana = -1;
-	protected int misterio_selected = 0;
-	protected int pagina_actual = 0;
+	private EventBus mEventBus;
+	private GregorianCalendar mCalendario;
+	protected int mIndexDiaSemana = -1;
+	protected int mMisterioSelected = 0;
+	protected int mPaginaActual = 0;
 	protected boolean mDualPage = false;
 
+   /**
+    * Inicialização antes da criação das views. 
+    * Determina o dia da semana atual. 
+    */
 	@AfterInject
 	void startup() {
-		calendario = (GregorianCalendar) GregorianCalendar.getInstance();
+		mCalendario = (GregorianCalendar) GregorianCalendar.getInstance();
 
-		index_dia_semana = calendario.get(Calendar.DAY_OF_WEEK);
+		mIndexDiaSemana = mCalendario.get(Calendar.DAY_OF_WEEK);
 
-		eventBus = EventBus.getDefault();
+		mEventBus = EventBus.getDefault();
 
 		if (V.DEBUG) {
-			Log.d(TAG, "index_dia_semana: " + index_dia_semana);
+			Log.d(TAG, "mIndexDiaSemana: " + mIndexDiaSemana);
 		}
 	}
 
+   /**
+    * Inicialização depois da criação das views. 
+    * Determina se o layout inclui 2 views. 
+    * Notifica o novo estado da aplicação. 
+    */
 	@AfterViews
 	void init() {
 
-		try {
-			eventBus.register(this);
+		// try {
+		mEventBus.register(this);
 
-			dia_semana.setText(V.DIA_SEMANA[index_dia_semana] + " - " + Misterios.designacaoMisterio(index_dia_semana));
-			
-			this.mDualPage = this.oracoes != null && this.oracoes.getVisibility() == View.VISIBLE;
-			
-			Log.i(TAG, "Dual Mode:"+this.mDualPage);
+		mDiaSemana.setText(V.DIA_SEMANA[mIndexDiaSemana] + " - "
+				+ Misterios.designacaoMisterio(mIndexDiaSemana));
 
-		} catch (Exception e) {
-			Log.e(TAG, "Erro no init() @AfterViews:", e);
-		}
+		this.mDualPage = this.mOracoes != null
+				&& this.mOracoes.getVisibility() == View.VISIBLE;
 
-	}
-
-	@Override
-	protected void onSaveInstanceState(Bundle outState) {
-		super.onSaveInstanceState(outState);
-
-		outState.putInt(V.MISTERIO, this.misterio_selected);
-		outState.putInt(V.DIA, this.index_dia_semana);
-		outState.putInt(V.PAGINA, this.pagina_actual);
+		mEventBus.post(new Estado(mIndexDiaSemana, mMisterioSelected,
+				mPaginaActual, mDualPage));
 
 		if (V.DEBUG) {
-			Log.d(TAG, "onSaveInstanceState [MISTERIO]=" + misterio_selected
-					+ "; [DIA]=" + index_dia_semana + "; [PAGINA]="
-					+ pagina_actual);
+			Log.d(TAG, "Triggered event Estado. Dia:" + mIndexDiaSemana
+					+ "; Mistério:" + mMisterioSelected + "; Página:"
+					+ mPaginaActual + "; DualPage:" + mDualPage);
 		}
+
+//		Log.i(TAG, "Dual Mode:" + this.mDualPage);
+
+		// } catch (Exception e) {
+		// Log.e(TAG, "Erro no init() @AfterViews:", e);
+		// }
 
 	}
 
+   /**
+    * Guarda o estado da aplicação. 
+    */
 	@Override
-	protected void onRestoreInstanceState(Bundle inState) {
+	protected void onSaveInstanceState(final Bundle outState) {
+		super.onSaveInstanceState(outState);
+
+		outState.putInt(V.MISTERIO, this.mMisterioSelected);
+		outState.putInt(V.DIA, this.mIndexDiaSemana);
+		outState.putInt(V.PAGINA, this.mPaginaActual);
+
+		if (V.DEBUG) {
+			Log.d(TAG, "onSaveInstanceState [MISTERIO]=" + mMisterioSelected
+					+ "; [DIA]=" + mIndexDiaSemana + "; [PAGINA]="
+					+ mPaginaActual);
+		}
+
+	}
+	
+   /**
+    *
+    * Recupera o estado da aplicação e notifica as alterações. 
+    *
+    */
+	@Override
+	protected void onRestoreInstanceState(final Bundle inState) {
 		super.onRestoreInstanceState(inState);
 
 		int d = inState.getInt(V.DIA);
@@ -100,25 +147,25 @@ public class MainActivity extends SherlockFragmentActivity {
 		boolean alterado = false;
 
 		if (V.DEBUG) {
-			Log.d(TAG, "onRestoreInstanceState [MISTERIO]=" + p + "; [DIA]=" + d
-					+ "; [PAGINA]=" + g);
-			Log.d(TAG, "MainActivityState [MISTERIO]=" + misterio_selected
-					+ "; [DIA]=" + index_dia_semana + "; [PAGINA]="
-					+ pagina_actual);
+			Log.d(TAG, "onRestoreInstanceState [MISTERIO]=" + p + "; [DIA]="
+					+ d + "; [PAGINA]=" + g);
+			Log.d(TAG, "MainActivityState [MISTERIO]=" + mMisterioSelected
+					+ "; [DIA]=" + mIndexDiaSemana + "; [PAGINA]="
+					+ mPaginaActual);
 		}
 
-		if (d > this.index_dia_semana) {
-			this.index_dia_semana = d;
+		if (d > this.mIndexDiaSemana) {
+			this.mIndexDiaSemana = d;
 			alterado = true;
 		}
 
-		if (p != this.misterio_selected) {
-			this.misterio_selected = p;
+		if (p != this.mMisterioSelected) {
+			this.mMisterioSelected = p;
 			alterado = true;
 		}
 
-		if (g != this.pagina_actual) {
-			this.pagina_actual = g;
+		if (g != this.mPaginaActual) {
+			this.mPaginaActual = g;
 			alterado = true;
 		}
 
@@ -126,35 +173,42 @@ public class MainActivity extends SherlockFragmentActivity {
 
 			if (V.DEBUG) {
 				Log.d(TAG, "MainActivityState changed [MISTERIO]="
-						+ misterio_selected + "; [DIA]=" + index_dia_semana
-						+ "; [PAGINA]=" + pagina_actual);
+						+ mMisterioSelected + "; [DIA]=" + mIndexDiaSemana
+						+ "; [PAGINA]=" + mPaginaActual);
 				Log.d(TAG, " Rezar EventBus Generated");
 			}
 
-			eventBus.post(new Rezar(index_dia_semana, misterio_selected,
-					pagina_actual));
+			mEventBus.post(new Rezar(mIndexDiaSemana, mMisterioSelected,
+					mPaginaActual));
 		}
 
 	}
 
-	public void onEvent(Integer event) {
+   /**
+    * Recebe as notificações de mudança de página e guarda no estado. 
+    */
+	public void onEvent(final Pagina event) {
 
 		if (V.DEBUG) {
 			Log.d(TAG, "Evento (Integer) página recebido:" + event);
 		}
 
-		this.pagina_actual = event.intValue();
+		this.mPaginaActual = event.getPagina();
 
 	}
 
-	public void onEvent(Rezar event) {
+   /**
+    * Recebe a notificação de mistério selecionado e guarda no estado. 
+    *
+    */
+	public void onEvent(final Rezar event) {
 
 		if (V.DEBUG) {
 			Log.d(TAG, "Evento Rezar recebido:" + event);
 		}
 
-		index_dia_semana = event.dia_semana;
-		misterio_selected = event.misterio;
+		mIndexDiaSemana = event.diaSemana;
+		mMisterioSelected = event.misterio;
 
 	}
 }

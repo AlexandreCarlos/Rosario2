@@ -1,0 +1,15 @@
+python ConverteHTML2.py Doloroso1.txt
+python ConverteHTML2.py Doloroso2.txt
+python ConverteHTML2.py Doloroso3.txt
+python ConverteHTML2.py Doloroso4.txt
+python ConverteHTML2.py Doloroso5.txt
+python ConverteHTML2.py Glorioso1.txt
+python ConverteHTML2.py Glorioso2.txt
+python ConverteHTML2.py Glorioso3.txt
+python ConverteHTML2.py Glorioso4.txt
+python ConverteHTML2.py Glorioso5.txt
+python ConverteHTML2.py Luminoso1.txt
+python ConverteHTML2.py Luminoso2.txt
+python ConverteHTML2.py Luminoso3.txt
+python ConverteHTML2.py Luminoso4.txt
+python ConverteHTML2.py Luminoso5.txt

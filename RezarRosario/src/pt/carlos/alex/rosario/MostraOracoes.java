@@ -1,78 +1,307 @@
+/*
+ * Copyright (C) 2012 Alexandre Carlos 
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Fragment que mostra as orações associadas a um mistério
+ */
 package pt.carlos.alex.rosario;
 
-import java.util.Calendar;
-import java.util.GregorianCalendar;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.CountDownLatch;
 
+import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.widget.TextView;
 
-import com.actionbarsherlock.app.SherlockFragmentActivity;
+import com.actionbarsherlock.app.SherlockFragment;
 import com.googlecode.androidannotations.annotations.AfterInject;
 import com.googlecode.androidannotations.annotations.AfterViews;
-import com.googlecode.androidannotations.annotations.EActivity;
-import com.googlecode.androidannotations.annotations.OptionsMenu;
+import com.googlecode.androidannotations.annotations.Background;
+import com.googlecode.androidannotations.annotations.EFragment;
+import com.googlecode.androidannotations.annotations.UiThread;
 import com.googlecode.androidannotations.annotations.ViewById;
 
-@EActivity(R.layout.activity_mostra_oracoes)
-@OptionsMenu(R.menu.activity_main)
-public class MostraOracoes extends SherlockFragmentActivity {
+import de.greenrobot.event.EventBus;
 
-	final static String TAG = "Rosário.MostraOracoes Activity";
+/**
+ * @author alexandre
+ * 
+ */
+@EFragment(R.layout.oracoes_page_layout)
+public class MostraOracoes extends SherlockFragment {
 
-	@ViewById(R.id.dia_semana_p)
-	protected TextView dia_semana;
+	private static final String TAG = "Rosário.MostraOracoes";
 
-//	private EventBus eventBus;
-	private GregorianCalendar calendario;
-	protected int index_dia_semana = -1;
-	protected int misterio_selected = 0;
-	protected int pagina_actual = 0;
-	protected boolean mDualPage = false;
-	
+	private EventBus mEventBus;
+	private boolean mRegistado = false;
+	private final CountDownLatch startSignal = new CountDownLatch(2); // Controlo da ocorrência das condições de inicialização do Page Viewer. 
+
+	@ViewById(R.id.pager)
+	protected ViewPager mPager;
+
+	@ViewById(R.id.indicator)
+	ContasRosario mIndicator;
+
+	@ViewById(R.id.textMisterio)
+	TextView mTextMisterio;
+
+	protected int mIndexDiaSemana = -1;
+	protected int mMisterioSelected = 0;
+	public int mPaginaActual = 0;
+
+	protected List<String> mOracao;
+	protected List<Integer> mCoresContas;
+   
+   /**
+    * Inicialização e registo no event bus. 
+    */
 	@AfterInject
-	void startup() {
-		calendario = (GregorianCalendar) GregorianCalendar.getInstance();
+	void beforeCreate() {
+		mEventBus = EventBus.getDefault();
 
-		index_dia_semana = calendario.get(Calendar.DAY_OF_WEEK);
-
-//		eventBus = EventBus.getDefault();
-
-		index_dia_semana = getIntent().getIntExtra(V.DIA, -1);
-		misterio_selected = getIntent().getIntExtra(V.MISTERIO, -1);
-		pagina_actual = getIntent().getIntExtra(V.PAGINA, -1);
-		
-		if (V.DEBUG) {
-			Log.d(TAG, "IntentExtra values -Dia:"+index_dia_semana+"; Mistério:"+misterio_selected+"; Página:"+pagina_actual);
-			Log.d(TAG, "Dia Semana:"+V.DIA_SEMANA[index_dia_semana]);
-		}
+		registaBus();
 
 		if (V.DEBUG) {
-			Log.d(TAG, "index_dia_semana: " + index_dia_semana);
+			Log.d(TAG, "Inicializa-mIndexDiaSemana:" + mIndexDiaSemana
+					+ "; mMisterioSelected:" + mMisterioSelected
+					+ "; mPaginaActual:" + mPaginaActual);
+			Log.d(TAG, "beforeCreate.startSignal=" + startSignal.getCount());
 		}
 	}
 
+   /**
+    * Ativação da condição de View (group) inicializada.
+    */
 	@AfterViews
-	void init() {
+	void afterCreate() {
 
 		try {
-//			eventBus.register(this);
 
-//			index_dia_semana = getIntent().getIntExtra(V.DIA, -1);
-//			misterio_selected = getIntent().getIntExtra(V.MISTERIO, -1);
-//			pagina_actual = getIntent().getIntExtra(V.PAGINA, -1);
-//			
-//			if (V.DEBUG) {
-//				Log.d(TAG, "IntentExtra values -Dia:"+index_dia_semana+"; Mistério:"+misterio_selected+"; Página:"+pagina_actual);
-//				Log.d(TAG, "Dia Semana:"+V.DIA_SEMANA[index_dia_semana]);
-//			}
+			startSignal.countDown();
 
-			dia_semana.setText(V.DIA_SEMANA[index_dia_semana]);
-			
+			if (V.DEBUG) {
+				Log.d(TAG, "afterCreate.startSignal=" + startSignal.getCount());
+			}
 		} catch (Exception e) {
 			Log.e(TAG, "Erro no init() @AfterViews:", e);
 		}
 
 	}
-	
-	
+
+   /**
+    * Método auxiliar de controlo do registo no event bus. 
+    */
+	private void registaBus() {
+		if (!mRegistado) {
+			mEventBus.register(this);
+			mRegistado = true;
+		}
+	}
+
+   /**
+    * Método auxiliar de controlo do desregisto no event bus. 
+    */
+	private void desregistaBus() {
+		if (mRegistado) {
+			mEventBus.unregister(this);
+			mRegistado = false;
+		}
+	}
+
+	@Override
+	public void onResume() {
+		super.onResume();
+		registaBus();
+
+	}
+
+	@Override
+	public void onPause() {
+		desregistaBus();
+		super.onPause();
+	}
+
+   /**
+    *
+    * Processo background de inicialização das orações associadas ao mistério selecionado. 
+    *
+    */
+	@Background
+	protected void initDezena() {
+		try {
+			mCoresContas = new ArrayList<Integer>();
+
+			mCoresContas.add(getResources().getColor(R.color.ics_yellow)); // Evangelho
+			mCoresContas.add(getResources().getColor(R.color.ics_green)); // Pai-Nosso
+
+			for (int i = 2; i < 12; i++) {
+				mCoresContas.add(getResources().getColor(R.color.ics_blue)); // Avé-Maria
+			}
+
+			mCoresContas.add(getResources().getColor(R.color.ics_bold_yellow)); // Glória
+			mCoresContas.add(getResources().getColor(R.color.ics_violet)); // Jaculatória
+
+			if (V.DEBUG) {
+				Log.d(TAG, "initDezena before.await.startSignal=" + startSignal.getCount());
+			}
+			
+			startSignal.await();  // Espera pela conclusão da inicialização do estado e das Views
+			
+			if (V.DEBUG) {
+				Log.d(TAG, "initDezena after.await.startSignal=" + startSignal.getCount());
+			}
+			
+			mOracao = Misterios.oracoesDoMisterio(mIndexDiaSemana,
+					mMisterioSelected);
+
+			geraPageView();
+
+		} catch (InterruptedException e) {
+			Log.e(TAG, "initDezena startSignal await Interrupted", e);
+		}
+	}
+
+
+   /**
+    * Método auxiliar que identifica o tipo de mistério do dia. 
+    */
+	private void identificarMisterio() {
+
+		mTextMisterio.setText(Misterios.identificarMisterioDia(mIndexDiaSemana,
+				mMisterioSelected));
+
+	}
+
+	/**
+	 * Método auxiliar gerador da View Page com as orações associadas ao mistério selecionado. 
+	 */
+	@UiThread
+	protected void geraPageView() {
+
+		identificarMisterio();
+
+		mPager.setAdapter(new OracoesPageAdapter(this, mOracao));
+
+		final float density = getResources().getDisplayMetrics().density;
+
+		mIndicator.setViewPager(mPager);
+		mIndicator.setCoresContas(mCoresContas);
+
+		this.detectaPaginaCorrente();
+
+		mIndicator.setBackgroundColor(getResources().getColor(
+				R.color.ics_dark_grey)); // cor de fundo do ViewPage
+											// Indicator
+		mIndicator.setRadius(6 * density);
+		mIndicator.setPageColor(getResources().getColor(R.color.ics_blue)); // Cor
+																			// de
+																			// fundo
+																			// dos
+																			// circulos
+		mIndicator
+				.setFillColor(getResources().getColor(R.color.ics_clear_grey)); // Cor
+																				// de
+																				// fundo
+																				// do
+																				// circulo
+																				// da
+																				// página
+																				// visivel
+		mIndicator.setStrokeColor(getResources().getColor(R.color.ics_black)); // Cor
+																				// da
+																				// circunferencia
+																				// dos
+																				// circulos
+	}
+
+   /**
+    * Definição do Page Change Listener para as mudanças de página na View Page. 
+    */
+	private void detectaPaginaCorrente() {
+
+		// We set this on the indicator, NOT the mPager
+		mIndicator
+				.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+					@Override
+					public void onPageSelected(final int position) {
+
+						mPaginaActual = position;
+
+						mEventBus.post(new Pagina(position));
+
+						if (V.DEBUG) {
+							Log.d(TAG, "onPageSelected-position:" + position);
+							Log.d(TAG, "Página (Integer) mEventBus generated");
+						}
+					}
+
+					@Override
+					public void onPageScrolled(final int position,
+							final float positionOffset, final int positionOffsetPixels) {
+					}
+
+					@Override
+					public void onPageScrollStateChanged(final int state) {
+					}
+				});
+	}
+
+   /**
+    * Trata da mudança de Mistério, notificado pelo evento Rezar. 
+    */
+	public void onEvent(final Rezar event) {
+
+		if (V.DEBUG) {
+			Log.d(TAG, "Evento Rezar recebido:" + event);
+		}
+
+		mIndexDiaSemana = event.diaSemana;
+		mMisterioSelected = event.misterio;
+
+		identificarMisterio();
+/*
+ * Refresca o conteudo das páginas de acordo com o mistério escolhido 
+ */
+		mOracao.clear();
+		mOracao.addAll(Misterios.oracoesDoMisterio(mIndexDiaSemana,
+				mMisterioSelected));
+		mPager.getAdapter().notifyDataSetChanged();
+
+		this.mPager.setCurrentItem(event.pagina);
+	}
+
+   /**
+    * Recebe a notificação do estado da aplicação e ativa a condição de estado inicial da aplicação definido. 
+    */
+	public void onEvent(final Estado event) {
+		if (V.DEBUG) {
+			Log.d(TAG, "Evento Estado recebido:" + event);
+		}
+
+		this.mIndexDiaSemana = event.getDiaSemana();
+		this.mMisterioSelected = event.getMisterio();
+		this.mPaginaActual = event.getPagina();
+
+		startSignal.countDown();
+		
+		if (V.DEBUG) {
+			Log.d(TAG, "onEvent(Estado event) startSignal=" + startSignal.getCount());
+		}
+
+		this.initDezena(); // Estado inicial obtido, iniciar a criação da ViewPageindicator 
+
+	}
 }

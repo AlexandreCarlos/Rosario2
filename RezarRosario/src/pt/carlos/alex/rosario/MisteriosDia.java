@@ -1,0 +1,143 @@
+/*
+ * Copyright (C) 2012 Alexandre Carlos 
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */ 
+/**
+ * Fragmento com a visualização dos mistérios do dia. 
+ */
+package pt.carlos.alex.rosario;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+
+import com.actionbarsherlock.app.SherlockListFragment;
+import com.googlecode.androidannotations.annotations.AfterInject;
+import com.googlecode.androidannotations.annotations.EFragment;
+import com.googlecode.androidannotations.annotations.ViewById;
+
+import de.greenrobot.event.EventBus;
+
+/**
+ * @author alexandre
+ * 
+ */
+@EFragment
+public class MisteriosDia extends SherlockListFragment {
+	static final String TAG = "Rosário.misterios_dia";
+	// final static boolean DEBUG = true;
+
+	private int mIndexDiaSemana = -1;
+	private boolean mDualPage = false;
+//	private MainActivity mMa = null;
+	private EventBus mEventBus;
+
+	@ViewById(R.id.oracoes)
+	protected View mOracoes;
+
+   /**
+    * Inicialização do event bus e respeito registo. 
+    */
+	@AfterInject
+	void beforeCreate() {
+
+		mEventBus = EventBus.getDefault();
+		mEventBus.register(this);
+
+//		mMa = (MainActivity) getActivity();
+//		mIndexDiaSemana = mMa.mIndexDiaSemana;
+//		this.mDualPage = mMa.mDualPage;
+//		mMa = null;
+
+		if (V.DEBUG) {
+			Log.d(TAG, "Inicializa-mIndexDiaSemana: " + mIndexDiaSemana
+					+ "; dualPage:" + mDualPage);
+		}
+
+	}
+
+   /**
+    * Criação da List View com os mistérios do dia. 
+    */
+	@Override
+	public void onActivityCreated(final Bundle savedInstanceState) {
+		super.onActivityCreated(savedInstanceState);
+
+		// setListAdapter(new ArrayAdapter<String>(getActivity(),
+		// android.R.layout.simple_list_item_1, android.R.id.text1,
+		// Misterios.Design__Misterios(mIndexDiaSemana)));
+
+		setListAdapter(new ArrayAdapter<String>(getActivity(),
+				R.layout.misterio_list_itemlayout, R.id.item_misterio,
+				Misterios.designacaoMisterios(mIndexDiaSemana)));
+
+		// getListView().setChoiceMode(ListView.CHOICE_MODE_SINGLE);
+		// getListView().setSelector(R.color.ics_bold_red);
+
+	}
+
+   /**
+    * Tratamento do mistério selecionado. 
+    *
+    * Se o atividade tiver 2 fragmentos desencadeia o evento Rezar. 
+    * Senão inicia a atividade ActivityMostraOracoes com o estado da aplicação
+    * como parâmetros 'Extra'.
+    *
+    */
+	@Override
+	public void onListItemClick(final ListView l, final View v, final int position, final long id) {
+		if (V.DEBUG) {
+			Log.d(TAG, "List Item Click: " + position);
+
+		}
+
+		// ma.misterio_selected = position; //Persistência do estado (mistério
+		// seleccionado)
+
+		// v.getFocusables(position);
+		// v.setSelected(true);
+//		mMa = (MainActivity) getActivity();
+//		this.mDualPage = mMa.mDualPage;
+//		mMa = null;
+
+		getListView().setChoiceMode(ListView.CHOICE_MODE_SINGLE);
+		l.setItemChecked(position, true);
+
+		if (mDualPage) {
+			mEventBus.post(new Rezar(mIndexDiaSemana, position, 0));
+			Log.i(TAG, "Rezar eventBus generated");
+		} else {
+			Intent intent = new Intent(this.getActivity(),
+					ActivityMostraOracoes_.class);
+			intent.putExtra(V.DIA, mIndexDiaSemana);
+			intent.putExtra(V.MISTERIO, position);
+			intent.putExtra(V.PAGINA, 0);
+			Log.d(TAG, "ActivityMostraOracoes_.class Intent generated & started");
+			startActivity(intent);
+		}
+
+	}
+	
+	/**
+	 * Trata os eventos de alteração de estado da aplicação. 
+	 */
+	public void onEvent(final Estado event) {
+		mIndexDiaSemana = event.getDiaSemana();
+		this.mDualPage = event.isDualPage();
+	}
+
+}
