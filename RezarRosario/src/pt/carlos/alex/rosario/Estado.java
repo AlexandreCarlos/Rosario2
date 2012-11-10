@@ -27,7 +27,7 @@ public class Estado {
 	private int diaSemana;
 	private int misterio;
 	private int pagina;
-	private Boolean dualPage;
+	
 	/**
 	 * Construtor de defeito
 	 * Inicializa os atributos com valores incorretos (int = -1)
@@ -36,21 +36,18 @@ public class Estado {
 		this.setDiaSemana(-1);
 		this.setMisterio(-1);
 		this.setPagina(-1);
-		this.setDualPage(false);
-	}
+		}
   /**
    * Construtor com parâmetros de inicialização dos atributos
    *
    * @Param int diaSemana o dia da semana a assignar 
    * @Param int misterio o índex do mistério selecionado
    * @Param int pagina o índex da página selecionada
-   * @Param Boolean dualPage o indicador se o layout tem 2 fragmentos visíveis 
    */
-	public Estado(final int pDiaSemana, final int pMisterio, final int pPagina, final Boolean pDualPage) {
+	public Estado(final int pDiaSemana, final int pMisterio, final int pPagina) {
 		this.setDiaSemana(pDiaSemana);
 		this.setMisterio(pMisterio);
 		this.setPagina(pPagina);
-		this.setDualPage(pDualPage);
 	}
 
 	/**
@@ -96,25 +93,11 @@ public class Estado {
 	}
 
 	/**
-	 * @return true se os 2 fragmentos estão visíveis
-	 */
-	public Boolean isDualPage() {
-		return dualPage;
-	}
-
-	/**
-	 * @param Boolean dualPage Assigna o estado da visibilidade dos 2 fragmentos
-	 */
-	public void setDualPage(final Boolean mDualPage) {
-		this.dualPage = mDualPage;
-	}
-	
-	/**
 	 * @return String representation of Estado
 	 */
 	@Override
 	public String toString() {
 		return "Estado [diaSemana=" + diaSemana + ", misterio=" + misterio
-				+ ", pagina=" + pagina + ", dualPage=" + dualPage + "]";
+				+ ", pagina=" + pagina + "]";
 	}
 }

@@ -24,7 +24,6 @@ import java.util.concurrent.CountDownLatch;
 
 import android.support.v4.view.ViewPager;
 import android.util.Log;
-import android.widget.TextView;
 
 import com.actionbarsherlock.app.SherlockFragment;
 import com.googlecode.androidannotations.annotations.AfterInject;
@@ -47,7 +46,9 @@ public class MostraOracoes extends SherlockFragment {
 
 	private EventBus mEventBus;
 	private boolean mRegistado = false;
-	private final CountDownLatch startSignal = new CountDownLatch(2); // Controlo da ocorrência das condições de inicialização do Page Viewer. 
+
+	// Controlo da ocorrência das condições de inicialização do Page Viewer.
+	private final CountDownLatch startPageViewer = new CountDownLatch(2);
 
 	@ViewById(R.id.pager)
 	protected ViewPager mPager;
@@ -55,8 +56,8 @@ public class MostraOracoes extends SherlockFragment {
 	@ViewById(R.id.indicator)
 	ContasRosario mIndicator;
 
-	@ViewById(R.id.textMisterio)
-	TextView mTextMisterio;
+	// @ViewById(R.id.textMisterio)
+	// TextView mTextMisterio;
 
 	protected int mIndexDiaSemana = -1;
 	protected int mMisterioSelected = 0;
@@ -64,10 +65,10 @@ public class MostraOracoes extends SherlockFragment {
 
 	protected List<String> mOracao;
 	protected List<Integer> mCoresContas;
-   
-   /**
-    * Inicialização e registo no event bus. 
-    */
+
+	/**
+	 * Inicialização e registo no event bus.
+	 */
 	@AfterInject
 	void beforeCreate() {
 		mEventBus = EventBus.getDefault();
@@ -78,22 +79,23 @@ public class MostraOracoes extends SherlockFragment {
 			Log.d(TAG, "Inicializa-mIndexDiaSemana:" + mIndexDiaSemana
 					+ "; mMisterioSelected:" + mMisterioSelected
 					+ "; mPaginaActual:" + mPaginaActual);
-			Log.d(TAG, "beforeCreate.startSignal=" + startSignal.getCount());
+			Log.d(TAG, "beforeCreate.startSignal=" + startPageViewer.getCount());
 		}
 	}
 
-   /**
-    * Ativação da condição de View (group) inicializada.
-    */
+	/**
+	 * Ativação da condição de View (group) inicializada.
+	 */
 	@AfterViews
 	void afterCreate() {
 
 		try {
 
-			startSignal.countDown();
+			startPageViewer.countDown();
 
 			if (V.DEBUG) {
-				Log.d(TAG, "afterCreate.startSignal=" + startSignal.getCount());
+				Log.d(TAG,
+						"afterCreate.startSignal=" + startPageViewer.getCount());
 			}
 		} catch (Exception e) {
 			Log.e(TAG, "Erro no init() @AfterViews:", e);
@@ -101,9 +103,9 @@ public class MostraOracoes extends SherlockFragment {
 
 	}
 
-   /**
-    * Método auxiliar de controlo do registo no event bus. 
-    */
+	/**
+	 * Método auxiliar de controlo do registo no event bus.
+	 */
 	private void registaBus() {
 		if (!mRegistado) {
 			mEventBus.register(this);
@@ -111,9 +113,9 @@ public class MostraOracoes extends SherlockFragment {
 		}
 	}
 
-   /**
-    * Método auxiliar de controlo do desregisto no event bus. 
-    */
+	/**
+	 * Método auxiliar de controlo do desregisto no event bus.
+	 */
 	private void desregistaBus() {
 		if (mRegistado) {
 			mEventBus.unregister(this);
@@ -134,11 +136,12 @@ public class MostraOracoes extends SherlockFragment {
 		super.onPause();
 	}
 
-   /**
-    *
-    * Processo background de inicialização das orações associadas ao mistério selecionado. 
-    *
-    */
+	/**
+	 * 
+	 * Processo background de inicialização das orações associadas ao mistério
+	 * selecionado.
+	 * 
+	 */
 	@Background
 	protected void initDezena() {
 		try {
@@ -155,43 +158,47 @@ public class MostraOracoes extends SherlockFragment {
 			mCoresContas.add(getResources().getColor(R.color.ics_violet)); // Jaculatória
 
 			if (V.DEBUG) {
-				Log.d(TAG, "initDezena before.await.startSignal=" + startSignal.getCount());
+				Log.d(TAG, "initDezena before.await.startSignal="
+						+ startPageViewer.getCount());
 			}
-			
-			startSignal.await();  // Espera pela conclusão da inicialização do estado e das Views
-			
+
+			startPageViewer.await(); // Espera pela conclusão da inicialização
+										// do
+										// estado e das Views
+
 			if (V.DEBUG) {
-				Log.d(TAG, "initDezena after.await.startSignal=" + startSignal.getCount());
+				Log.d(TAG, "initDezena after.await.startSignal="
+						+ startPageViewer.getCount());
 			}
-			
+
 			mOracao = Misterios.oracoesDoMisterio(mIndexDiaSemana,
 					mMisterioSelected);
 
 			geraPageView();
 
 		} catch (InterruptedException e) {
-			Log.e(TAG, "initDezena startSignal await Interrupted", e);
+			Log.e(TAG, "initDezena startPageViewer await Interrupted", e);
 		}
 	}
 
-
-   /**
-    * Método auxiliar que identifica o tipo de mistério do dia. 
-    */
-	private void identificarMisterio() {
-
-		mTextMisterio.setText(Misterios.identificarMisterioDia(mIndexDiaSemana,
-				mMisterioSelected));
-
-	}
+	// /**
+	// * Método auxiliar que identifica o tipo de mistério do dia.
+	// */
+	// private void identificarMisterio() {
+	//
+	// mTextMisterio.setText(Misterios.identificarMisterioDia(mIndexDiaSemana,
+	// mMisterioSelected));
+	//
+	// }
 
 	/**
-	 * Método auxiliar gerador da View Page com as orações associadas ao mistério selecionado. 
+	 * Método auxiliar gerador da View Page com as orações associadas ao
+	 * mistério selecionado.
 	 */
 	@UiThread
 	protected void geraPageView() {
 
-		identificarMisterio();
+		// identificarMisterio();
 
 		mPager.setAdapter(new OracoesPageAdapter(this, mOracao));
 
@@ -227,9 +234,10 @@ public class MostraOracoes extends SherlockFragment {
 																				// circulos
 	}
 
-   /**
-    * Definição do Page Change Listener para as mudanças de página na View Page. 
-    */
+	/**
+	 * Definição do Page Change Listener para as mudanças de página na View
+	 * Page.
+	 */
 	private void detectaPaginaCorrente() {
 
 		// We set this on the indicator, NOT the mPager
@@ -250,7 +258,8 @@ public class MostraOracoes extends SherlockFragment {
 
 					@Override
 					public void onPageScrolled(final int position,
-							final float positionOffset, final int positionOffsetPixels) {
+							final float positionOffset,
+							final int positionOffsetPixels) {
 					}
 
 					@Override
@@ -259,33 +268,41 @@ public class MostraOracoes extends SherlockFragment {
 				});
 	}
 
-   /**
-    * Trata da mudança de Mistério, notificado pelo evento Rezar. 
-    */
+	/**
+	 * Trata da mudança de Mistério, notificado pelo evento Rezar.
+	 */
 	public void onEvent(final Rezar event) {
 
-		if (V.DEBUG) {
-			Log.d(TAG, "Evento Rezar recebido:" + event);
+		try {
+			if (V.DEBUG) {
+				Log.d(TAG, "Evento Rezar recebido:" + event);
+			}
+
+			mIndexDiaSemana = event.diaSemana;
+			mMisterioSelected = event.misterio;
+
+			/*
+			 * Refresca o conteudo das páginas de acordo com o mistério
+			 * escolhido
+			 */
+			mOracao.clear();
+			mOracao.addAll(Misterios.oracoesDoMisterio(mIndexDiaSemana,
+					mMisterioSelected));
+
+			if (mPager.getAdapter() != null) {
+				this.mPager.getAdapter().notifyDataSetChanged();
+				this.mPager.setCurrentItem(event.pagina);
+			}
+
+		} catch (Exception e) {
+			Log.e(TAG, "Erro no onEvent(final Rezar event):", e);
 		}
-
-		mIndexDiaSemana = event.diaSemana;
-		mMisterioSelected = event.misterio;
-
-		identificarMisterio();
-/*
- * Refresca o conteudo das páginas de acordo com o mistério escolhido 
- */
-		mOracao.clear();
-		mOracao.addAll(Misterios.oracoesDoMisterio(mIndexDiaSemana,
-				mMisterioSelected));
-		mPager.getAdapter().notifyDataSetChanged();
-
-		this.mPager.setCurrentItem(event.pagina);
 	}
 
-   /**
-    * Recebe a notificação do estado da aplicação e ativa a condição de estado inicial da aplicação definido. 
-    */
+	/**
+	 * Recebe a notificação do estado da aplicação e ativa a condição de estado
+	 * inicial da aplicação definido.
+	 */
 	public void onEvent(final Estado event) {
 		if (V.DEBUG) {
 			Log.d(TAG, "Evento Estado recebido:" + event);
@@ -295,13 +312,15 @@ public class MostraOracoes extends SherlockFragment {
 		this.mMisterioSelected = event.getMisterio();
 		this.mPaginaActual = event.getPagina();
 
-		startSignal.countDown();
-		
+		startPageViewer.countDown();
+
 		if (V.DEBUG) {
-			Log.d(TAG, "onEvent(Estado event) startSignal=" + startSignal.getCount());
+			Log.d(TAG, "onEvent(Estado event) startPageViewer="
+					+ startPageViewer.getCount());
 		}
 
-		this.initDezena(); // Estado inicial obtido, iniciar a criação da ViewPageindicator 
+		this.initDezena(); // Estado inicial obtido, iniciar a criação da
+							// ViewPageindicator
 
 	}
 }

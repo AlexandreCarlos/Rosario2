@@ -13,13 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- package pt.carlos.alex.rosario;
+package pt.carlos.alex.rosario;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 import android.os.Bundle;
+import android.text.Html;
 import android.util.Log;
+import android.view.Display;
 import android.view.View;
 import android.widget.TextView;
 
@@ -29,12 +31,14 @@ import com.googlecode.androidannotations.annotations.AfterViews;
 import com.googlecode.androidannotations.annotations.EActivity;
 import com.googlecode.androidannotations.annotations.OptionsMenu;
 import com.googlecode.androidannotations.annotations.ViewById;
+import com.slidingmenu.lib.SlidingMenu;
 
 import de.greenrobot.event.EventBus;
+
 /**
- *
- * Atividade principal que inicializa e controla os estados da aplicaçã. 
- *
+ * 
+ * Atividade principal que inicializa e controla os estados da aplicaçã.
+ * 
  */
 @EActivity(R.layout.activity_main)
 @OptionsMenu(R.menu.activity_main)
@@ -55,19 +59,21 @@ public class MainActivity extends SherlockFragmentActivity {
 	@ViewById(R.id.oracoes)
 	protected View mOracoes;
 
+	@ViewById(R.id.slidingmenulayout)
+	protected SlidingMenu mSlindingMenu;
+
 	private EventBus mEventBus;
 	private GregorianCalendar mCalendario;
 	protected int mIndexDiaSemana = -1;
 	protected int mMisterioSelected = 0;
 	protected int mPaginaActual = 0;
-	protected boolean mDualPage = false;
 
-   /**
-    * Inicialização antes da criação das views. 
-    * Determina o dia da semana atual. 
-    */
+	/**
+	 * Inicialização antes da criação das views. Determina o dia da semana
+	 * atual.
+	 */
 	@AfterInject
-	void startup() {
+	void beforeCreate() {
 		mCalendario = (GregorianCalendar) GregorianCalendar.getInstance();
 
 		mIndexDiaSemana = mCalendario.get(Calendar.DAY_OF_WEEK);
@@ -79,33 +85,28 @@ public class MainActivity extends SherlockFragmentActivity {
 		}
 	}
 
-   /**
-    * Inicialização depois da criação das views. 
-    * Determina se o layout inclui 2 views. 
-    * Notifica o novo estado da aplicação. 
-    */
+	/**
+	 * Inicialização depois da criação das views. Determina se o layout inclui 2
+	 * views. Notifica o novo estado da aplicação.
+	 */
 	@AfterViews
-	void init() {
+	void afterCreate() {
 
 		// try {
 		mEventBus.register(this);
 
-		mDiaSemana.setText(V.DIA_SEMANA[mIndexDiaSemana] + " - "
-				+ Misterios.designacaoMisterio(mIndexDiaSemana));
-
-		this.mDualPage = this.mOracoes != null
-				&& this.mOracoes.getVisibility() == View.VISIBLE;
+		this.escreveTitulo();
 
 		mEventBus.post(new Estado(mIndexDiaSemana, mMisterioSelected,
-				mPaginaActual, mDualPage));
+				mPaginaActual));
 
 		if (V.DEBUG) {
 			Log.d(TAG, "Triggered event Estado. Dia:" + mIndexDiaSemana
 					+ "; Mistério:" + mMisterioSelected + "; Página:"
-					+ mPaginaActual + "; DualPage:" + mDualPage);
+					+ mPaginaActual);
 		}
 
-//		Log.i(TAG, "Dual Mode:" + this.mDualPage);
+		// Log.i(TAG, "Dual Mode:" + this.mDualPage);
 
 		// } catch (Exception e) {
 		// Log.e(TAG, "Erro no init() @AfterViews:", e);
@@ -113,9 +114,55 @@ public class MainActivity extends SherlockFragmentActivity {
 
 	}
 
-   /**
-    * Guarda o estado da aplicação. 
-    */
+	/**
+	 * Actualiza o texto da TextView dia_semana com o dia da semana e o mistério
+	 * que se está a rezar.
+	 */
+	private void escreveTitulo() {
+		StringBuilder s;
+
+		s = new StringBuilder("<html><head></head><body>");
+		s.append(V.DIA_SEMANA[mIndexDiaSemana]);
+		s.append(" - ");
+		s.append(Misterios.designacaoMisterio(mIndexDiaSemana));
+
+		if (this.isLandscape()) {
+			s.append(" (");
+		} else {
+			s.append("<br />(");
+		}
+
+		s.append(Misterios.identificarMisterioDia(mIndexDiaSemana,
+				mMisterioSelected));
+		s.append(")</body></html>");
+
+		mDiaSemana.setText(Html.fromHtml(s.toString()));
+	}
+
+	/**
+	 * Detecta a orientação do écran.
+	 * 
+	 * Utiliza métodos Deprecated, para garantir a retro compatibilidade com API
+	 * Level < 13 (Honeycomb)
+	 * 
+	 * @return True se o écran estiver orientado em Landscape
+	 */
+	@SuppressWarnings("deprecation")
+	private boolean isLandscape() {
+	
+		Display getOrient = getWindowManager().getDefaultDisplay();
+
+		if (V.DEBUG) {
+			Log.d(TAG, "Screen Size - Width: " + getOrient.getWidth()
+					+ "; Heigth: " + getOrient.getHeight());
+		}
+
+		return !(getOrient.getWidth() < getOrient.getHeight());
+	}
+
+	/**
+	 * Guarda o estado da aplicação.
+	 */
 	@Override
 	protected void onSaveInstanceState(final Bundle outState) {
 		super.onSaveInstanceState(outState);
@@ -131,12 +178,12 @@ public class MainActivity extends SherlockFragmentActivity {
 		}
 
 	}
-	
-   /**
-    *
-    * Recupera o estado da aplicação e notifica as alterações. 
-    *
-    */
+
+	/**
+	 * 
+	 * Recupera o estado da aplicação e notifica as alterações.
+	 * 
+	 */
 	@Override
 	protected void onRestoreInstanceState(final Bundle inState) {
 		super.onRestoreInstanceState(inState);
@@ -184,9 +231,9 @@ public class MainActivity extends SherlockFragmentActivity {
 
 	}
 
-   /**
-    * Recebe as notificações de mudança de página e guarda no estado. 
-    */
+	/**
+	 * Recebe as notificações de mudança de página e guarda no estado.
+	 */
 	public void onEvent(final Pagina event) {
 
 		if (V.DEBUG) {
@@ -197,10 +244,10 @@ public class MainActivity extends SherlockFragmentActivity {
 
 	}
 
-   /**
-    * Recebe a notificação de mistério selecionado e guarda no estado. 
-    *
-    */
+	/**
+	 * Recebe a notificação de mistério selecionado e guarda no estado.
+	 * 
+	 */
 	public void onEvent(final Rezar event) {
 
 		if (V.DEBUG) {
@@ -209,6 +256,8 @@ public class MainActivity extends SherlockFragmentActivity {
 
 		mIndexDiaSemana = event.diaSemana;
 		mMisterioSelected = event.misterio;
+
+		this.escreveTitulo();
 
 	}
 }

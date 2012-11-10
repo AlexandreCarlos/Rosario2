@@ -26,7 +26,7 @@
     android:background="@color/ics_white"
     sliding:viewAbove="@layout/oracoes_fragment_layout"
     sliding:viewBehind="@layout/misterios_fragment_layout"
-    sliding:behindWidth="@dimen/slidingmenu_width"
+    sliding:behindOffset="@dimen/slidingmenu_offset"
     sliding:touchModeAbove="margin"
     sliding:touchModeBehind="margin"
     sliding:selectorEnabled="false" />

@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */ 
+ */
 /**
  * Classe agregadora de todos os mistérios e orações do Rosário de Fátima. 
  */
@@ -31,10 +31,17 @@ public final class Misterios {
 
 	private static final String TAG = "Rosário.Misterios";
 
-	public static final String[] DESIGN = { "Mistérios Gloriosos (da Glória)", // 0
-			"Mistérios Gozosos (da Alegria)", // 1
-			"Mistérios Dolorosos (da Dor)", // 2
-			"Mistérios Luminosos (da Luz)" // 3
+	// public static final String[] DESIGN = {
+	// "Mistérios Gloriosos (da Glória)", // 0
+	// "Mistérios Gozosos (da Alegria)", // 1
+	// "Mistérios Dolorosos (da Dor)", // 2
+	// "Mistérios Luminosos (da Luz)" // 3
+	// };
+
+	public static final String[] DESIGN = { "Mistérios Gloriosos", // 0
+			"Mistérios Gozosos", // 1
+			"Mistérios Dolorosos", // 2
+			"Mistérios Luminosos" // 3
 	};
 
 	public static final int[] MISTERIOS = { -1, // Erro ???
@@ -111,8 +118,8 @@ public final class Misterios {
 	private static final String LUMINOSO5 = "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\"><html><head><meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\"></head><body><div  align=\"center\"><h2>A instituição da Eucaristia <sub><font  size=\"-1\"><i>(Mt 26,26-29)</i></font></sub></h2></div><sup><font color=\"#AA66CC\" size=\"-1\">26</font></sup>Enquanto comiam, Jesus tomou o pão e, depois de pronunciar a bênção, partiu-o e deu-o aos seus discípulos, dizendo: «Tomai, comei: Isto é o meu corpo.»<br><br><sup><font color=\"#AA66CC\" size=\"-1\">27</font></sup>Em seguida, tomou um cálice, deu graças e entregou-lho, dizendo: «Bebei dele todos. <sup><font color=\"#AA66CC\" size=\"-1\">28</font></sup>Porque este é o meu sangue, sangue da Aliança, que vai ser derramado por muitos, para perdão dos pecados.<sup><font color=\"#AA66CC\" size=\"-1\">29</font></sup>Eu vos digo: Não beberei mais deste produto da videira, até ao dia em que beber o vinho novo convosco no Reino de meu Pai.»  <br></body></html>";
 
 	/**
-	 * Obter a designação dos Mistérios do dia da semana. 
-	 *
+	 * Obter a designação dos Mistérios do dia da semana.
+	 * 
 	 * @param diaSemana
 	 *            int com o dia da semana 1 - Domingo 2 - 2ª Feira 3 - 3ª Feira
 	 *            4 - 4ª Feira 5 - 5ª Feira 6 - 6ª Feira 7 - Sábado
@@ -137,8 +144,8 @@ public final class Misterios {
 	}
 
 	/**
-	 * Obter a designação do tipo de Mistério do dia da semana. 
-	 *
+	 * Obter a designação do tipo de Mistério do dia da semana.
+	 * 
 	 * @param diaSemana
 	 *            int com o dia da semana 1 - Domingo 2 - 2ª Feira 3 - 3ª Feira
 	 *            4 - 4ª Feira 5 - 5ª Feira 6 - 6ª Feira 7 - Sábado
@@ -149,30 +156,33 @@ public final class Misterios {
 	}
 
 	/**
-	 * Obter a identificação do Mistério selecionado para o dia da semana. 
-	 *
+	 * Obter a identificação do Mistério selecionado para o dia da semana.
+	 * 
 	 * @param diaSemana
 	 *            int com o dia da semana 1 - Domingo 2 - 2ª Feira 3 - 3ª Feira
 	 *            4 - 4ª Feira 5 - 5ª Feira 6 - 6ª Feira 7 - Sábado
 	 * @param misterio
 	 *            int com o mistério selecionado (Base de Referência 0)
-	 * @return String com a identificação do Mistério selecionado para o dia da semana
+	 * @return String com a identificação do Mistério selecionado para o dia da
+	 *         semana
 	 */
-	public static String identificarMisterioDia(final int pDiaSemana, final int misterio) {
+	public static String identificarMisterioDia(final int pDiaSemana,
+			final int misterio) {
 
 		if (misterio < 5) {
-			switch (MISTERIOS[pDiaSemana]) {
-			case 0:
-				return (misterio + 1) + "º Mistério Glorioso";
-			case 1:
-				return (misterio + 1) + "º Mistério Gozoso";
-			case 2:
-				return (misterio + 1) + "º Mistério Doloroso";
-			case 3:
-				return (misterio + 1) + "º Mistério Luminoso";
-			default:
-				return null;
-			}
+			// switch (MISTERIOS[pDiaSemana]) {
+			// case 0:
+			// return (misterio + 1) + "º Mistério Glorioso";
+			// case 1:
+			// return (misterio + 1) + "º Mistério Gozoso";
+			// case 2:
+			// return (misterio + 1) + "º Mistério Doloroso";
+			// case 3:
+			// return (misterio + 1) + "º Mistério Luminoso";
+			// default:
+			// return null;
+			// }
+			return (misterio + 1) + "º Mistério";
 		}
 
 		return "Oração Final";
@@ -180,16 +190,19 @@ public final class Misterios {
 	}
 
 	/**
-	 * Obter o texto bíblico referente ao Mistério selecionado para o dia da semana.
-	 *
+	 * Obter o texto bíblico referente ao Mistério selecionado para o dia da
+	 * semana.
+	 * 
 	 * @param diaSemana
 	 *            int com o dia da semana 1 - Domingo 2 - 2ª Feira 3 - 3ª Feira
 	 *            4 - 4ª Feira 5 - 5ª Feira 6 - 6ª Feira 7 - Sábado
 	 * @param misterio
 	 *            int com o mistério selecionado (Base de Referência 0)
-	 * @return String com o texto bíblico referente ao Mistério selecionado para o dia da semana
+	 * @return String com o texto bíblico referente ao Mistério selecionado para
+	 *         o dia da semana
 	 */
-	public static String obterMisterioDia(final int pDiaSemana, final int misterio) {
+	public static String obterMisterioDia(final int pDiaSemana,
+			final int misterio) {
 
 		switch (MISTERIOS[pDiaSemana]) {
 		case 0:
@@ -208,10 +221,11 @@ public final class Misterios {
 
 	/**
 	 * Obter o texto bíblico referente ao Mistério Gozoso selecionado.
-	 *
+	 * 
 	 * @param i
 	 *            int com o mistério selecionado (Base de Referência 0)
-	 * @return String com o texto bíblico referente ao Mistério Gozoso selecionado
+	 * @return String com o texto bíblico referente ao Mistério Gozoso
+	 *         selecionado
 	 */
 	public static String gozosos(final int i) {
 
@@ -235,10 +249,11 @@ public final class Misterios {
 
 	/**
 	 * Obter o texto bíblico referente ao Mistério Glorioso selecionado.
-	 *
+	 * 
 	 * @param i
 	 *            int com o mistério selecionado (Base de Referência 0)
-	 * @return String com o texto bíblico referente ao Mistério Glorioso selecionado
+	 * @return String com o texto bíblico referente ao Mistério Glorioso
+	 *         selecionado
 	 */
 	public static String gloriosos(final int i) {
 
@@ -262,10 +277,11 @@ public final class Misterios {
 
 	/**
 	 * Obter o texto bíblico referente ao Mistério Doloroso selecionado.
-	 *
+	 * 
 	 * @param i
 	 *            int com o mistério selecionado (Base de Referência 0)
-	 * @return String com o texto bíblico referente ao Mistério Doloroso selecionado
+	 * @return String com o texto bíblico referente ao Mistério Doloroso
+	 *         selecionado
 	 */
 	public static String dolorosos(final int i) {
 
@@ -289,10 +305,11 @@ public final class Misterios {
 
 	/**
 	 * Obter o texto bíblico referente ao Mistério Luminoso selecionado.
-	 *
+	 * 
 	 * @param i
 	 *            int com o mistério selecionado (Base de Referência 0)
-	 * @return String com o texto bíblico referente ao Mistério Luminoso selecionado
+	 * @return String com o texto bíblico referente ao Mistério Luminoso
+	 *         selecionado
 	 */
 	public static String luminosos(final int i) {
 
@@ -310,13 +327,13 @@ public final class Misterios {
 		case 5:
 			return ORACOESFINAIS;
 		default:
-			return null;	
+			return null;
 		}
 	}
 
 	/**
-	 * Obter o Pai Nosso. 
-	 *
+	 * Obter o Pai Nosso.
+	 * 
 	 * @return String com a oração do Pai Nosso
 	 */
 	public static String paiNosso() {
@@ -324,8 +341,8 @@ public final class Misterios {
 	}
 
 	/**
-	 * Obter a Avé Maria. 
-	 *
+	 * Obter a Avé Maria.
+	 * 
 	 * @return String com a oração da Avé Maria
 	 */
 	public static String aveMaria() {
@@ -333,8 +350,8 @@ public final class Misterios {
 	}
 
 	/**
-	 * Obter o Glória. 
-	 *
+	 * Obter o Glória.
+	 * 
 	 * @return String com a oração do Glória
 	 */
 	public static String gloria() {
@@ -342,8 +359,8 @@ public final class Misterios {
 	}
 
 	/**
-	 * Obter o Salvé Rainha. 
-	 *
+	 * Obter o Salvé Rainha.
+	 * 
 	 * @return String com a oração da Salvé Rainha
 	 */
 	public static String salveRainha() {
@@ -351,8 +368,8 @@ public final class Misterios {
 	}
 
 	/**
-	 * Obter a Jaculatória final. 
-	 *
+	 * Obter a Jaculatória final.
+	 * 
 	 * @return String com a Jaculatória final
 	 */
 	public static String jaculatoria() {
@@ -360,16 +377,19 @@ public final class Misterios {
 	}
 
 	/**
-	 * Obter a lista das orações da Dezena do Mistério selecionado para o dia da semana. 
-	 *
+	 * Obter a lista das orações da Dezena do Mistério selecionado para o dia da
+	 * semana.
+	 * 
 	 * @param diaSemana
 	 *            int com o dia da semana 1 - Domingo 2 - 2ª Feira 3 - 3ª Feira
 	 *            4 - 4ª Feira 5 - 5ª Feira 6 - 6ª Feira 7 - Sábado
 	 * @param misterio
 	 *            int com o mistério selecionado (Base de Referência 0)
-	 * @return String List com as Orações (Dezena) do Mistério selecionado para o dia da semana
+	 * @return String List com as Orações (Dezena) do Mistério selecionado para
+	 *         o dia da semana
 	 */
-	public static List<String> oracoesDoMisterio(final int pDiaSemana, final int misterio) {
+	public static List<String> oracoesDoMisterio(final int pDiaSemana,
+			final int misterio) {
 		List<String> mOracao = new ArrayList<String>();
 
 		try {
