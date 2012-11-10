@@ -18,6 +18,7 @@ package pt.carlos.alex.rosario;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.text.Html;
 import android.util.Log;
@@ -26,6 +27,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.actionbarsherlock.app.SherlockFragmentActivity;
+import com.actionbarsherlock.view.MenuItem;
 import com.googlecode.androidannotations.annotations.AfterInject;
 import com.googlecode.androidannotations.annotations.AfterViews;
 import com.googlecode.androidannotations.annotations.EActivity;
@@ -45,13 +47,6 @@ import de.greenrobot.event.EventBus;
 public class MainActivity extends SherlockFragmentActivity {
 
 	static final String TAG = "Rosário.MainActivity";
-	// final static boolean DEBUG = true;
-	// final static String MISTERIO = "Misterio";
-	// final static String DIA = "Dia";
-	// final static String PAGINA = "Pagina";
-	// final static String[] DIA_SEMANA = { "Que dia é este?", "Domingo",
-	// "2ª Feira", "3ª Feira", "4ª Feira", "5ª Feira", "6ª Feira",
-	// "Sábado" };
 
 	@ViewById(R.id.dia_semana)
 	protected TextView mDiaSemana;
@@ -92,10 +87,13 @@ public class MainActivity extends SherlockFragmentActivity {
 	@AfterViews
 	void afterCreate() {
 
-		// try {
 		mEventBus.register(this);
 
 		this.escreveTitulo();
+
+		if (mSlindingMenu != null) {
+			getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+		}
 
 		mEventBus.post(new Estado(mIndexDiaSemana, mMisterioSelected,
 				mPaginaActual));
@@ -105,12 +103,6 @@ public class MainActivity extends SherlockFragmentActivity {
 					+ "; Mistério:" + mMisterioSelected + "; Página:"
 					+ mPaginaActual);
 		}
-
-		// Log.i(TAG, "Dual Mode:" + this.mDualPage);
-
-		// } catch (Exception e) {
-		// Log.e(TAG, "Erro no init() @AfterViews:", e);
-		// }
 
 	}
 
@@ -149,7 +141,7 @@ public class MainActivity extends SherlockFragmentActivity {
 	 */
 	@SuppressWarnings("deprecation")
 	private boolean isLandscape() {
-	
+
 		Display getOrient = getWindowManager().getDefaultDisplay();
 
 		if (V.DEBUG) {
@@ -259,5 +251,37 @@ public class MainActivity extends SherlockFragmentActivity {
 
 		this.escreveTitulo();
 
+		if (this.mSlindingMenu != null) {
+			if (this.mSlindingMenu.isBehindShowing()) {
+				this.mSlindingMenu.showAbove();
+			}
+		}
 	}
+
+	@Override
+	public boolean onOptionsItemSelected(final MenuItem item) {
+		switch (item.getItemId()) {
+		case android.R.id.home:
+			mSlindingMenu.toggle();
+			return true;
+		case R.id.about:
+			new AlertDialog.Builder(this).setTitle(R.string.about)
+					.setMessage(Html.fromHtml(getString(R.string.about_msg)))
+					.show();
+			break;
+		case R.id.licenses:
+			new AlertDialog.Builder(this)
+					.setTitle(R.string.licenses)
+					.setMessage(
+							Html.fromHtml(getString(R.string.apache_license)))
+					.show();
+			break;
+		default:
+			break;
+		}
+
+		return super.onOptionsItemSelected(item);
+
+	}
+
 }
