@@ -9,5 +9,6 @@
 	<color name="ics_dark_grey">#FFCCCCCC</color>
 	<color name="ics_clear_grey">#CC888888</color>
 	<color name="ics_black">#FF000000</color>
-		
+	<color name="ics_white">#FFFFFFFF</color>
+	
 </resources>
