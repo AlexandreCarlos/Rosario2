@@ -128,24 +128,37 @@ public class MainActivity extends SherlockFragmentActivity implements
 	 * que se está a rezar.
 	 */
 	private void escreveTitulo() {
-		StringBuilder s;
 
-		s = new StringBuilder("<html><head></head><body>");
-		s.append(V.DIA_SEMANA[mIndexDiaSemana]);
-		s.append(" - ");
-		s.append(Misterios.designacaoMisterio(mIndexDiaSemana));
-
+	String formattedString;
+	
 		if (this.isLandscape()) {
-			s.append(" (");
+			formattedString = String.format("<html><head></head><body>%s - %s (%s)</body></html>", V.DIA_SEMANA[mIndexDiaSemana], 
+				Misterios.designacaoMisterio(mIndexDiaSemana), Misterios.identificarMisterioDia(mIndexDiaSemana, mMisterioSelected)); 
 		} else {
-			s.append("<br />(");
+			formattedString = String.format("<html><head></head><body>%s - %s <br />(%s)</body></html>", V.DIA_SEMANA[mIndexDiaSemana], 
+				Misterios.designacaoMisterio(mIndexDiaSemana), Misterios.identificarMisterioDia(mIndexDiaSemana, mMisterioSelected)); 
 		}
+	
+		mDiaSemana.setText(Html.fromHtml(formattedString));
 
-		s.append(Misterios.identificarMisterioDia(mIndexDiaSemana,
-				mMisterioSelected));
-		s.append(")</body></html>");
+//	StringBuilder s;
+//
+//		s = new StringBuilder("<html><head></head><body>");
+//		s.append(V.DIA_SEMANA[mIndexDiaSemana]);
+		// s.append(" - ");
+		// s.append(Misterios.designacaoMisterio(mIndexDiaSemana));
 
-		mDiaSemana.setText(Html.fromHtml(s.toString()));
+		// if (this.isLandscape()) {
+			// s.append(" (");
+		// } else {
+			// s.append("<br />(");
+		// }
+
+		// s.append(Misterios.identificarMisterioDia(mIndexDiaSemana,
+				// mMisterioSelected));
+		// s.append(")</body></html>");
+
+		// mDiaSemana.setText(Html.fromHtml(s.toString()));
 
 		ab.setSelectedNavigationItem(mIndexDiaSemana - 1);
 		
