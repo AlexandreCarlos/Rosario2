@@ -67,6 +67,7 @@ public class MainActivity extends SherlockFragmentActivity implements
 	protected int mMisterioSelected = 0;
 	protected int mPaginaActual = 0;
 	private ActionBar ab;
+	private ArrayAdapter <CharSequence> weekDaysList;
 
 	/**
 	 * Inicialização antes da criação das views. Determina o dia da semana
@@ -99,9 +100,11 @@ public class MainActivity extends SherlockFragmentActivity implements
 		ab.setDisplayShowTitleEnabled(false);
 		ab.setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);
 		
-		ab.setListNavigationCallbacks(ArrayAdapter.createFromResource(this,
-				R.array.week_days, R.layout.sherlock_spinner_dropdown_item),
-				this);
+		weekDaysList = ArrayAdapter.createFromResource(ab.getThemedContext(),
+				R.array.week_days, R.layout.sherlock_spinner_item);
+		weekDaysList.setDropDownViewResource(R.layout.sherlock_spinner_dropdown_item);
+		
+		ab.setListNavigationCallbacks(weekDaysList, this);
 
 		this.escreveTitulo();
 
@@ -145,6 +148,12 @@ public class MainActivity extends SherlockFragmentActivity implements
 		mDiaSemana.setText(Html.fromHtml(s.toString()));
 
 		ab.setSelectedNavigationItem(mIndexDiaSemana - 1);
+		
+		if (this.mSlindingMenu != null) {
+			if (this.mSlindingMenu.isBehindShowing()) {
+				this.mSlindingMenu.showAbove();
+			}
+		}
 	}
 
 	/**
@@ -267,11 +276,6 @@ public class MainActivity extends SherlockFragmentActivity implements
 
 		this.escreveTitulo();
 
-		if (this.mSlindingMenu != null) {
-			if (this.mSlindingMenu.isBehindShowing()) {
-				this.mSlindingMenu.showAbove();
-			}
-		}
 	}
 
 	@Override
