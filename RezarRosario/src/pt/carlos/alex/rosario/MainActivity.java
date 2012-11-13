@@ -24,8 +24,11 @@ import android.text.Html;
 import android.util.Log;
 import android.view.Display;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import com.actionbarsherlock.app.ActionBar;
+import com.actionbarsherlock.app.ActionBar.OnNavigationListener;
 import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.actionbarsherlock.view.MenuItem;
 import com.googlecode.androidannotations.annotations.AfterInject;
@@ -44,7 +47,8 @@ import de.greenrobot.event.EventBus;
  */
 @EActivity(R.layout.activity_main)
 @OptionsMenu(R.menu.activity_main)
-public class MainActivity extends SherlockFragmentActivity {
+public class MainActivity extends SherlockFragmentActivity implements
+		OnNavigationListener {
 
 	static final String TAG = "Rosário.MainActivity";
 
@@ -62,6 +66,7 @@ public class MainActivity extends SherlockFragmentActivity {
 	protected int mIndexDiaSemana = -1;
 	protected int mMisterioSelected = 0;
 	protected int mPaginaActual = 0;
+	private ActionBar ab;
 
 	/**
 	 * Inicialização antes da criação das views. Determina o dia da semana
@@ -89,10 +94,19 @@ public class MainActivity extends SherlockFragmentActivity {
 
 		mEventBus.register(this);
 
+		ab = getSupportActionBar();
+
+		ab.setDisplayShowTitleEnabled(false);
+		ab.setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);
+		
+		ab.setListNavigationCallbacks(ArrayAdapter.createFromResource(this,
+				R.array.week_days, R.layout.sherlock_spinner_dropdown_item),
+				this);
+
 		this.escreveTitulo();
 
 		if (mSlindingMenu != null) {
-			getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+			ab.setDisplayHomeAsUpEnabled(true);
 		}
 
 		mEventBus.post(new Estado(mIndexDiaSemana, mMisterioSelected,
@@ -129,6 +143,8 @@ public class MainActivity extends SherlockFragmentActivity {
 		s.append(")</body></html>");
 
 		mDiaSemana.setText(Html.fromHtml(s.toString()));
+
+		ab.setSelectedNavigationItem(mIndexDiaSemana - 1);
 	}
 
 	/**
@@ -264,6 +280,20 @@ public class MainActivity extends SherlockFragmentActivity {
 		case android.R.id.home:
 			mSlindingMenu.toggle();
 			return true;
+			// case R.id.domingo:
+			// return changeWeekDay(1);
+			// case R.id.segunda:
+			// return changeWeekDay(2);
+			// case R.id.terca:
+			// return changeWeekDay(3);
+			// case R.id.quarta:
+			// return changeWeekDay(4);
+			// case R.id.quinta:
+			// return changeWeekDay(5);
+			// case R.id.sexta:
+			// return changeWeekDay(6);
+			// case R.id.sabado:
+			// return changeWeekDay(1);
 		case R.id.about:
 			new AlertDialog.Builder(this).setTitle(R.string.about)
 					.setMessage(Html.fromHtml(getString(R.string.about_msg)))
@@ -282,6 +312,27 @@ public class MainActivity extends SherlockFragmentActivity {
 
 		return super.onOptionsItemSelected(item);
 
+	}
+
+	@Override
+	public boolean onNavigationItemSelected(final int itemPosition,
+			final long itemId) {
+
+		mIndexDiaSemana = itemPosition + 1;
+		mMisterioSelected = 0;
+		mPaginaActual = 0;
+
+		if (V.DEBUG) {
+			Log.d(TAG, "onNavigationItemSelected - itemPosition:"
+					+ itemPosition + "; mIndexDiaSemana:" + mIndexDiaSemana);
+		}
+
+		this.escreveTitulo();
+
+		mEventBus.post(new Estado(mIndexDiaSemana, mMisterioSelected,
+				mPaginaActual));
+
+		return true;
 	}
 
 }

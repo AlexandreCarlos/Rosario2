@@ -42,6 +42,7 @@ public class MisteriosDia extends SherlockListFragment {
 	private int mIndexDiaSemana = -1;
 	private EventBus mEventBus;
 	private boolean mRegistado = false;
+	private boolean isInit = false;
 
 	@ViewById(R.id.oracoes)
 	protected View mOracoes;
@@ -69,10 +70,18 @@ public class MisteriosDia extends SherlockListFragment {
 	public void onActivityCreated(final Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
 
+		setMisteriosList();
+
+		isInit= true;
+	}
+
+	/**
+	 * 
+	 */
+	private void setMisteriosList() {
 		setListAdapter(new ArrayAdapter<String>(getActivity(),
 				R.layout.misterio_list_itemlayout, R.id.item_misterio,
 				Misterios.designacaoMisterios(mIndexDiaSemana)));
-
 	}
 
 	/**
@@ -148,6 +157,10 @@ public class MisteriosDia extends SherlockListFragment {
 	 */
 	public void onEvent(final Estado event) {
 		mIndexDiaSemana = event.getDiaSemana();
+		
+		if (isInit) {
+			this.setMisteriosList();
+		}
 	}
 
 }

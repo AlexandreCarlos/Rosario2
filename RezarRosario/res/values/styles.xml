@@ -1,5 +1,17 @@
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <style name="AppTheme" parent="android:Theme.Light" />
+    <!-- <style name="AppTheme" parent="android:Theme.Light" /> -->
+
+    <style name="AppTheme" parent="Theme.Sherlock.Light">
+        <item name="android:actionDropDownStyle">@style/MyDropDownNav</item>
+    </style>
+
+    <!-- style the list navigation -->
+    <style name="MyDropDownNav" parent="Widget.Sherlock.Light.Spinner.DropDown.ActionBar">
+        <item name="android:background">@drawable/ad_spinner_background_holo_light</item>
+        <item name="android:popupBackground">@drawable/ad_menu_dropdown_panel_holo_light</item>
+        <item name="android:dropDownSelector">@drawable/ad_selectable_background</item>
+        <item name="android:textColor">@color/ics_white</item>
+    </style>
 
 </resources>
