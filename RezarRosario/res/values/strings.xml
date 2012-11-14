@@ -44,4 +44,6 @@
 		either express or implied. See the License for the specific 
 		language governing permissions and limitations under the License.</string>
     <string name="week_days_menu">Dia da seamana</string>
+    <string name="menu_data">Data</string>
+    <string name="dialog_menu_data">Escolha o dia</string>
 </resources>

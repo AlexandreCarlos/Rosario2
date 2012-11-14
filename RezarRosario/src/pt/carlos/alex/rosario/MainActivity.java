@@ -20,6 +20,7 @@ import java.util.GregorianCalendar;
 
 import android.app.AlertDialog;
 import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
 import android.text.Html;
 import android.util.Log;
 import android.view.Display;
@@ -297,20 +298,10 @@ public class MainActivity extends SherlockFragmentActivity implements
 		case android.R.id.home:
 			mSlindingMenu.toggle();
 			return true;
-			// case R.id.domingo:
-			// return changeWeekDay(1);
-			// case R.id.segunda:
-			// return changeWeekDay(2);
-			// case R.id.terca:
-			// return changeWeekDay(3);
-			// case R.id.quarta:
-			// return changeWeekDay(4);
-			// case R.id.quinta:
-			// return changeWeekDay(5);
-			// case R.id.sexta:
-			// return changeWeekDay(6);
-			// case R.id.sabado:
-			// return changeWeekDay(1);
+		case R.id.menu_data:
+			 DialogFragment newFragment = new DialogoData();
+			 newFragment.show(getSupportFragmentManager(), getResources().getString(R.string.dialog_menu_data));
+			return true;
 		case R.id.about:
 			new AlertDialog.Builder(this).setTitle(R.string.about)
 					.setMessage(Html.fromHtml(getString(R.string.about_msg)))

@@ -1,6 +1,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <item
+        android:id="@+id/menu_data"
+        android:enabled="true"
+        android:icon="@android:drawable/ic_menu_my_calendar"
+        android:orderInCategory="100"
+        android:showAsAction="ifRoom|withText"
+        android:title="@string/menu_data"
+        android:visible="true">
+    </item>
+    <item
         android:id="@+id/menu_settings"
         android:orderInCategory="700"
         android:showAsAction="never"
