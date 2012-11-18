@@ -271,7 +271,8 @@ public class MostraOracoes extends SherlockFragment {
 	/**
 	 * Trata da mudança de Mistério, notificado pelo evento Rezar.
 	 */
-	public void onEvent(final Rezar event) {
+	@SuppressWarnings(value = "UnusedDeclaration")
+    public void onEvent(final Rezar event) {
 
 		try {
 			if (V.DEBUG) {
@@ -303,7 +304,8 @@ public class MostraOracoes extends SherlockFragment {
 	 * Recebe a notificação do estado da aplicação e ativa a condição de estado
 	 * inicial da aplicação definido.
 	 */
-	public void onEvent(final Estado event) {
+	@SuppressWarnings(value = "UnusedDeclaration")
+    public void onEvent(final Estado event) {
 		if (V.DEBUG) {
 			Log.d(TAG, "Evento Estado recebido:" + event);
 		}

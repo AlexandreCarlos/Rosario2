@@ -24,11 +24,10 @@ public class Pagina {
 	private int mPagina;
 	
 	/**
-	 * Construtor de defeito
-	 * Inicializa o atributo a zero
+	 * Construtor de defeito  inibido
 	 */
-	public Pagina() {
-		setPagina(0);
+	@SuppressWarnings(value = "UnusedDeclaration")
+    private Pagina() {
 	}
 	
 	/**

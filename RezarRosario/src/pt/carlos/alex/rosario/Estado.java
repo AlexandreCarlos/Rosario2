@@ -29,13 +29,10 @@ public class Estado {
 	private int pagina;
 	
 	/**
-	 * Construtor de defeito
-	 * Inicializa os atributos com valores incorretos (int = -1)
+	 * Construtor de defeito inibido
 	 */
-	public Estado() {
-		this.setDiaSemana(-1);
-		this.setMisterio(-1);
-		this.setPagina(-1);
+	@SuppressWarnings(value = "UnusedDeclaration")
+    private Estado() {
 		}
   /**
    * Construtor com parâmetros de inicialização dos atributos

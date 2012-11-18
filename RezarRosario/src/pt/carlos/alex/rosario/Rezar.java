@@ -28,13 +28,10 @@ public class Rezar {
 	protected int pagina;
 
 /**
- * Construtor por defeito
- * Construtor que inicializa a classe com os atributos a zero
+ * Construtor por defeito inibido
  */
-	public Rezar() {
-		this.diaSemana = 0;
-		this.misterio = 0;
-		this.pagina = 0;
+	@SuppressWarnings(value = "UnusedDeclaration")
+    private Rezar() {
 	}
 
 /**
@@ -53,6 +50,7 @@ public class Rezar {
 	/**
 	 * @return O dia da semana
 	 */
+    @SuppressWarnings(value = "UnusedDeclaration")
 	public int getDiaSemana() {
 		return diaSemana;
 	}
@@ -61,6 +59,7 @@ public class Rezar {
 	 * @param int diaSemana
 	 *            Assigna o Dia da semana
 	 */
+    @SuppressWarnings(value = "UnusedDeclaration")
 	public void setDiaSemana(final int pDiaSemana) {
 		this.diaSemana = pDiaSemana;
 	}
@@ -68,6 +67,7 @@ public class Rezar {
 	/**
 	 * @return O índex do Mistério selecionado
 	 */
+    @SuppressWarnings(value = "UnusedDeclaration")
 	public int getMisterio() {
 		return misterio;
 	}
@@ -76,6 +76,7 @@ public class Rezar {
 	 * @param int misterio
 	 *            Assigna o índex do Mistério selecionado
 	 */
+    @SuppressWarnings(value = "UnusedDeclaration")
 	public void setMisterio(final int pMisterio) {
 		this.misterio = pMisterio;
 	}
@@ -83,6 +84,7 @@ public class Rezar {
 	/**
 	 * @return O índex da Página selecionada
 	 */
+    @SuppressWarnings(value = "UnusedDeclaration")
 	public int getPagina() {
 		return pagina;
 	}
@@ -91,6 +93,7 @@ public class Rezar {
 	 * @param int pagina
 	 *            Assigna o índex da Página selecionada
 	 */
+    @SuppressWarnings(value = "UnusedDeclaration")
 	public void setPagina(final int pPagina) {
 		this.pagina = pPagina;
 	}

@@ -46,6 +46,7 @@ import com.viewpagerindicator.PageIndicator;
  * Draws circles (one for each view). The current view position is filled and
  * others are only stroked.
  */
+@SuppressWarnings(value = "UnusedDeclaration")
 public class ContasRosario extends View implements PageIndicator {
     private static final int INVALID_POINTER = -1;
 
@@ -72,6 +73,7 @@ public class ContasRosario extends View implements PageIndicator {
     private boolean mIsDragging;
 
 
+    @SuppressWarnings(value = "UnusedDeclaration")
     public ContasRosario(final Context context) {
         this(context, null);
     }

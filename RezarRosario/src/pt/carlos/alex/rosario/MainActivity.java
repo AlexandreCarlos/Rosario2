@@ -1,17 +1,17 @@
 /*
- * Copyright (C) 2012 Alexandre Carlos 
+ * Copyright (c) 2012. Alexanndre Carlos.
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
  *
- *      http://www.apache.org/licenses/LICENSE-2.0
+ *  http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
  */
 package pt.carlos.alex.rosario;
 
@@ -68,9 +68,8 @@ public class MainActivity extends SherlockFragmentActivity implements
 	protected int mMisterioSelected = 0;
 	protected int mPaginaActual = 0;
 	private ActionBar ab;
-	private ArrayAdapter <CharSequence> weekDaysList;
 
-	/**
+    /**
 	 * Inicialização antes da criação das views. Determina o dia da semana
 	 * atual.
 	 */
@@ -100,10 +99,11 @@ public class MainActivity extends SherlockFragmentActivity implements
 
 		ab.setDisplayShowTitleEnabled(false);
 		ab.setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);
-		
-		weekDaysList = ArrayAdapter.createFromResource(ab.getThemedContext(),
-				R.array.week_days, R.layout.sherlock_spinner_item);
-		weekDaysList.setDropDownViewResource(R.layout.sherlock_spinner_dropdown_item);
+
+        ArrayAdapter<CharSequence> weekDaysList;
+        weekDaysList = ArrayAdapter.createFromResource(ab.getThemedContext(),
+                R.array.week_days, R.layout.sherlock_spinner_item);
+        weekDaysList.setDropDownViewResource(R.layout.sherlock_spinner_dropdown_item);
 		
 		ab.setListNavigationCallbacks(weekDaysList, this);
 
@@ -265,7 +265,8 @@ public class MainActivity extends SherlockFragmentActivity implements
 	/**
 	 * Recebe as notificações de mudança de página e guarda no estado.
 	 */
-	public void onEvent(final Pagina event) {
+	@SuppressWarnings(value = "UnusedDeclaration")
+    public void onEvent(final Pagina event) {
 
 		if (V.DEBUG) {
 			Log.d(TAG, "Evento (Integer) página recebido:" + event);
@@ -279,7 +280,8 @@ public class MainActivity extends SherlockFragmentActivity implements
 	 * Recebe a notificação de mistério selecionado e guarda no estado.
 	 * 
 	 */
-	public void onEvent(final Rezar event) {
+	@SuppressWarnings(value = "UnusedDeclaration")
+    public void onEvent(final Rezar event) {
 
 		if (V.DEBUG) {
 			Log.d(TAG, "Evento Rezar recebido:" + event);
