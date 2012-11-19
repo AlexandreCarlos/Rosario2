@@ -134,10 +134,10 @@ public class MainActivity extends SherlockFragmentActivity implements
 	
 		if (this.isLandscape()) {
 			formattedString = String.format("<html><head></head><body>%s - %s (%s)</body></html>", V.DIA_SEMANA[mIndexDiaSemana], 
-				Misterios.designacaoMisterio(mIndexDiaSemana), Misterios.identificarMisterioDia(mIndexDiaSemana, mMisterioSelected)); 
+				Misterios.designacaoMisterio(mIndexDiaSemana), Misterios.identificarMisterioDia(mMisterioSelected));
 		} else {
 			formattedString = String.format("<html><head></head><body>%s - %s <br />(%s)</body></html>", V.DIA_SEMANA[mIndexDiaSemana], 
-				Misterios.designacaoMisterio(mIndexDiaSemana), Misterios.identificarMisterioDia(mIndexDiaSemana, mMisterioSelected)); 
+				Misterios.designacaoMisterio(mIndexDiaSemana), Misterios.identificarMisterioDia(mMisterioSelected));
 		}
 	
 		mDiaSemana.setText(Html.fromHtml(formattedString));

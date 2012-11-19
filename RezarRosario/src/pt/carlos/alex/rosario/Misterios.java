@@ -18,10 +18,10 @@
  */
 package pt.carlos.alex.rosario;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import android.util.Log;
 
 /**
  * @author Alexandre Carlos
@@ -158,16 +158,13 @@ public final class Misterios {
 	/**
 	 * Obter a identificação do Mistério selecionado para o dia da semana.
 	 * 
-	 * @param diaSemana
-	 *            int com o dia da semana 1 - Domingo 2 - 2ª Feira 3 - 3ª Feira
-	 *            4 - 4ª Feira 5 - 5ª Feira 6 - 6ª Feira 7 - Sábado
-	 * @param misterio
-	 *            int com o mistério selecionado (Base de Referência 0)
-	 * @return String com a identificação do Mistério selecionado para o dia da
+	 *
+     * @param misterio
+     *            int com o mistério selecionado (Base de Referência 0)
+     * @return String com a identificação do Mistério selecionado para o dia da
 	 *         semana
 	 */
-	public static String identificarMisterioDia(final int pDiaSemana,
-			final int misterio) {
+	public static String identificarMisterioDia(final int misterio) {
 
 		if (misterio < 5) {
 			// switch (MISTERIOS[pDiaSemana]) {
@@ -364,8 +361,7 @@ public final class Misterios {
 	 * @return String com a oração da Salvé Rainha
 	 */
 	public static String salveRainha() {
-		return SALVERAINHA;
-	}
+		return SALVERAINHA;                                                	}
 
 	/**
 	 * Obter a Jaculatória final.
