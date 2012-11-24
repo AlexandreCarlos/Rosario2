@@ -59,6 +59,7 @@ public class OracoesPageAdapter extends PagerAdapter {
 		return this.oracao.size();
 	}
 
+    @SuppressWarnings("deprecation")
     @Override
     public Object instantiateItem(final View collection, final int position) {
     	if (V.DEBUG){
@@ -78,6 +79,7 @@ public class OracoesPageAdapter extends PagerAdapter {
 
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public void destroyItem(final View collection, final int position, final Object view) {
          ((ViewPager) collection).removeView((View) view);
@@ -109,10 +111,12 @@ public class OracoesPageAdapter extends PagerAdapter {
     public void restoreState(final Parcelable arg0, final ClassLoader arg1) {
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public void startUpdate(final View arg0) {
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public void finishUpdate(final View arg0) {
     }

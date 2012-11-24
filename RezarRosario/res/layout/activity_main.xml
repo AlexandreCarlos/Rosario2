@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/ics_white"
     android:orientation="vertical" >
 
     <TextView
@@ -14,14 +15,28 @@
         android:text="@string/dia_semana"
         android:textSize="18sp"
         android:textStyle="bold"
+        android:background="@color/ics_white"
         tools:context=".MainActivity" />
+    
+<com.slidingmenu.lib.SlidingMenu
+    xmlns:sliding="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/slidingmenulayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/ics_white"
+    sliding:viewAbove="@layout/oracoes_fragment_layout"
+    sliding:viewBehind="@layout/misterios_fragment_layout"
+    sliding:behindOffset="@dimen/slidingmenu_offset"
+    sliding:touchModeAbove="margin"
+    sliding:touchModeBehind="margin"
+    sliding:selectorEnabled="false" />
 
-    <fragment
-        android:id="@+id/misterios_do_dia"
-        android:name="pt.carlos.alex.rosario.MisteriosDia_"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp" />
+<!--     <fragment -->
+<!--         android:id="@+id/misterios_do_dia" -->
+<!--         android:name="pt.carlos.alex.rosario.MisteriosDia_" -->
+<!--         android:layout_width="match_parent" -->
+<!--         android:layout_height="wrap_content" -->
+<!--         android:layout_marginTop="10dp" /> -->
 
 <!--     <fragment -->
 <!--         android:id="@+id/oracoes" -->

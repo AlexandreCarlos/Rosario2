@@ -5,5 +5,45 @@
     <string name="title_activity_main">Rosário</string>
     <string name="dia_semana">Dia da Semana</string>
     <string name="oracoes_dia">Orações do dia</string>
-	
+    <string name="about">Sobre</string>
+    <string name="licenses">Licenças</string>
+    <string name="about_msg">&lt;b>Rosário&lt;/b> é uma aplicação Open Source Android 
+        que pretende ajudar a rezar o Rosário de Fátima.&lt;br>
+        Podem e devem copiar o código desta aplicação
+        desde que citem o projecto e incluam a licença
+        no texto original em inglês na vossa aplicação.
+        &lt;br>&lt;br>
+		</string>
+    <string name="apache_license">&lt;b>Rosário &lt;/b>&lt;br>
+        \u00A9 2012 Alexandre Carlos&lt;br>
+        Rosário is licensed under the Apache License Version 2.0.
+        &lt;br>&lt;br>
+        &lt;b>SlidingMenu &lt;/b>&lt;br>
+        \u00A9 2012 Jeremy Feinstein&lt;br>
+        SlidingMenu is licensed under the Apache License Version 2.0.
+        &lt;br>&lt;br>
+        &lt;b>EventBus &lt;/b>&lt;br>
+        \u00A9 2012 Markus Junginger&lt;br>
+        EventBus is licensed under the Apache License Version 2.0.
+        &lt;br>&lt;br>
+        &lt;b>ActionBarSherlock &lt;/b>&lt;br>
+        \u00A9 2012 Jake Wharton&lt;br>
+        ActionBarSherlock is licensed under the Apache License Version 2.0.
+        &lt;br>&lt;br>
+        &lt;b>ViewPagerIndicator &lt;/b>&lt;br>
+        \u00A9 2012 Jake Wharton&lt;br>
+        ViewPagerIndicator is licensed under the Apache License Version 2.0.
+        &lt;br>&lt;br>
+		&lt;b>The Apache License Version 2.0&lt;/b>&lt;br>
+		You may obtain a copy of the License at&lt;br>
+		&lt;center>&lt;a href=\'http://www.apache.org/licenses/LICENSE-2.0\'>
+				"http://www.apache.org/licenses/LICENSE-2.0&lt;/a>&lt;/center>&lt;br>
+		Unless required by applicable law or agreed to in writing, 
+		software distributed under the License is distributed on an 
+		\'AS IS\' BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, 
+		either express or implied. See the License for the specific 
+		language governing permissions and limitations under the License.</string>
+    <string name="week_days_menu">Dia da seamana</string>
+    <string name="menu_data">Data</string>
+    <string name="dialog_menu_data">Escolha o dia</string>
 </resources>
